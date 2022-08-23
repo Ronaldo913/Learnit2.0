@@ -371,6 +371,10 @@ class _LoginpageState extends State<Loginpage> {
               height: 40,
               child: Text(
                 "Siga-nos",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.green,
+                ),
                 textAlign: TextAlign.center,
               ),
             ),
