@@ -3,6 +3,7 @@ import 'package:learnit2/pages/animation.dart';
 import 'package:learnit2/pages/home_page.dart';
 import 'package:learnit2/pages/registration_page.dart';
 import 'package:learnit2/pages/recuperacao.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Loginpage extends StatefulWidget {
   const Loginpage({Key? key}) : super(key: key);
@@ -70,6 +71,8 @@ class _LoginpageState extends State<Loginpage> {
                             validator: (String? value) {
                               if (value == null || value.isEmpty) {
                                 return 'Campo vazio!';
+                              } else if (!value.contains("@")) {
+                                return 'Um e-mail válido deve possuir um "@"!';
                               }
                               return null;
                             },
@@ -399,16 +402,37 @@ class _LoginpageState extends State<Loginpage> {
     );
   }
 
-  void openSite() async {
 
+  Future<void> openSite() async {
+    final Uri _url = Uri.parse('https://ronaldo913.github.io/ImagensPMovel/index.html');
+
+    if (!await launchUrl(
+      _url,
+      mode: LaunchMode.externalApplication,
+    )) {
+      throw 'Could not launch $_url';
+    }
   }
 
-  void openInstagram() async {
+  Future<void> openInstagram() async {
+    final Uri _url = Uri.parse('https://www.instagram.com/learnit_plus/');
 
-
+    if (!await launchUrl(
+      _url,
+      mode: LaunchMode.externalApplication,
+    )) {
+      throw 'Could not launch $_url';
+    }
   }
 
-  void openGoogle() async {
+  Future<void> openGoogle() async {
+    final Uri _url = Uri.parse('https://flutter.dev');
 
+    if (!await launchUrl(
+      _url,
+      mode: LaunchMode.externalApplication,
+    )) {
+      throw 'Could not launch $_url';
+    }
   }
 }
