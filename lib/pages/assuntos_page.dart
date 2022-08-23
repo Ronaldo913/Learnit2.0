@@ -1,11 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:learnit/pages/conteudo_page.dart';
-import 'package:learnit/pages/home_page.dart';
-//import 'package:learnit/domain/progresso.dart';
-//import 'package:learnit/repositories/usuario_repository.dart';
-//import 'package:provider/provider.dart';
+import 'package:learnit2/pages/conteudo_page.dart';
+import 'package:learnit2/pages/home_page.dart';
 
 class AssuntosPage extends StatefulWidget {
   const AssuntosPage({Key? key}) : super(key: key);

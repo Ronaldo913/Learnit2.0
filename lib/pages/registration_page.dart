@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:learnit/pages/home_page.dart';
-import 'package:learnit/pages/login_page.dart';
+import 'package:learnit2/pages/home_page.dart';
+import 'package:learnit2/pages/login_page.dart';
 
 class RegistrationPage extends StatefulWidget {
   const RegistrationPage({Key? key}) : super(key: key);

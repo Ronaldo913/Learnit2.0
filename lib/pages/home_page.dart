@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:learnit/pages/assuntos_page.dart';
-import 'package:learnit/pages/perfil_page.dart';
-import 'package:learnit/pages/questoes_page.dart';
-import 'package:learnit/pages/pacote_page.dart';
+import 'package:learnit2/pages/assuntos_page.dart';
+import 'package:learnit2/pages/cronograma_page.dart';
+import 'package:learnit2/pages/perfil_page.dart';
+import 'package:learnit2/pages/questoes_page.dart';
+import 'package:learnit2/pages/pacote_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -62,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return const PerfilPage();
+                          return const CronogramaPage();
                         },
                       ),
                     );

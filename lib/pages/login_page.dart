@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:learnit/pages/animation.dart';
-import 'package:learnit/pages/pacote_page.dart';
-import 'package:learnit/pages/home_page.dart';
-import 'package:learnit/pages/registration_page.dart';
-import 'package:learnit/pages/recuperacao.dart';
-import 'package:url_launcher/url_launcher.dart';
-
-//https://pub.dev/packages/url_launcher
+import 'package:learnit2/pages/animation.dart';
+import 'package:learnit2/pages/home_page.dart';
+import 'package:learnit2/pages/registration_page.dart';
+import 'package:learnit2/pages/recuperacao.dart';
 
 class Loginpage extends StatefulWidget {
   const Loginpage({Key? key}) : super(key: key);
@@ -404,29 +400,15 @@ class _LoginpageState extends State<Loginpage> {
   }
 
   void openSite() async {
-    const url = 'https://ronaldo913.github.io/ImagensPMovel/index.html';
-    if (await canLaunch(url)) {
-      await launch(url, forceSafariVC: true, forceWebView: true);
-    } else {
-      throw 'Não foi possível iniciar $url';
-    }
+
   }
 
   void openInstagram() async {
-    const url = 'https://www.instagram.com/learnit_plus/';
-    if (await canLaunch(url)) {
-      await launch(url, forceSafariVC: true, forceWebView: true);
-    } else {
-      throw 'Não foi possível iniciar $url';
-    }
+
+
   }
 
   void openGoogle() async {
-    const url = 'https://ronaldo913.github.io/ImagensPMovel/index.html';
-    if (await canLaunch(url)) {
-      await launch(url, forceSafariVC: true, forceWebView: true);
-    } else {
-      throw 'Não foi possível iniciar $url';
-    }
+
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnit/pages/login_page.dart';
+import 'package:learnit2/pages/login_page.dart';
 
 class AnimationPage extends StatefulWidget {
   final Widget page;

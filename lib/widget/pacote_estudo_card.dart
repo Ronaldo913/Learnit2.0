@@ -1,5 +1,5 @@
-import 'package:learnit/domain/pacote_estudo.dart';
-import 'package:learnit/pages/pacotes_detalhes.dart';
+import 'package:learnit2/domain/pacote_estudo.dart';
+import 'package:learnit2/pages/pacotes_detalhes.dart';
 import 'package:flutter/material.dart';
 
 class CardPacoteEstudo extends StatefulWidget {

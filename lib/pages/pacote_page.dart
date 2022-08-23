@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:learnit/domain/pacote_estudo.dart';
-import 'package:learnit/pages/pacotes_detalhes.dart';
-import 'package:learnit/widget/pacote_estudo_card.dart';
-import 'package:learnit/pages/home_page.dart';
+import 'package:learnit2/domain/pacote_estudo.dart';
+import 'package:learnit2/pages/pacotes_detalhes.dart';
+import 'package:learnit2/widget/pacote_estudo_card.dart';
+import 'package:learnit2/pages/home_page.dart';
 
 class PacotePage extends StatefulWidget {
   const PacotePage({Key? key}) : super(key: key);

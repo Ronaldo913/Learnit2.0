@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:learnit/pages/home_page.dart';
-import 'package:learnit/pages/login_page.dart';
-import 'package:learnit/pages/quest.dart';
+import 'package:learnit2/pages/home_page.dart';
+import 'package:learnit2/pages/login_page.dart';
+import 'package:learnit2/pages/quest.dart';
 
 class Recuperacao extends StatefulWidget {
   const Recuperacao({Key? key}) : super(key: key);

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnit/pages/quest.dart';
+import 'package:learnit2/pages/quest.dart';
 
 import 'home_page.dart';
 

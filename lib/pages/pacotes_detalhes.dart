@@ -1,4 +1,4 @@
-import 'package:learnit/domain/pacote_estudo.dart';
+import 'package:learnit2/domain/pacote_estudo.dart';
 import 'package:flutter/material.dart';
 
 class PacoteDetalhes extends StatefulWidget {
