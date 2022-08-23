@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnit2/pages/home_page.dart';
 import 'package:learnit2/pages/login_page.dart';
-import 'package:learnit2/pages/quest.dart';
-
 class Recuperacao extends StatefulWidget {
   const Recuperacao({Key? key}) : super(key: key);
 
@@ -37,13 +34,12 @@ class _RecuperacaoState extends State<Recuperacao> {
                     const SizedBox(height: 4),
                   ],
                 ),
-                Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                  Text(
-                      "Por favor, informe o e-mail relacionado à conta cadastrada. Enviaremos um e-mail com as instruções a serem seguidas para efetuar a redefinição da senha.",
-                      textAlign: TextAlign.justify,
-                      style: TextStyle(fontSize: 14))
-                ]),
-                const SizedBox(height: 4),
+                Text(
+                    "Por favor, informe o e-mail relacionado à conta cadastrada. Enviaremos um e-mail com as instruções a serem seguidas para efetuar a redefinição da senha.",
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(fontSize: 14)
+                ),
+                SizedBox(height: 4),
                 TextFormField(
                   controller: _emailController,
                   validator: (String? value) {
