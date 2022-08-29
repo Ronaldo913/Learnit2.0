@@ -3,23 +3,14 @@ import 'package:learnit2/domain/usuario.dart';
 class BD {
   static List<usuario> lista = [
     Usuario(
-      imagem: 'https://ronaldo913.github.io/ImagensPMovel/images/foco.png',
-      titulo: 'Pacote Foco',
-      desconto: 10,
-      numParcelas: 6,
-      precoAntigo: 19.90,
-      precoAtual: 9.90,
-      redacao: 1,
-      aula: 100,
-      exercicio: 300,
-      horas: 10,
-      duvida: 0,
-    ),
-    Usuario(
-      
-    ),
-    Usuario(
-      
+      nome: 'Mayara',
+      sobrenome: 'Silva',
+      nascimento: '25/04/2004',
+      celular: '82999000364',
+      email: 'mayara@email.com',
+      cpf: '123.456.789-00',
+      username: 'mayarinhan',
+      senha: '123456789',
     ),
   ];
 
