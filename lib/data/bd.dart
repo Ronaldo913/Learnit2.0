@@ -1,7 +1,7 @@
 import 'package:learnit2/domain/usuario.dart';
 
 class BD {
-  static List<usuario> lista = [
+  static List<Usuario> lista = [
     Usuario(
       nome: 'Mayara',
       sobrenome: 'Silva',
