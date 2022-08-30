@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:learnit2/domain/usuario.dart';
 import 'package:learnit2/pages/animation.dart';
 import 'package:learnit2/pages/home_page.dart';
 import 'package:learnit2/pages/registration_page.dart';
 import 'package:learnit2/pages/recuperacao.dart';
+import 'package:learnit2/data/bd.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Loginpage extends StatefulWidget {
@@ -16,6 +18,8 @@ class _LoginpageState extends State<Loginpage> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passController = TextEditingController();
+
+  Future<List<Usuario>> lista = BD.getUsuario();
 
   @override
   Widget build(BuildContext context) {
@@ -438,5 +442,19 @@ class _LoginpageState extends State<Loginpage> {
     )) {
       throw 'Could not launch $_url';
     }
+  }
+
+  buildListView() {
+    return FutureBuilder<List<Usuario>>(
+      future: lista,
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          List<Usuario> lista = snapshot.data ?? [];
+
+          //return;
+        }
+        return Center(child: const CircularProgressIndicator());
+      },
+    );
   }
 }
