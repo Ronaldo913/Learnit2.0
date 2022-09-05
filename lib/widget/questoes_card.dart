@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:learnit2/domain/questoes.dart';
+import 'package:learnit2/domain/questoes_conteudo.dart';
 import 'package:learnit2/pages/quest.dart';
 
 class CardQuestoes extends StatefulWidget {
