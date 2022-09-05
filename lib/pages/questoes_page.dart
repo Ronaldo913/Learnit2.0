@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:learnit2/pages/quest.dart';
 import 'package:learnit2/domain/questoes.dart';
 import 'package:learnit2/data/bd.dart';
+import 'package:learnit2/widget/questoes_card.dart';
 import 'home_page.dart';
 
 class QuestoesPage extends StatefulWidget {
@@ -59,8 +59,25 @@ class _QuestoesPageState extends State<QuestoesPage> {
       ),
     );
   }
-}
-buildListView(){
-  
-}
 
+  buildListView(){
+    return FutureBuilder<List<Questoes>>(
+      future: lista,
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          List<Questoes> lista = snapshot.data ?? [];
+
+          return ListView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: lista.length,
+            itemBuilder: (BuildContext context, int index) {
+              return CardQuestoes(questoes: lista[index]);
+            },
+          );
+        }
+        return Center(child: const CircularProgressIndicator());
+      },
+    );
+  }
+}
