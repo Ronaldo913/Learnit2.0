@@ -18,34 +18,41 @@ class CardQuestoes extends StatefulWidget {
 class _CardQuestoesState extends State<CardQuestoes> {
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) {
-              return QuestPage(
-                questoes: widget.questoes,
-              );
-            },
+    Size size = MediaQuery.of(context).size;
+    return Column(
+      children: [
+        SizedBox(height: 30,),
+      InkWell(
+        onTap: queston,
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8.0),
           ),
-        );
-      },
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.0),
-        ),
-        child: Padding(padding: const EdgeInsets.only(top: 18.0, right: 8.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(titulo, textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 8.0,),
-                ],
-              ),
+          child: Padding(padding: const EdgeInsets.only(bottom: 30.0, top: 30.0, right: 8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(widget.questoes.titulo, textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
           ),
         ),
+      )
+      ],
     );
   }
+
+  void queston() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) {
+          return const QuestPage();
+        },
+      ),
+    );
+  }
+
+}
