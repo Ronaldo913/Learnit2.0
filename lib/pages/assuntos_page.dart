@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:learnit2/data/bd.dart';
 import 'package:learnit2/domain/questoes_conteudo.dart';
-import 'package:learnit2/widget/questoes_card.dart';
+import 'package:learnit2/widget/questoes_conteudo_card.dart';
 
 class AssuntosPage extends StatefulWidget {
   const AssuntosPage({Key? key}) : super(key: key);
