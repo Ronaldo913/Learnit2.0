@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
         type: BottomNavigationBarType.fixed,
         showUnselectedLabels: true,
         unselectedItemColor: Colors.grey,
-        selectedItemColor: const Color(0xFFE81F7C),
+        selectedItemColor: Colors.deepPurple[900],
         currentIndex: selectedIndex,
         onTap: (index) {
           setState(() {
@@ -113,6 +113,10 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.auto_stories),
             label: 'Conteúdos',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.tips_and_updates),
+            label: 'Quiz',
           ),
         ],
 
