@@ -19,14 +19,6 @@ class _LoginpageState extends State<Loginpage> {
   final _emailController = TextEditingController();
   final _passController = TextEditingController();
 
-  Future<List<Usuario>> lista = BD.getUsuario();
-
-  // login({
-  //
-  // }){
-  //
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +66,7 @@ class _LoginpageState extends State<Loginpage> {
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderRadius:
-                                BorderRadius.all(Radius.circular(90.0)),
+                                    BorderRadius.all(Radius.circular(90.0)),
                                 borderSide: BorderSide(
                                   color: Color(0xFF087f23),
                                   width: 1.5,
@@ -182,19 +174,7 @@ class _LoginpageState extends State<Loginpage> {
                                 Padding(
                                   padding: EdgeInsets.all(0),
                                   child: ElevatedButton(
-                                    onPressed: () {
-                                      if (_formKey.currentState!.validate()) {
-                                        Navigator.pushReplacement(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) {
-                                              return const AnimationPage(
-                                                  page: HomePage());
-                                            },
-                                          ),
-                                        );
-                                      }
-                                    },
+                                    onPressed: () => onPressedLogin(),
                                     child: const Padding(
                                       padding: EdgeInsets.all(16),
                                       child: const Text(
@@ -470,17 +450,40 @@ class _LoginpageState extends State<Loginpage> {
     }
   }
 
-  // login() {
-  //   return FutureBuilder<List<Usuario>>(
-  //     future: lista,
-  //     builder: (context, snapshot) {
-  //       if (snapshot.hasData) {
-  //         List<Usuario> lista = snapshot.data ?? [];
-  //
-  //         //return;
-  //       }
-  //     },
-  //   );
-  // }
+  onPressedLogin() {
+    if (_formKey.currentState!.validate()) {
+      List<Usuario> listaUsuario = BD.lista;
+      String email = _emailController.text;
+      String pass = _passController.text;
+      bool auth = false;
+
+      // Verificando usuarios
+      for (Usuario user in listaUsuario) {
+        //Checando email e senha
+        if (user.email == email && user.senha == pass) {
+          auth = true;
+        }
+      }
+
+      if (auth) {
+        // Push para pag de login
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return const AnimationPage(page: HomePage());
+            },
+          ),
+        );
+      } else {
+        // Mostrar a mensagem de erro
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text("Usuario e/ou senha incorretos"),
+          ),
+        );
+      }
+    }
+  }
 
 }
