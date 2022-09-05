@@ -72,6 +72,14 @@ class _LoginpageState extends State<Loginpage> {
                                 Icons.email,
                                 color: Colors.grey,
                               ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius:
+                                BorderRadius.all(Radius.circular(90.0)),
+                                borderSide: BorderSide(
+                                  color: Color(0xFF087f23),
+                                  width: 1.5,
+                                ),
+                              ),
                               border: OutlineInputBorder(
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(90.0)),
@@ -107,11 +115,22 @@ class _LoginpageState extends State<Loginpage> {
                                 Icons.key,
                                 color: Colors.grey,
                               ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(90.0)),
+                                borderSide: BorderSide(
+                                  color: Color(0xFF087f23),
+                                  width: 1.5,
+                                ),
+                              ),
                               border: OutlineInputBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(90.0)),
-                                  borderSide: BorderSide(
-                                      color: Colors.grey, width: 0.5)),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(90.0)),
+                                borderSide: BorderSide(
+                                  color: Colors.grey,
+                                  width: 0.5,
+                                ),
+                              ),
                             ),
                             obscureText: true,
                             validator: (String? value) {
@@ -379,6 +398,7 @@ class _LoginpageState extends State<Loginpage> {
             ),
             Container(
               height: 40,
+              padding: EdgeInsets.only(top: 16.0),
               child: Text(
                 "Siga-nos",
                 style: TextStyle(
@@ -416,9 +436,9 @@ class _LoginpageState extends State<Loginpage> {
     );
   }
 
-
   Future<void> openSite() async {
-    final Uri _url = Uri.parse('https://ronaldo913.github.io/ImagensPMovel/index.html');
+    final Uri _url =
+        Uri.parse('https://ronaldo913.github.io/ImagensPMovel/index.html');
 
     if (!await launchUrl(
       _url,
