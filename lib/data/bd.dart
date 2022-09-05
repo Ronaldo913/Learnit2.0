@@ -77,4 +77,13 @@ class BD {
     await Future.delayed(const Duration(seconds: 3));
     return lista1;
   }
+  static List<Questoes> listaquest= [
+    Questoes(titulo: 'Citologia'),
+    Questoes(titulo: 'Embriologia'),
+    Questoes(titulo: 'Génetica')
+  ];
+  static Future<List<Questoes>> getPacotesTuristicos() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return lista;
+  }
 }
