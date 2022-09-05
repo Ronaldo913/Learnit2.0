@@ -1,5 +1,6 @@
 import 'package:learnit2/domain/usuario.dart';
 import 'package:learnit2/domain/pacote_estudo.dart';
+import 'package:learnit2/domain/questoes.dart';
 
 class BD {
   static final List<Usuario> lista = [
@@ -79,10 +80,19 @@ class BD {
   }
   
   static List<Questoes> listaquest= [
-    Questoes(titulo: 'Citologia'),
+    Questoes(titulo: 'Introdução à Biologia'),
     Questoes(titulo: 'Embriologia'),
-    Questoes(titulo: 'Génetica')
+    Questoes(titulo: 'Citologia'),
+    Questoes(titulo: 'Genética'),
+    Questoes(titulo: 'Biofísica'),
+    Questoes(titulo: 'Botânica I (Morfologia e Anatomia Vegetal)'),
+    Questoes(titulo: 'Botânica II'),
+    Questoes(titulo: 'Anatomia Humana'),
+    Questoes(titulo: 'Biologia Celular'),
+    Questoes(titulo: 'Ecologia Geral'),
+    Questoes(titulo: 'Histologia')
   ];
+
   static Future<List<Questoes>> getListaQuest() async {
     await Future.delayed(const Duration(seconds: 3));
     return listaquest;
