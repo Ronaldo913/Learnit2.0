@@ -1,7 +1,7 @@
 class Questoes{
-  final String titulo
+  final String titulo;
 
-Questoes({
-  required this.titulo
-});
+  Questoes({
+    required this.titulo,
+  });
 }
