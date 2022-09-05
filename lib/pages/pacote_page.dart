@@ -14,7 +14,8 @@ class _PacotePageState extends State<PacotePage> {
   Future<List<PacoteEstudo>> lista = BD.getPacoteEstudo();
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return 
+      Padding(
       padding: const EdgeInsets.all(16.0),
       child: ListView(
         children: [const SizedBox(height: 16), buildListView()],
@@ -22,7 +23,7 @@ class _PacotePageState extends State<PacotePage> {
     );
   }
 
-  buildListView() {
+  buildListView(){
     return FutureBuilder<List<PacoteEstudo>>(
       future: lista,
       builder: (context, snapshot) {
