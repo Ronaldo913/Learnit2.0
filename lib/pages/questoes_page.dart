@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:learnit/pages/quest.dart';
-import 'package:learnit/domain/questoes.dart';
-import 'package:learnit/database/db.dart';
+import 'package:learnit2/pages/quest.dart';
+import 'package:learnit2/domain/questoes.dart';
+import 'package:learnit2/data/bd.dart';
 import 'home_page.dart';
 
 class QuestoesPage extends StatefulWidget {
@@ -12,7 +12,8 @@ class QuestoesPage extends StatefulWidget {
 }
 
 class _QuestoesPageState extends State<QuestoesPage> {
-  static List<Questoes> lista = db.listaquest;
+  Future<List<Questoes>> lista = BD.getListaQuest();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,15 +40,15 @@ class _QuestoesPageState extends State<QuestoesPage> {
         ],
       ),
       body: Padding(padding: const EdgeInsets.all(16.0),
-        child: ListView.builder(
-          itemCount: lista.length,
-          itemBuilder: (BuildContext context, int index) {
-            return buildCardQuestoes(titulo: lista[index]);
-          },
+        child: ListView(
+          children: [
+            const SizedBox(height: 16), buildListView()
+          ],
         ),
       ),
     );
   }
+
   void goHome() {
     Navigator.push(
       context,
@@ -58,45 +59,8 @@ class _QuestoesPageState extends State<QuestoesPage> {
       ),
     );
   }
+}
+buildListView(){
+  
+}
 
-}
-buildCardQuestoes({
-  required String titulo  
-  required BuildContext context
-}) {
-  return Card(
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(8.0),
-    ),
-    child: Padding(padding: const EdgeInsets.only(top: 18.0, right: 8.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(titulo, textAlign: TextAlign.center, style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(height: 8.0,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              ElevatedButton(
-                style: ElevatedButton.styleFrom( primary: Colors.white),
-                onPressed:() {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return QuestPage();
-                      },
-                    ),
-                  );
-                },
-                child: Icon(Icons.navigate_next, size: 28.0, color: Colors.black,
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
-    ),
-  );
-}
