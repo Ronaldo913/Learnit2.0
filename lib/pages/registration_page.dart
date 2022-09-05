@@ -1,5 +1,6 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
-import 'package:learnit2/pages/home_page.dart';
 import 'package:learnit2/pages/login_page.dart';
 
 class RegistrationPage extends StatefulWidget {
@@ -10,6 +11,16 @@ class RegistrationPage extends StatefulWidget {
 }
 
 class _RegistrationPageState extends State<RegistrationPage> {
+  final _formKey = GlobalKey<FormState>();
+  final _nameController = TextEditingController();
+  final _sobreController = TextEditingController();
+  final _dataController = TextEditingController();
+  final _phoneController = TextEditingController();
+  final _mailController = TextEditingController();
+  final _cpfController = TextEditingController();
+  final _userController = TextEditingController();
+  final _passController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -17,95 +28,202 @@ class _RegistrationPageState extends State<RegistrationPage> {
         body: Padding(
           padding: EdgeInsets.all(16),
           child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Image.network("https://ronaldo913.github.io/ImagensPMovel/images/logo.png"),
-                const SizedBox(height: 16),
-                const TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(90.0))),
-                    labelText: 'Nome',
-                  ),
-                ),
-                const SizedBox(height: 16),
-                const TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(90.0))),
-                    labelText: 'Sobrenome',
-                  ),
-                ),
-                const SizedBox(height: 16),
-                const TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(90.0))),
-                    labelText: 'Data de nascimento',
-                  ),
-                ),
-                const SizedBox(height: 16),
-                const TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(90.0))),
-                    labelText: 'Celular',
-                  ),
-                ),
-                const SizedBox(height: 16),
-                const TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(90.0))),
-                    labelText: 'E-mail',
-                  ),
-                ),
-                const SizedBox(height: 16),
-                const TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(90.0))),
-                    labelText: 'CPF',
-                  ),
-                ),
-                const SizedBox(height: 16),
-                const TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(90.0))),
-                    labelText: 'Crie seu username aqui',
-                  ),
-                ),
-                const SizedBox(height: 16),
-                const TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(90.0))),
-                    labelText: 'Crie sua senha aqui',
-                  ),
-                ),
-                const SizedBox(height: 42),
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        primary: Colors.green,
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(26.0),
-                            side: BorderSide(color: Colors.green))
+            child: Form(
+              key: _formKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Image.network("https://ronaldo913.github.io/ImagensPMovel/images/logo.png"),
+                  const SizedBox(height: 16),
+                   TextFormField(
+                     controller: _nameController,
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(90.0))),
+                      labelText: 'Nome',
+                      hintText: 'Digite aqui seu nome...',
+                      prefixIcon: Icon(Icons.person),
                     ),
-                    onPressed: onPressedButton,
-                    child: const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 16.0),
-                      child: Text(
-                        'Cadastrar',
-                        style: TextStyle(
-                          fontSize: 21,
-                          fontWeight: FontWeight.w600,
+                     validator: (value){
+                      if (value == null || value.isEmpty){
+                        return 'O campo nome é obrigatório';
+                      }
+                      if (value.length < 3){
+                        return 'Digite um nome válido';
+                      }
+                      return null;
+                     }
+                  ),
+                  const SizedBox(height: 16),
+                  TextFormField(
+                      controller: _sobreController,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(90.0))),
+                      labelText: 'Sobrenome',
+                      hintText: 'Digite aqui seu sobrenome...',
+                      prefixIcon: Icon(Icons.person),
+                    ),
+                      validator: (value){
+                        if (value == null || value.isEmpty){
+                          return 'O campo sobrenome é obrigatório';
+                        }
+                        if (value.length < 3){
+                          return 'Digite um sobrenome válido';
+                        }
+                        return null;
+                      }
+                  ),
+                  const SizedBox(height: 16),
+                  TextFormField(
+                    controller: _dataController,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(90.0))),
+                      labelText: 'Data de nascimento',
+                      hintText: 'Digite aqui sua data de nascimento...',
+                      prefixIcon: Icon(Icons.calendar_today),
+                    ),
+                      validator: (value){
+                        if (value == null || value.isEmpty){
+                          return 'O campo nome é obrigatório';
+                        }
+                        if (value.length < 8){
+                          return 'Digite uma data válida';
+                        }
+                        return null;
+                      }
+                  ),
+                  const SizedBox(height: 16),
+                  TextFormField(
+                    controller: _phoneController,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(90.0))),
+                      labelText: 'Celular',
+                      hintText: 'Digite aqui seu celular...',
+                      prefixIcon: Icon(Icons.phone),
+                    ),
+                      validator: (value){
+                        if (value == null || value.isEmpty){
+                          return 'Campo é obrigatório';
+                        }
+                        if (value.length < 11){
+                          return 'Digite um número de celular válido';
+                        }
+                        return null;
+                      }
+                  ),
+                  const SizedBox(height: 16),
+                  TextFormField(
+                    controller: _mailController,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(90.0))),
+                      labelText: 'E-mail',
+                      hintText: 'Digite aqui seu email...',
+                      prefixIcon: Icon(Icons.mail),
+                    ),
+                      validator: (value){
+                        if (value == null || value.isEmpty){
+                          return 'O campo e-mail é obrigatório';
+                        }
+                        if (!value.contains("@")) {
+                          return 'Digite um e-mail válido';
+                        }
+                        return null;
+                      }
+                  ),
+                  const SizedBox(height: 16),
+                  TextFormField(
+                    controller: _cpfController,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(90.0))),
+                      labelText: 'CPF',
+                      hintText: 'Digite aqui seu CPF...',
+                      prefixIcon: Icon(Icons.lock),
+                    ),
+                      validator: (value){
+                        if (value == null || value.isEmpty){
+                          return 'O campo CPF é obrigatório';
+                        }
+                        if (value.length < 11){
+                          return 'Digite um CPF válido';
+                        }
+                        return null;
+                      }
+                  ),
+                  const SizedBox(height: 16),
+                  TextFormField(
+                    controller: _userController,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(90.0))),
+                      labelText: 'Crie seu username aqui',
+                      hintText: 'Aqui você deve criar um username...',
+                      prefixIcon: Icon(Icons.alternate_email_outlined),
+                    ),
+                      validator: (value){
+                        if (value == null || value.isEmpty){
+                          return 'O campo é obrigatório';
+                        }
+                        if (value.length < 8){
+                          return 'Deve conter no mínimo 8 caracteres';
+                        }
+                        if (!value.contains("@")) {
+                          return 'Digite um user válido, deve ter um @';
+                        }
+                        return null;
+                      }
+                  ),
+                  const SizedBox(height: 16),
+                  TextFormField(
+                    controller: _passController,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(90.0))),
+                      labelText: 'Crie sua senha aqui',
+                      hintText: 'Aqui você deve criar uma senha...',
+                      prefixIcon: Icon(Icons.vpn_key),
+                    ),
+                      validator: (value){
+                        if (value == null || value.isEmpty){
+                          return 'O campo nome é obrigatório';
+                        }
+                        if (value.length < 8){
+                          return 'Deve conter no mínimo 8 caracteres';
+                        }
+                        return null;
+                      }
+                  ),
+                  const SizedBox(height: 42),
+                  ElevatedButton(onPressed: (){
+                    if(_formKey.currentState!.validate()){
+                      print('Cadastrando usuário');
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context){
+                            return const Loginpage();
+                          },
                         ),
+                      );
+                    }
+                  },
+                      child: Padding(
+                        padding: const EdgeInsets.all(24.0),
+                        child: const Text('Cadastrar'),
                       ),
-                    )
-                ),
-              ],
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.green,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30.0)
+                      )
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         )
@@ -122,5 +240,6 @@ class _RegistrationPageState extends State<RegistrationPage> {
         },
       ),
     );
+
   }
 }
