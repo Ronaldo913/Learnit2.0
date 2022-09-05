@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learnit2/domain/questoes.dart';
 import 'package:learnit2/pages/home_page.dart';
 
 class QuestPage extends StatefulWidget {
