@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learnit2/domain/questoes_conteudo.dart';
 import 'package:learnit2/data/bd.dart';
-import 'package:learnit2/widget/questoes_card.dart';
+import 'package:learnit2/widget/questoes_conteudo_card.dart';
 
 class QuestoesPage extends StatefulWidget {
   const QuestoesPage({Key? key}) : super(key: key);
