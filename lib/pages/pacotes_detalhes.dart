@@ -1,5 +1,5 @@
-import 'package:learnit2/domain/pacote_estudo.dart';
 import 'package:flutter/material.dart';
+import 'package:learnit2/domain/pacote_estudo.dart';
 
 class PacoteDetalhes extends StatefulWidget {
   final PacoteEstudo pacoteEstudo;
@@ -27,18 +27,14 @@ class _PacoteDetalhesState extends State<PacoteDetalhes> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
                 const SizedBox(height: 8),
-
                 Text(
                   pacote.titulo,
-                  style: const TextStyle(fontSize: 20, color: Color(0xFF0b4619)),
+                  style:
+                  const TextStyle(fontSize: 20, color: Color(0xFF0b4619)),
                 ),
-
                 const SizedBox(height: 8),
-
                 const SizedBox(height: 8),
-
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
@@ -71,7 +67,6 @@ class _PacoteDetalhesState extends State<PacoteDetalhes> {
               ],
             ),
           ),
-
         ],
       ),
     );
