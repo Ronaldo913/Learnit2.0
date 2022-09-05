@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:learnit2/domain/questoes.dart';
+import 'package:learnit2/domain/questoes_conteudo.dart';
 import 'package:learnit2/data/bd.dart';
 import 'package:learnit2/widget/questoes_card.dart';
-import 'home_page.dart';
 
 class QuestoesPage extends StatefulWidget {
   const QuestoesPage({Key? key}) : super(key: key);
@@ -25,17 +24,6 @@ class _QuestoesPageState extends State<QuestoesPage> {
             const SizedBox(height: 16), buildListView()
           ],
         ),
-      ),
-    );
-  }
-
-  void goHome() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) {
-          return const HomePage();
-        },
       ),
     );
   }
