@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:learnit2/pages/conteudo_page.dart';
-import 'package:learnit2/pages/home_page.dart';
+import 'package:learnit2/data/bd.dart';
+import 'package:learnit2/domain/questoes_conteudo.dart';
+import 'package:learnit2/widget/questoes_card.dart';
 
 class AssuntosPage extends StatefulWidget {
   const AssuntosPage({Key? key}) : super(key: key);
@@ -12,114 +12,41 @@ class AssuntosPage extends StatefulWidget {
 }
 
 class _AssuntosPageState extends State<AssuntosPage> {
-  //Progresso p = Progresso(cliques: 0);
-  //late UsuarioRepository usuario;
+  Future<List<Questoes>> lista = BD.getListaQuest();
+
   @override
   Widget build(BuildContext context) {
-    //usuario = context.watch<UsuarioRepository>();
-
     return Scaffold(
       backgroundColor: Colors.green[200],
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView(
-          children: [buildCardAssuntos(titulo: "Citologia", context: context)],
-        ),
-      ),
-    );
-  }
-
-  void goHome() {
-    // cliques++;
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) {
-          return HomePage();
-        },
-      ),
-    );
-  }
-
-  /*void onpressed() {
-    AssuntosPage.cliques++;
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) {
-          return Homepage();
-        },
-      ),
-    );
-  }*/
-
-  buildCardAssuntos({required String titulo, required BuildContext context}) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8.0),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.only(top: 18.0, right: 8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              titulo,
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(
-              height: 8.0,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(primary: Colors.white),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          //usuario.setAssuntos_estudados(1);
-                          return TelaAssuntos();
-                        },
-                      ),
-                    );
-                    
-                  },
-                  /* () {
-                  var clique;
-                  clique++;
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return TelaAssuntos(); //pagina da maia
-                      },
-                    ),
-                  );
-                },*/
-                  child: Icon(
-                    Icons.navigate_next,
-                    size: 28.0,
-                    color: Colors.black,
-                  ),
-                ),
-              ],
-            ),
+            const SizedBox(height: 16), buildListView()
           ],
         ),
       ),
     );
   }
+
+  buildListView(){
+    return FutureBuilder<List<Questoes>>(
+      future: lista,
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          List<Questoes> lista = snapshot.data ?? [];
+
+          return ListView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: lista.length,
+            itemBuilder: (BuildContext context, int index) {
+              return CardQuestoes(questoes: lista[index]);
+            },
+          );
+        }
+        return Center(child: const CircularProgressIndicator());
+      },
+    );
+  }
 }
-/*buildContarCliques({
-  //required Progresso (0),
-  required int cliques,
-}) {
-  //new Progresso(0);
-  int contados = cliques++;
-  return contados;
-  //print(contados);
-}*/
