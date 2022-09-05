@@ -21,6 +21,12 @@ class _LoginpageState extends State<Loginpage> {
 
   Future<List<Usuario>> lista = BD.getUsuario();
 
+  // login({
+  //
+  // }){
+  //
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -444,17 +450,17 @@ class _LoginpageState extends State<Loginpage> {
     }
   }
 
-  buildListView() {
-    return FutureBuilder<List<Usuario>>(
-      future: lista,
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          List<Usuario> lista = snapshot.data ?? [];
+  // login() {
+  //   return FutureBuilder<List<Usuario>>(
+  //     future: lista,
+  //     builder: (context, snapshot) {
+  //       if (snapshot.hasData) {
+  //         List<Usuario> lista = snapshot.data ?? [];
+  //
+  //         //return;
+  //       }
+  //     },
+  //   );
+  // }
 
-          //return;
-        }
-        return Center(child: const CircularProgressIndicator());
-      },
-    );
-  }
 }
