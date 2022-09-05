@@ -1,6 +1,7 @@
 import 'package:learnit2/domain/pacote_estudo.dart';
 import 'package:learnit2/pages/pacotes_detalhes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class CardPacoteEstudo extends StatefulWidget {
   final PacoteEstudo pacoteEstudo;
@@ -17,6 +18,8 @@ class CardPacoteEstudo extends StatefulWidget {
 class _CardPacoteEstudoState extends State<CardPacoteEstudo> {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return InkWell(
       onTap: () {
         Navigator.push(
@@ -35,6 +38,7 @@ class _CardPacoteEstudoState extends State<CardPacoteEstudo> {
           borderRadius: BorderRadius.circular(8),
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             buildImage(),
             Padding(
@@ -42,17 +46,18 @@ class _CardPacoteEstudoState extends State<CardPacoteEstudo> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    widget.pacoteEstudo.titulo,
-                    style: const TextStyle(
-                      fontSize: 21,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFF0b4619),
+                  FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      widget.pacoteEstudo.titulo,
+                      style: const TextStyle(
+                        fontSize: 21,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF0b4619),
+                      ),
                     ),
                   ),
-
                   SizedBox(height: 8),
-
                   Text('de R\$ ${widget.pacoteEstudo.precoAntigo}'),
                   Row(
                     children: [
@@ -67,7 +72,6 @@ class _CardPacoteEstudoState extends State<CardPacoteEstudo> {
                       ),
                     ],
                   ),
-
                   const SizedBox(height: 8),
                   Text(
                     '*Não há cancelamento',
@@ -75,17 +79,17 @@ class _CardPacoteEstudoState extends State<CardPacoteEstudo> {
                       color: Colors.green[700],
                     ),
                   ),
-
-                  SizedBox(height: 16,),
-
-                  ElevatedButton(onPressed: (){}, child: Text('ADQUIRIR'),
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.green[900],
-                    )
+                  SizedBox(
+                    height: 16,
                   ),
+                  ElevatedButton(
+                      onPressed: () {},
+                      child: Text('ADQUIRIR'),
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.green[900],
+                      )),
                 ],
               ),
-
             )
           ],
         ),
@@ -96,11 +100,18 @@ class _CardPacoteEstudoState extends State<CardPacoteEstudo> {
   buildImage() {
     return Stack(
       children: [
-        ClipRRect(
-          borderRadius: const BorderRadius.vertical(
-            top: Radius.circular(8),
+        SizedBox(
+          height: 170,
+          width: double.infinity,
+          child: ClipRRect(
+            borderRadius: const BorderRadius.vertical(
+              top: Radius.circular(8),
+            ),
+            child: Image.network(
+              widget.pacoteEstudo.imagem,
+              fit: BoxFit.cover,
+            ),
           ),
-          child: Image.network(widget.pacoteEstudo.imagem),
         ),
         Container(
           child: const Text(
