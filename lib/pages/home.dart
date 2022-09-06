@@ -36,7 +36,7 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                     style: ElevatedButton.styleFrom(
-                      primary: Color(0xFF125C13),
+                      primary: Color(0xFF027333),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(25.0),
                       ),
@@ -55,7 +55,7 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                     style: ElevatedButton.styleFrom(
-                      primary: Color(0xFF125C13),
+                      primary: Color(0xFF027333),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(25.0),
                       ),
@@ -75,7 +75,7 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                     style: ElevatedButton.styleFrom(
-                        primary: Colors.deepPurple[900],
+                        primary: Color(0xFF012340),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(35.0)
                         )

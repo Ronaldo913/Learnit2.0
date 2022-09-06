@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Learn It + Bio'),
-        backgroundColor: const Color(0xFF0B4619),
+        backgroundColor: const Color(0xFF025939),
         toolbarHeight: 64,
       ),
 
@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
         type: BottomNavigationBarType.fixed,
         showUnselectedLabels: true,
         unselectedItemColor: Colors.grey,
-        selectedItemColor: Colors.deepPurple[900],
+        selectedItemColor: Color(0xFF012340),
         currentIndex: selectedIndex,
         onTap: (index) {
           setState(() {

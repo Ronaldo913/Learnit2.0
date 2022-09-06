@@ -111,17 +111,17 @@ class BD {
   }
   
   static List<QuestoesConteudo> listaquest= [
-    QuestoesConteudo(titulo: 'Introdução à Biologia'),
-    QuestoesConteudo(titulo: 'Embriologia'),
-    QuestoesConteudo(titulo: 'Citologia'),
-    QuestoesConteudo(titulo: 'Genética'),
-    QuestoesConteudo(titulo: 'Biofísica'),
-    QuestoesConteudo(titulo: 'Botânica I (Morfologia e Anatomia Vegetal)'),
-    QuestoesConteudo(titulo: 'Botânica II'),
-    QuestoesConteudo(titulo: 'Anatomia Humana'),
-    QuestoesConteudo(titulo: 'Biologia Celular'),
-    QuestoesConteudo(titulo: 'Ecologia Geral'),
-    QuestoesConteudo(titulo: 'Histologia')
+    QuestoesConteudo(titulo: 'Introdução à Biologia', color: 0xFF02A676),
+    QuestoesConteudo(titulo: 'Embriologia', color: 0xFF008C72),
+    QuestoesConteudo(titulo: 'Citologia', color: 0xFF007369),
+    QuestoesConteudo(titulo: 'Genética', color: 0xFF005A5B),
+    QuestoesConteudo(titulo: 'Biofísica', color: 0xFF003840),
+    QuestoesConteudo(titulo: 'Botânica I (Morfologia e Anatomia Vegetal)', color: 0xFF003840),
+    QuestoesConteudo(titulo: 'Botânica II', color: 0xFF005A5B),
+    QuestoesConteudo(titulo: 'Anatomia Humana', color: 0xFF007369),
+    QuestoesConteudo(titulo: 'Biologia Celular', color: 0xFF008C72),
+    QuestoesConteudo(titulo: 'Ecologia Geral', color: 0xFF02A676),
+    QuestoesConteudo(titulo: 'Histologia', color: 0xFF02A676)
   ];
 
   static Future<List<QuestoesConteudo>> getListaQuest() async {

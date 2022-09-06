@@ -17,7 +17,7 @@ class _AssuntosPageState extends State<AssuntosPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green[200],
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView(

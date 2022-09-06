@@ -16,6 +16,7 @@ class CardQuestoesConteudo extends StatefulWidget {
 }
 
 class _CardQuestoeConteudoState extends State<CardQuestoesConteudo> {
+  QuestoesConteudo get card => widget.questoesConteudo;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -25,6 +26,7 @@ class _CardQuestoeConteudoState extends State<CardQuestoesConteudo> {
       InkWell(
         onTap: queston,
         child: Card(
+          color: Color(card.color),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8.0),
           ),
@@ -32,8 +34,8 @@ class _CardQuestoeConteudoState extends State<CardQuestoesConteudo> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text(widget.questoesConteudo.titulo, textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                Text(card.titulo, textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
                 ),
               ],
             ),
@@ -54,5 +56,4 @@ class _CardQuestoeConteudoState extends State<CardQuestoesConteudo> {
       ),
     );
   }
-
 }
