@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:learnit2/pages/login_page.dart';
 
@@ -26,7 +24,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
     return SafeArea(
         child: Scaffold(
         body: Padding(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: SingleChildScrollView(
             child: Form(
               key: _formKey,
@@ -57,9 +55,12 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   const SizedBox(height: 16),
                   TextFormField(
                       controller: _sobreController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(90.0))),
+                          borderRadius: BorderRadius.all(
+                              Radius.circular(90.0)
+                          ),
+                      ),
                       labelText: 'Sobrenome',
                       hintText: 'Digite aqui seu sobrenome...',
                       prefixIcon: Icon(Icons.person),
@@ -77,7 +78,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   const SizedBox(height: 16),
                   TextFormField(
                     controller: _dataController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(90.0))),
                       labelText: 'Data de nascimento',
@@ -86,7 +87,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     ),
                       validator: (value){
                         if (value == null || value.isEmpty){
-                          return 'O campo nome é obrigatório';
+                          return 'O campo data é obrigatório';
                         }
                         if (value.length < 8){
                           return 'Digite uma data válida';
@@ -97,7 +98,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   const SizedBox(height: 16),
                   TextFormField(
                     controller: _phoneController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(90.0))),
                       labelText: 'Celular',
@@ -106,7 +107,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     ),
                       validator: (value){
                         if (value == null || value.isEmpty){
-                          return 'Campo é obrigatório';
+                          return 'O campo celular é obrigatório';
                         }
                         if (value.length < 11){
                           return 'Digite um número de celular válido';
@@ -117,11 +118,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   const SizedBox(height: 16),
                   TextFormField(
                     controller: _mailController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(90.0))),
                       labelText: 'E-mail',
-                      hintText: 'Digite aqui seu email...',
+                      hintText: 'Digite aqui seu e-mail...',
                       prefixIcon: Icon(Icons.mail),
                     ),
                       validator: (value){
@@ -137,7 +138,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   const SizedBox(height: 16),
                   TextFormField(
                     controller: _cpfController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(90.0))),
                       labelText: 'CPF',
@@ -157,11 +158,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   const SizedBox(height: 16),
                   TextFormField(
                     controller: _userController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(90.0))),
-                      labelText: 'Crie seu username aqui',
-                      hintText: 'Aqui você deve criar um username...',
+                      labelText: 'Username',
+                      hintText: 'Aqui você deve criar seu username...',
                       prefixIcon: Icon(Icons.alternate_email_outlined),
                     ),
                       validator: (value){
@@ -180,16 +181,16 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   const SizedBox(height: 16),
                   TextFormField(
                     controller: _passController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(90.0))),
-                      labelText: 'Crie sua senha aqui',
+                      labelText: 'Senha',
                       hintText: 'Aqui você deve criar uma senha...',
                       prefixIcon: Icon(Icons.vpn_key),
                     ),
                       validator: (value){
                         if (value == null || value.isEmpty){
-                          return 'O campo nome é obrigatório';
+                          return 'O campo é obrigatório';
                         }
                         if (value.length < 8){
                           return 'Deve conter no mínimo 8 caracteres';
@@ -211,7 +212,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       );
                     }
                   },
-                      child: Padding(
+                    child: const Padding(
                         padding: const EdgeInsets.all(24.0),
                         child: const Text('Cadastrar'),
                       ),
@@ -229,17 +230,5 @@ class _RegistrationPageState extends State<RegistrationPage> {
         )
     )
     );
-  }
-
-  void onPressedButton(){
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-        builder: (context){
-          return const Loginpage();
-        },
-      ),
-    );
-
   }
 }
