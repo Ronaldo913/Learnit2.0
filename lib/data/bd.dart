@@ -147,7 +147,7 @@ class BD {
   ];
 
   static Future<List<Questoes>> getQuestoes() async {
-    await Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 1));
     return lista3;
   }
   
