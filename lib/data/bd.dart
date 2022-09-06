@@ -1,6 +1,7 @@
 import 'package:learnit2/domain/usuario.dart';
 import 'package:learnit2/domain/pacote_estudo.dart';
 import 'package:learnit2/domain/questoes_conteudo.dart';
+import 'package:learnit2/domain/questoes.dart';
 
 class BD {
   static final List<Usuario> lista = [
@@ -57,7 +58,7 @@ class BD {
   ];
 
   static Future<List<Usuario>> getUsuario() async {
-    await Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 1));
     return lista;
   }
 
@@ -105,27 +106,51 @@ class BD {
   ];
 
   static Future<List<PacoteEstudo>> getPacoteEstudo() async {
-    await Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 1));
     return lista1;
   }
   
-  static List<Questoes> listaquest= [
-    Questoes(titulo: 'Introdução à Biologia'),
-    Questoes(titulo: 'Embriologia'),
-    Questoes(titulo: 'Citologia'),
-    Questoes(titulo: 'Genética'),
-    Questoes(titulo: 'Biofísica'),
-    Questoes(titulo: 'Botânica I (Morfologia e Anatomia Vegetal)'),
-    Questoes(titulo: 'Botânica II'),
-    Questoes(titulo: 'Anatomia Humana'),
-    Questoes(titulo: 'Biologia Celular'),
-    Questoes(titulo: 'Ecologia Geral'),
-    Questoes(titulo: 'Histologia')
+  static List<QuestoesConteudo> listaquest= [
+    QuestoesConteudo(titulo: 'Introdução à Biologia'),
+    QuestoesConteudo(titulo: 'Embriologia'),
+    QuestoesConteudo(titulo: 'Citologia'),
+    QuestoesConteudo(titulo: 'Genética'),
+    QuestoesConteudo(titulo: 'Biofísica'),
+    QuestoesConteudo(titulo: 'Botânica I (Morfologia e Anatomia Vegetal)'),
+    QuestoesConteudo(titulo: 'Botânica II'),
+    QuestoesConteudo(titulo: 'Anatomia Humana'),
+    QuestoesConteudo(titulo: 'Biologia Celular'),
+    QuestoesConteudo(titulo: 'Ecologia Geral'),
+    QuestoesConteudo(titulo: 'Histologia')
   ];
 
-  static Future<List<Questoes>> getListaQuest() async {
-    await Future.delayed(const Duration(seconds: 3));
+  static Future<List<QuestoesConteudo>> getListaQuest() async {
+    await Future.delayed(const Duration(seconds: 1));
     return listaquest;
+  }
+
+  static List<Questoes> lista3 = [
+    Questoes(
+      enunciado: 'Costuma-se dizer que as células são formadas por membrana, citoplasma e núcleo. Entretanto, não são todas as células que apresentam um núcleo definido e delimitado por membrana nuclear. Baseando-se nisso, o mais correto seria afirmar que todas as células possuem membrana, citoplasma e material genético. As células que apresentam núcleo definido são chamadas de:',
+      a: 'a) autotróficas',
+      b: 'b) heterotróficas',
+      c: 'c) eucarióticas',
+      d: 'd) procarióticas',
+    ),
+    Questoes(
+      enunciado: 'Costuma-se dizer que as células são formadas por membrana, citoplasma e núcleo. Entretanto, não são todas as células que apresentam um núcleo definido e delimitado por membrana nuclear. Baseando-se nisso, o mais correto seria afirmar que todas as células possuem membrana, citoplasma e material genético. As células que apresentam núcleo definido são chamadas de:',
+      a: 'a) autotróficas',
+      b: 'b) heterotróficas',
+      c: 'c) eucarióticas',
+      d: 'd) procarióticas',
+    ),
+  ];
+
+  static Future<List<Questoes>> getQuestoes() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return lista3;
   }
   
 }
+
+

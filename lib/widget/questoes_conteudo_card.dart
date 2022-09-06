@@ -3,19 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:learnit2/domain/questoes_conteudo.dart';
 import 'package:learnit2/pages/quest.dart';
 
-class CardQuestoes extends StatefulWidget {
-  final Questoes questoes;
+class CardQuestoesConteudo extends StatefulWidget {
+  final QuestoesConteudo questoesConteudo;
 
-  const CardQuestoes({
+  const CardQuestoesConteudo({
     Key? key,
-    required this.questoes,
+    required this.questoesConteudo,
   }) : super(key: key);
 
   @override
-  _CardQuestoesState createState() => _CardQuestoesState();
+  State<CardQuestoesConteudo> createState() => _CardQuestoeConteudoState();
 }
 
-class _CardQuestoesState extends State<CardQuestoes> {
+class _CardQuestoeConteudoState extends State<CardQuestoesConteudo> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -32,7 +32,7 @@ class _CardQuestoesState extends State<CardQuestoes> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text(widget.questoes.titulo, textAlign: TextAlign.center,
+                Text(widget.questoesConteudo.titulo, textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
               ],

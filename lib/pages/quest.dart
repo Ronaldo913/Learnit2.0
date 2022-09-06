@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:learnit2/data/bd.dart';
+import 'package:learnit2/domain/questoes.dart';
 import 'package:learnit2/pages/home_page.dart';
+import 'package:learnit2/widget/questoes_card.dart';
 
 class QuestPage extends StatefulWidget {
   const QuestPage({Key? key}) : super(key: key);
@@ -9,8 +12,8 @@ class QuestPage extends StatefulWidget {
 }
 
 class _QuestPageState extends State<QuestPage> {
+  Future<List<Questoes>> lista3 = BD.getQuestoes();
 
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,99 +35,16 @@ class _QuestPageState extends State<QuestPage> {
               );
             },
           ),
-          // add more IconButton
         ],
       ),
-
       backgroundColor: Colors.green[100],
-      body: ListView(
-        children: [
-          Container(
-            margin: EdgeInsets.all(30.0),
-            padding: EdgeInsets.all(10.0),
-            alignment: Alignment.topLeft,
-            width: 400,
-            height: 800,
-            //decoration: BoxDecoration(
-              //border: Border.all(),
-            //),
-
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text("Q.1 - Costuma-se dizer que as células são formadas por membrana, citoplasma e núcleo. Entretanto, não são todas as células que apresentam um núcleo definido e delimitado por membrana nuclear. Baseando-se nisso, o mais correto seria afirmar que todas as células possuem membrana, citoplasma e material genético. As células que apresentam núcleo definido são chamadas de:", textAlign: TextAlign.justify, style: TextStyle(fontSize: 25)),
-                SizedBox(height: 8),
-                Text("a) autotróficas.",textAlign: TextAlign.justify, style: TextStyle(fontSize: 18)),
-                Text("b) heterotróficas.",textAlign: TextAlign.justify, style: TextStyle(fontSize: 18)),
-                Text("c) eucarióticas.",textAlign: TextAlign.justify, style: TextStyle(fontSize: 18)),
-                Text("d) procarióticas.",textAlign: TextAlign.justify, style: TextStyle(fontSize: 18)),
-
-                SizedBox(height: 8),
-                Padding(
-                  padding: EdgeInsets.all(16),
-                  child: InkWell(
-                    splashColor: Color(0xFF0B4619),
-                      onTap: () {
-                        const snackBar = SnackBar(
-                          content: Text('c) Eucarióticas.'),
-                        );
-
-                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                        },
-                      child: const Padding(
-                        padding: EdgeInsets.all(16),
-                        child: Text("CLIQUE AQUI PARA VER A RESPOSTA"),
-                      ),
-                  ),
-                  ),
-            ],
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.all(30.0),
-            padding: EdgeInsets.all(10.0),
-            alignment: Alignment.topLeft,
-            width: 400,
-            height: 800,
-            //decoration: BoxDecoration(
-            //border: Border.all(),
-            //),
-
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text("Q.2 - XXXXXXXXXXXXXXX", textAlign: TextAlign.justify, style: TextStyle(fontSize: 25)),
-                SizedBox(height: 8),
-                Text("a) XXXXXXXXXXXXXX",textAlign: TextAlign.justify, style: TextStyle(fontSize: 18)),
-                Text("b) XXXXXXXXXXXXX",textAlign: TextAlign.justify, style: TextStyle(fontSize: 18)),
-                Text("c) XXXXXXXX",textAlign: TextAlign.justify, style: TextStyle(fontSize: 18)),
-                Text("d) XXXXXXXXXXXXXXXX",textAlign: TextAlign.justify, style: TextStyle(fontSize: 18)),
-
-                SizedBox(height: 8),
-                Padding(
-                  padding: EdgeInsets.all(16),
-                  child: InkWell(
-                    splashColor: Color(0xFF0B4619),
-                    onTap: () {
-                      const snackBar = SnackBar(
-                        content: Text('RESP2'),
-                      );
-
-                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                    },
-                    child: const Padding(
-                      padding: EdgeInsets.all(16),
-                      child: Text("CLIQUE AQUI PARA VER A RESPOSTA"),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-
-            ]
-            ),
-            );
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView(
+          children: [const SizedBox(height: 16), buildListView()],
+        ),
+      ),
+    );
   }
 
   void goHome() {
@@ -137,7 +57,27 @@ class _QuestPageState extends State<QuestPage> {
       ),
     );
   }
+
+  buildListView() {
+    return FutureBuilder<List<Questoes>>(
+      future: lista3,
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          List<Questoes> lista3 = snapshot.data ?? [];
+
+          return ListView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: lista3.length,
+            itemBuilder: (BuildContext context, int index) {
+              return CardQuestoes(questoes: lista3[index]);
+            },
+          );
+        }
+        return Center(child: const CircularProgressIndicator());
+      },
+    );
+  }
 }
 
-children(Type widget) {
-}
+children(Type widget) {}

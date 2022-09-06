@@ -1,7 +1,7 @@
-class Questoes{
+class QuestoesConteudo{
   final String titulo;
 
-  Questoes({
+  QuestoesConteudo({
     required this.titulo,
   });
 }

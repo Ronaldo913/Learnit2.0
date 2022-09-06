@@ -11,7 +11,7 @@ class QuestoesPage extends StatefulWidget {
 }
 
 class _QuestoesPageState extends State<QuestoesPage> {
-  Future<List<Questoes>> lista = BD.getListaQuest();
+  Future<List<QuestoesConteudo>> lista = BD.getListaQuest();
 
   @override
   Widget build(BuildContext context) {
@@ -29,18 +29,18 @@ class _QuestoesPageState extends State<QuestoesPage> {
   }
 
   buildListView(){
-    return FutureBuilder<List<Questoes>>(
+    return FutureBuilder<List<QuestoesConteudo>>(
       future: lista,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          List<Questoes> lista = snapshot.data ?? [];
+          List<QuestoesConteudo> lista = snapshot.data ?? [];
 
           return ListView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemCount: lista.length,
             itemBuilder: (BuildContext context, int index) {
-              return CardQuestoes(questoes: lista[index]);
+              return CardQuestoesConteudo(questoesConteudo: lista[index]);
             },
           );
         }

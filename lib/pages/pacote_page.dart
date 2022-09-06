@@ -7,18 +7,20 @@ class PacotePage extends StatefulWidget {
   const PacotePage({Key? key}) : super(key: key);
 
   @override
-  _PacotePageState createState() => _PacotePageState();
+  State<PacotePage> createState() => _PacotePageState();
 }
 
 class _PacotePageState extends State<PacotePage> {
   Future<List<PacoteEstudo>> lista = BD.getPacoteEstudo();
   @override
   Widget build(BuildContext context) {
-    return 
-      Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: ListView(
-        children: [const SizedBox(height: 16), buildListView()],
+    return Scaffold(
+      body: Padding(padding: const EdgeInsets.all(16.0),
+        child: ListView(
+          children: [
+            const SizedBox(height: 16), buildListView()
+          ],
+        ),
       ),
     );
   }

@@ -101,7 +101,7 @@ class _CardPacoteEstudoState extends State<CardPacoteEstudo> {
     return Stack(
       children: [
         SizedBox(
-          height: 170,
+          height: 270,
           width: double.infinity,
           child: ClipRRect(
             borderRadius: const BorderRadius.vertical(
