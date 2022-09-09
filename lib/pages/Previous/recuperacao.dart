@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnit2/pages/login_page.dart';
+import 'package:learnit2/pages/Previous/login_page.dart';
 class Recuperacao extends StatefulWidget {
   const Recuperacao({Key? key}) : super(key: key);
 

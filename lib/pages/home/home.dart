@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:learnit2/pages/assuntos_page.dart';
-import 'package:learnit2/pages/pacote_page.dart';
-import 'package:learnit2/pages/questoes_page.dart';
+import 'package:learnit2/pages/home/assuntos_page.dart';
+import 'package:learnit2/pages/home/pacote_page.dart';
+import 'package:learnit2/pages/home/questoes_page.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);

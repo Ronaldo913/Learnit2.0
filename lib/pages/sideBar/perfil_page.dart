@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnit2/pages/pacote_page.dart';
+import 'package:learnit2/pages/home/pacote_page.dart';
 
 class PerfilPage extends StatefulWidget {
   const PerfilPage({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learnit2/data/bd.dart';
 import 'package:learnit2/domain/questoes.dart';
-import 'package:learnit2/pages/home_page.dart';
+import 'package:learnit2/pages/home/home_page.dart';
 import 'package:learnit2/widget/questoes_card.dart';
 
 class QuestPage extends StatefulWidget {

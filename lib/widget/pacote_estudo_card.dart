@@ -1,5 +1,5 @@
 import 'package:learnit2/domain/pacote_estudo.dart';
-import 'package:learnit2/pages/pacotes_detalhes.dart';
+import 'package:learnit2/pages/home/pacotes_detalhes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'home_page.dart';
+import '../home/home_page.dart';
 import 'create_crono_page.dart';
 
 class CronogramaPage extends StatefulWidget {

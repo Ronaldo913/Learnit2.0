@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:learnit2/domain/usuario.dart';
-import 'package:learnit2/pages/animation.dart';
-import 'package:learnit2/pages/home_page.dart';
-import 'package:learnit2/pages/registration_page.dart';
-import 'package:learnit2/pages/recuperacao.dart';
+import 'package:learnit2/pages/animations/animation.dart';
+import 'package:learnit2/pages/home/home_page.dart';
+import 'package:learnit2/pages/Previous/registration_page.dart';
+import 'package:learnit2/pages/Previous/recuperacao.dart';
 import 'package:learnit2/data/bd.dart';
 import 'package:url_launcher/url_launcher.dart';
 

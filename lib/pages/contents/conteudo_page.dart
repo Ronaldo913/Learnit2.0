@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:learnit2/pages/quest.dart';
-import 'package:learnit2/pages/home_page.dart';
+import 'package:learnit2/pages/questions/quest.dart';
+import 'package:learnit2/pages/home/home_page.dart';
 
 class TelaAssuntos extends StatefulWidget {
   const TelaAssuntos({Key? key}) : super(key: key);

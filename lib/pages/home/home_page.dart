@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:learnit2/pages/assuntos_page.dart';
-import 'package:learnit2/pages/cronograma_page.dart';
-import 'package:learnit2/pages/home.dart';
-import 'package:learnit2/pages/perfil_page.dart';
-import 'package:learnit2/pages/questoes_page.dart';
+import 'package:learnit2/pages/home/assuntos_page.dart';
+import 'package:learnit2/pages/sideBar/bottom_navigation_page.dart';
+import 'package:learnit2/pages/sideBar/cronograma_page.dart';
+import 'package:learnit2/pages/home/home.dart';
+import 'package:learnit2/pages/sideBar/perfil_page.dart';
+import 'package:learnit2/pages/home/questoes_page.dart';
+import 'package:learnit2/pages/sideBar/network_page.dart';
 import 'package:flutter/cupertino.dart';
 
 class HomePage extends StatefulWidget {
@@ -59,6 +61,33 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             ListTile(
+              leading: const Icon(Icons.wifi,
+              ),
+              title: const Text("Redes",
+                style: TextStyle(
+                    fontSize: 24
+                ),
+              ),
+              subtitle: const Text("Atualize-se!",
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+              trailing: IconButton(
+                icon: const Icon(Icons.arrow_forward_outlined),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return const BottomNavigationPage();
+                      },
+                    ),
+                  );
+                },
+              ),
+            ),
+            ListTile(
               leading: const Icon(Icons.event_note,
               ),
               title: const Text("Cronograma",
@@ -66,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                     fontSize: 24
                 ),
               ),
-              subtitle: const Text("Um cronograma para você...",
+              subtitle: const Text("Organize-se",
                 style: TextStyle(
                   fontSize: 18,
                 ),
