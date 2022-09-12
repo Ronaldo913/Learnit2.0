@@ -93,15 +93,18 @@ class _CardQuestoesState extends State<CardQuestoes> {
                     child: InkWell(
                       splashColor: Color(0xFF0B4619),
                       onTap: () {
-                        const snackBar = SnackBar(
-                          content: Text('c) Eucarióticas.'),
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(widget.questoes.resp),
+                          ),
                         );
-
-                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
                       },
                       child: const Padding(
                         padding: EdgeInsets.all(16),
-                        child: Text("CLIQUE AQUI PARA VER A RESPOSTA", style: const TextStyle(color: Colors.white),),
+                        child: Text(
+                          "CLIQUE AQUI PARA VER A RESPOSTA",
+                          style: const TextStyle(color: Colors.white),
+                        ),
                       ),
                     ),
                   ),
