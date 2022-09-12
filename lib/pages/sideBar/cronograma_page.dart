@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:learnit2/domain/cronograma.dart';
+import 'package:learnit2/widget/cronograma_card.dart';
 import '../home/home_page.dart';
 import 'create_crono_page.dart';
+import 'package:learnit2/data/bd.dart';
 
 class CronogramaPage extends StatefulWidget {
   const CronogramaPage({Key? key}) : super(key: key);
@@ -10,10 +13,7 @@ class CronogramaPage extends StatefulWidget {
 }
 
 class _CronogramaPageState extends State<CronogramaPage> {
-  TextEditingController titleController = TextEditingController();
-  TextEditingController hourController = TextEditingController();
-  TextEditingController minuteController = TextEditingController();
-
+  Future<List<Cronograma>> lista = BD.getListaCrono();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,13 +43,7 @@ class _CronogramaPageState extends State<CronogramaPage> {
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
-            buildCardCronograma(
-                title: 'Tarde', hour: '12', minute: '30', context: context),
-            buildCardCronograma(
-                title: 'Citologia', hour: '18', minute: '30', context: context),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
+            const SizedBox(height: 16), buildListView(),
                 FloatingActionButton(
                   onPressed: () {
                     Navigator.push(
@@ -59,15 +53,13 @@ class _CronogramaPageState extends State<CronogramaPage> {
                           return CreateCronogramaPage();
                         },
                       ),
-                    );
+                      );
                   },
                   child: Icon(Icons.add),
-                )
+                ),
               ],
             ),
-          ],
         ),
-      ),
     );
   }
 
@@ -92,37 +84,27 @@ class _CronogramaPageState extends State<CronogramaPage> {
       ),
     );
   }
+
+  buildListView(){
+    return FutureBuilder<List<Cronograma>>(
+      future: lista,
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          List<Cronograma> lista = snapshot.data ?? [];
+
+          return ListView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: lista.length,
+            itemBuilder: (BuildContext context, int index) {
+              return CardCronograma(cronogramaCard: lista[index]);
+            },
+          );
+        }
+        return Center(child: const CircularProgressIndicator());
+      },
+    );
+  }
+
 }
 
-buildCardCronograma(
-    {required String title,
-    required String hour,
-    required String minute,
-    required BuildContext context}) {
-  return Card(
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(8.0),
-    ),
-    child: Padding(
-      padding: const EdgeInsets.only(top: 8.0, right: 8.0, bottom: 6.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            title,
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(
-            width: 8.0,
-          ),
-          Text(
-            '$hour:$minute',
-            textAlign: TextAlign.center,
-            style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
-          ),
-        ],
-      ),
-    ),
-  );
-}
