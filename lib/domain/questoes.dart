@@ -5,6 +5,7 @@ class Questoes {
   final String c;
   final String d;
   final int color;
+  final String resp;
 
   Questoes({
     required this.enunciado,
@@ -13,6 +14,6 @@ class Questoes {
     required this.c,
     required this.d,
     required this.color,
+    required this.resp,
   });
 }
-
