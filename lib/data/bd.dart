@@ -4,6 +4,8 @@ import 'package:learnit2/domain/pacote_estudo.dart';
 import 'package:learnit2/domain/questoes_conteudo.dart';
 import 'package:learnit2/domain/questoes.dart';
 import 'package:learnit2/domain/cronograma.dart';
+import 'package:learnit2/pages/questions/quest.dart';
+import 'package:learnit2/pages/contents/conteudo_page.dart';
 
 class BD {
   static final List<Usuario> lista = [
@@ -113,22 +115,66 @@ class BD {
   }
 
   static List<QuestoesConteudo> listaquest = [
-    QuestoesConteudo(titulo: 'Introdução à Biologia', color: 0xFF02A676),
-    QuestoesConteudo(titulo: 'Embriologia', color: 0xFF008C72),
-    QuestoesConteudo(titulo: 'Citologia', color: 0xFF007369),
-    QuestoesConteudo(titulo: 'Genética', color: 0xFF005A5B),
-    QuestoesConteudo(titulo: 'Biofísica', color: 0xFF003840),
-    QuestoesConteudo(titulo: 'Botânica I (Morfologia e Anatomia Vegetal)', color: 0xFF003840),
-    QuestoesConteudo(titulo: 'Botânica II', color: 0xFF005A5B),
-    QuestoesConteudo(titulo: 'Anatomia Humana', color: 0xFF007369),
-    QuestoesConteudo(titulo: 'Biologia Celular', color: 0xFF008C72),
-    QuestoesConteudo(titulo: 'Ecologia Geral', color: 0xFF02A676),
-    QuestoesConteudo(titulo: 'Histologia', color: 0xFF02A676)
+    QuestoesConteudo(
+        titulo: 'Introdução à Biologia', color: 0xFF02A676, page: QuestPage()),
+    QuestoesConteudo(
+        titulo: 'Embriologia', color: 0xFF008C72, page: QuestPage()),
+    QuestoesConteudo(titulo: 'Citologia', color: 0xFF007369, page: QuestPage()),
+    QuestoesConteudo(titulo: 'Genética', color: 0xFF005A5B, page: QuestPage()),
+    QuestoesConteudo(titulo: 'Biofísica', color: 0xFF003840, page: QuestPage()),
+    QuestoesConteudo(
+        titulo: 'Botânica I (Morfologia e Anatomia Vegetal)',
+        color: 0xFF003840,
+        page: QuestPage()),
+    QuestoesConteudo(
+        titulo: 'Botânica II', color: 0xFF005A5B, page: QuestPage()),
+    QuestoesConteudo(
+        titulo: 'Anatomia Humana', color: 0xFF007369, page: QuestPage()),
+    QuestoesConteudo(
+        titulo: 'Biologia Celular', color: 0xFF008C72, page: QuestPage()),
+    QuestoesConteudo(
+        titulo: 'Ecologia Geral', color: 0xFF02A676, page: QuestPage()),
+    QuestoesConteudo(
+        titulo: 'Histologia', color: 0xFF02A676, page: const QuestPage())
   ];
 
   static Future<List<QuestoesConteudo>> getListaQuest() async {
     await Future.delayed(const Duration(seconds: 1));
     return listaquest;
+  }
+
+  static List<QuestoesConteudo> listcontents = [
+    QuestoesConteudo(
+        titulo: 'Introdução à Biologia',
+        color: 0xFF02A676,
+        page: TelaAssuntos()),
+    QuestoesConteudo(
+        titulo: 'Embriologia', color: 0xFF008C72, page: TelaAssuntos()),
+    QuestoesConteudo(
+        titulo: 'Citologia', color: 0xFF007369, page: TelaAssuntos()),
+    QuestoesConteudo(
+        titulo: 'Genética', color: 0xFF005A5B, page: TelaAssuntos()),
+    QuestoesConteudo(
+        titulo: 'Biofísica', color: 0xFF003840, page: TelaAssuntos()),
+    QuestoesConteudo(
+        titulo: 'Botânica I (Morfologia e Anatomia Vegetal)',
+        color: 0xFF003840,
+        page: TelaAssuntos()),
+    QuestoesConteudo(
+        titulo: 'Botânica II', color: 0xFF005A5B, page: TelaAssuntos()),
+    QuestoesConteudo(
+        titulo: 'Anatomia Humana', color: 0xFF007369, page: TelaAssuntos()),
+    QuestoesConteudo(
+        titulo: 'Biologia Celular', color: 0xFF008C72, page: TelaAssuntos()),
+    QuestoesConteudo(
+        titulo: 'Ecologia Geral', color: 0xFF02A676, page: TelaAssuntos()),
+    QuestoesConteudo(
+        titulo: 'Histologia', color: 0xFF02A676, page: TelaAssuntos())
+  ];
+
+  static Future<List<QuestoesConteudo>> getListaConstents() async {
+    await Future.delayed(const Duration(seconds: 1));
+    return listcontents;
   }
 
   static List<Questoes> lista3 = [
@@ -152,7 +198,7 @@ class BD {
     ),
     Questoes(
       enunciado:
-      '2) Ccostuma-se dizer que as células são formadas por membrana, citoplasma e núcleo. Entretanto, não são todas as células que apresentam um núcleo definido e delimitado por membrana nuclear. Baseando-se nisso, o mais correto seria afirmar que todas as células possuem membrana, citoplasma e material genético. As células que apresentam núcleo definido são chamadas de:',
+          '2) Ccostuma-se dizer que as células são formadas por membrana, citoplasma e núcleo. Entretanto, não são todas as células que apresentam um núcleo definido e delimitado por membrana nuclear. Baseando-se nisso, o mais correto seria afirmar que todas as células possuem membrana, citoplasma e material genético. As células que apresentam núcleo definido são chamadas de:',
       a: 'a) autotróficas',
       b: 'b) heterotróficas',
       c: 'c) eucarióticas',
@@ -161,7 +207,7 @@ class BD {
     ),
     Questoes(
       enunciado:
-      '2) Ccostuma-se dizer que as células são formadas por membrana, citoplasma e núcleo. Entretanto, não são todas as células que apresentam um núcleo definido e delimitado por membrana nuclear. Baseando-se nisso, o mais correto seria afirmar que todas as células possuem membrana, citoplasma e material genético. As células que apresentam núcleo definido são chamadas de:',
+          '2) Ccostuma-se dizer que as células são formadas por membrana, citoplasma e núcleo. Entretanto, não são todas as células que apresentam um núcleo definido e delimitado por membrana nuclear. Baseando-se nisso, o mais correto seria afirmar que todas as células possuem membrana, citoplasma e material genético. As células que apresentam núcleo definido são chamadas de:',
       a: 'a) autotróficas',
       b: 'b) heterotróficas',
       c: 'c) eucarióticas',
@@ -182,23 +228,18 @@ class BD {
         author: "Learn It +",
         type: 'Photo',
         caption:
-            "In last weeks podcast episode we talked about ways of funding a startup and some innovative ways to utilize open source when building a startup",
+            "Abelhas nos protegem.",
         tags: [
-          'code',
-          'algo',
-          'developer',
-          'angular',
-          'software',
-          'python',
-          'flutter',
-          'developer',
-          'angular',
-          'software',
-          'python',
-          'flutter'
+          'abelhas',
+          'protetora',
+          'polen',
+          'pequena',
+          'fofa',
+          'beemovie',
+          'mel'
         ],
-        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/logo.png',
-        date: '09/09/2022',
+        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/1.jpeg',
+        date: '08/09/2022',
         likeCount: 856,
         commentCount: 85),
     Network(
@@ -206,10 +247,10 @@ class BD {
             "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
         author: "Learn It +",
         type: 'Photo',
-        caption: "Custom line chart with flutter!",
-        tags: ['code', 'algo', 'developer'],
-        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/logo.png',
-        date: '09/09/2022',
+        caption: "Não a extinção!",
+        tags: ['rinoceronte', 'grande', 'marfim'],
+        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/2.jpeg',
+        date: '07/09/2022',
         likeCount: 1175,
         commentCount: 98),
     Network(
@@ -218,10 +259,10 @@ class BD {
         author: "Learn It +",
         type: 'Photo',
         caption:
-            "I spent the day trying to deploy the calendar app and I failed",
-        tags: ['code', 'algo', 'developer'],
-        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/logo.png',
-        date: '09/09/2022',
+            "Eles são muito parceiros!",
+        tags: ['marfim', 'elefante', 'carinhosos', "dumbo"],
+        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/3.jpeg',
+        date: '06/09/2022',
         likeCount: 2458,
         commentCount: 125),
     Network(
@@ -230,10 +271,10 @@ class BD {
         author: "Learn It +",
         type: 'Photo',
         caption:
-            "I have a successful week behind me. I finished this week with all the new features that were included in version 1.1.0, but I also developed a new chart yesterday that will be available in version 1.1.1. The chart will calculate and draw the categories for the currently selected period, where your expense and incomes will be visible. I think this is a very useful chart because it is easy to keep track of how much expense and incomes a category had in the current period.",
-        tags: ['code', 'developer'],
-        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/logo.png',
-        date: '09/09/2022',
+            "Lêmures são perigoros :)",
+        tags: ['perigo', 'enganadores'],
+        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/4.jpeg',
+        date: '05/09/2022',
         likeCount: 412,
         commentCount: 75),
     Network(
@@ -242,10 +283,10 @@ class BD {
         author: "Learn It +",
         type: 'Photo',
         caption:
-            "During this month will be learning about concurrency in Swift. I had already done some exercises but i want to go deeper in this topic. It’s likely that I create a sample app to put into practice all the knowledge so if you are also interested in this just let me know! So maybe I publish the code :)",
-        tags: ['code', 'algo', 'developer'],
-        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/logo.png',
-        date: '09/09/2022',
+            "Cocoricóó",
+        tags: ['Despertar', 'canto', 'galos'],
+        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/5.jpeg',
+        date: '04/09/2022',
         likeCount: 135,
         commentCount: 18),
     Network(
@@ -255,10 +296,98 @@ class BD {
         type: 'Photo',
         caption: "Happy coding",
         tags: ['code', 'algo', 'developer', 'weekend', 'cool'],
-        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/logo.png',
-        date: '09/09/2022',
+        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/13.jpeg',
+        date: '03/09/2022',
         likeCount: 4,
         commentCount: 2),
+    Network(
+        avatar:
+            "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
+        author: "Learn It +",
+        type: 'Photo',
+        caption: "Custom line chart with flutter!",
+        tags: ['code', 'algo', 'developer'],
+        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/6.jpeg',
+        date: '02/09/2022',
+        likeCount: 1175,
+        commentCount: 98),
+    Network(
+        avatar:
+            "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
+        author: "Learn It +",
+        type: 'Photo',
+        caption: "Custom line chart with flutter!",
+        tags: ['code', 'algo', 'developer'],
+        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/14.jpeg',
+        date: '01/09/2022',
+        likeCount: 1175,
+        commentCount: 98),
+    Network(
+        avatar:
+            "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
+        author: "Learn It +",
+        type: 'Photo',
+        caption: "Custom line chart with flutter!",
+        tags: ['code', 'algo', 'developer'],
+        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/7.jpeg',
+        date: '30/08/2022',
+        likeCount: 1175,
+        commentCount: 98),
+    Network(
+        avatar:
+            "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
+        author: "Learn It +",
+        type: 'Photo',
+        caption: "Custom line chart with flutter!",
+        tags: ['code', 'algo', 'developer'],
+        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/15.jpeg',
+        date: '29/08/2022',
+        likeCount: 1175,
+        commentCount: 98),
+    Network(
+        avatar:
+            "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
+        author: "Learn It +",
+        type: 'Photo',
+        caption: "Custom line chart with flutter!",
+        tags: ['code', 'algo', 'developer'],
+        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/8.jpeg',
+        date: '28/08/2022',
+        likeCount: 1175,
+        commentCount: 98),
+    Network(
+        avatar:
+            "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
+        author: "Learn It +",
+        type: 'Photo',
+        caption: "Custom line chart with flutter!",
+        tags: ['code', 'algo', 'developer'],
+        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/9.jpeg',
+        date: '27/08/2022',
+        likeCount: 1175,
+        commentCount: 98),
+    Network(
+        avatar:
+            "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
+        author: "Learn It +",
+        type: 'Photo',
+        caption: "Custom line chart with flutter!",
+        tags: ['code', 'algo', 'developer'],
+        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/10.jpeg',
+        date: '26/08/2022',
+        likeCount: 1175,
+        commentCount: 98),
+    Network(
+        avatar:
+            "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
+        author: "Learn It +",
+        type: 'Photo',
+        caption: "Custom line chart with flutter!",
+        tags: ['code', 'algo', 'developer'],
+        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/11.jpeg',
+        date: '25/08/2022',
+        likeCount: 1175,
+        commentCount: 98),
   ];
 
   static Future<List<Network>> getNetwork() async {

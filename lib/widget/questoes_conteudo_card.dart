@@ -51,7 +51,7 @@ class _CardQuestoeConteudoState extends State<CardQuestoesConteudo> {
       context,
       MaterialPageRoute(
         builder: (context) {
-          return const QuestPage();
+          return card.page;
         },
       ),
     );

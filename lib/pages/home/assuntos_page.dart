@@ -12,7 +12,7 @@ class AssuntosPage extends StatefulWidget {
 }
 
 class _AssuntosPageState extends State<AssuntosPage> {
-  Future<List<QuestoesConteudo>> lista = BD.getListaQuest();
+  Future<List<QuestoesConteudo>> lista = BD.getListaConstents();
 
   @override
   Widget build(BuildContext context) {

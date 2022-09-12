@@ -34,7 +34,7 @@ class _TelaAssuntosState extends State<TelaAssuntos> {
           ],
         ),
         
-        backgroundColor: Colors.green[100],
+        backgroundColor: Colors.white,
         body: SingleChildScrollView(
             padding: const EdgeInsets.all(20),
             child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, crossAxisAlignment: CrossAxisAlignment.center, children: [
