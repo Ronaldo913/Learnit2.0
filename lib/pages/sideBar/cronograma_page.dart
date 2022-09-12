@@ -17,7 +17,7 @@ class _CronogramaPageState extends State<CronogramaPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green[200],
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(' CRONOGRAMA '),
         backgroundColor: Color(0xFF0B4619),
