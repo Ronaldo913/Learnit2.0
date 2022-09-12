@@ -249,6 +249,19 @@ class BD {
     return posts;
   }
   
+  static List<Cronograma> listacrono = [
+    Cronograma(title: 'Estudar Embriologia', hour: 12, minute: 30, day: 'Terça', color: 0xFF02A676),
+    Cronograma(title: 'Estudar Citologia', hour: 13, minute: 45, day: 'Terça', color: 0xFF008C72),
+    Cronograma(title: 'Estudar Histologia', hour: 14, minute: 55, day: 'Terça', color: 0xFF007369),
+    Cronograma(title: 'Estudar Genetica', hour: 15, minute: 20, day: 'Terça', color: 0xFF005A5B),
+    Cronograma(title: 'Estudar Sexologia', hour: 18, minute: 00, day: 'Terça', color: 0xFF003840),
+  ];
+
+  static Future<List<Cronograma>> getListaCrono() async {
+    await Future.delayed(const Duration(seconds: 1));
+    return listacrono;
+  }
+  
 }
 
 
