@@ -115,11 +115,11 @@ class BD {
   }
 
   static List<QuestoesConteudo> listaquest = [
-    QuestoesConteudo(
-        titulo: 'Introdução à Biologia', color: 0xFF02A676, page: QuestPage()),
+    QuestoesConteudo(titulo: 'Citologia', color: 0xFF02A676, page: QuestPage()),
     QuestoesConteudo(
         titulo: 'Embriologia', color: 0xFF008C72, page: QuestPage()),
-    QuestoesConteudo(titulo: 'Citologia', color: 0xFF007369, page: QuestPage()),
+    QuestoesConteudo(
+        titulo: 'Introdução à Biologia', color: 0xFF007369, page: QuestPage()),
     QuestoesConteudo(titulo: 'Genética', color: 0xFF005A5B, page: QuestPage()),
     QuestoesConteudo(titulo: 'Biofísica', color: 0xFF003840, page: QuestPage()),
     QuestoesConteudo(
@@ -145,13 +145,13 @@ class BD {
 
   static List<QuestoesConteudo> listcontents = [
     QuestoesConteudo(
-        titulo: 'Introdução à Biologia',
-        color: 0xFF02A676,
-        page: TelaAssuntos()),
+        titulo: 'Citologia', color: 0xFF02A676, page: TelaAssuntos()),
     QuestoesConteudo(
         titulo: 'Embriologia', color: 0xFF008C72, page: TelaAssuntos()),
     QuestoesConteudo(
-        titulo: 'Citologia', color: 0xFF007369, page: TelaAssuntos()),
+        titulo: 'Introdução à Biologia',
+        color: 0xFF007369,
+        page: TelaAssuntos()),
     QuestoesConteudo(
         titulo: 'Genética', color: 0xFF005A5B, page: TelaAssuntos()),
     QuestoesConteudo(
@@ -181,37 +181,42 @@ class BD {
     Questoes(
       enunciado:
           '1) Costuma-se dizer que as células são formadas por membrana, citoplasma e núcleo. Entretanto, não são todas as células que apresentam um núcleo definido e delimitado por membrana nuclear. Baseando-se nisso, o mais correto seria afirmar que todas as células possuem membrana, citoplasma e material genético. As células que apresentam núcleo definido são chamadas de:',
-      a: 'a) autotróficas',
-      b: 'b) heterotróficas',
-      c: 'c) eucarióticas',
-      d: 'd) procarióticas',
+      a: 'a) Autotróficas',
+      b: 'b) Heterotróficas',
+      c: 'c) Eucarióticas',
+      d: 'd) Procarióticas',
+      resp: 'c) Eucarióticas',
       color: 0xFF02A676,
     ),
     Questoes(
       enunciado:
-          '2) Ccostuma-se dizer que as células são formadas por membrana, citoplasma e núcleo. Entretanto, não são todas as células que apresentam um núcleo definido e delimitado por membrana nuclear. Baseando-se nisso, o mais correto seria afirmar que todas as células possuem membrana, citoplasma e material genético. As células que apresentam núcleo definido são chamadas de:',
-      a: 'a) autotróficas',
-      b: 'b) heterotróficas',
-      c: 'c) eucarióticas',
-      d: 'd) procarióticas',
+          '2) A Biologia Celular, ou citologia, é a parte da Biologia responsável por estudar o funcionamento das células e suas estruturas. Qual das alternativas abaixo indica corretamente o nome do pesquisador que denominou essas estruturas funcionais dos seres vivos de células?',
+      a: 'a) Theodor Schwann',
+      b: 'b) Robert Hooke',
+      c: 'c) Rudolf Virchow',
+      d: 'd) Walther Flemming',
+      resp: 'b) Robert Hooke',
       color: 0xFF008C72,
     ),
     Questoes(
       enunciado:
-          '2) Ccostuma-se dizer que as células são formadas por membrana, citoplasma e núcleo. Entretanto, não são todas as células que apresentam um núcleo definido e delimitado por membrana nuclear. Baseando-se nisso, o mais correto seria afirmar que todas as células possuem membrana, citoplasma e material genético. As células que apresentam núcleo definido são chamadas de:',
-      a: 'a) autotróficas',
-      b: 'b) heterotróficas',
-      c: 'c) eucarióticas',
-      d: 'd) procarióticas',
+          '3) A Teoria Celular pode ser resumida, atualmente, em três pontos principais. Analise e marque a alternativa que não apresenta uma afirmação relacionada com essa teoria.',
+      a: 'a) Todos os seres vivos são formadas por uma ou mais células',
+      b: 'b) Todas as células são formadas por membrana, citoplasma e núcleo',
+      c: 'c) As células são as unidades funcionais dos organismos vivos',
+      d: 'd) Uma célula só pode originar-se de outra existente',
+      resp:
+          'Letra B. Não se pode afirmar que todas as células possuem núcleo, pois as procariontes não possuem material genético delimitado por membrana nuclear.',
       color: 0xFF007369,
     ),
     Questoes(
       enunciado:
-          '2) Ccostuma-se dizer que as células são formadas por membrana, citoplasma e núcleo. Entretanto, não são todas as células que apresentam um núcleo definido e delimitado por membrana nuclear. Baseando-se nisso, o mais correto seria afirmar que todas as células possuem membrana, citoplasma e material genético. As células que apresentam núcleo definido são chamadas de:',
-      a: 'a) autotróficas',
-      b: 'b) heterotróficas',
-      c: 'c) eucarióticas',
-      d: 'd) procarióticas',
+          '4) Analise atentamente as alternativas seguintes e marque aquela que indica a função das mitocôndrias.',
+      a: 'a) Realizam a respiração celular',
+      b: 'b) Auxiliam na síntese de proteínas nas células',
+      c: 'c) Responsáveis pela digestão intracelular',
+      d: 'd) Realizam a fotossíntese',
+      resp: 'a) Realizam a respiração celular',
       color: 0xFF005A5B,
     ),
   ];
@@ -227,8 +232,7 @@ class BD {
             "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/280601979_321098190011099_2298139029896812518_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=Qn5P0L4qNuQAX-XsOUm&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT_LBkbbJ7_UQ46MIlb2XIbxhuDqh35BR-GiMn4sMBdcKQ&oe=630A298E&_nc_sid=8fd12b",
         author: "Learn It +",
         type: 'Photo',
-        caption:
-            "Abelhas nos protegem.",
+        caption: "Abelhas nos protegem.",
         tags: [
           'abelhas',
           'protetora',
@@ -258,8 +262,7 @@ class BD {
             "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/295310263_2005323692988879_192442431266284434_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=1&_nc_ohc=_OycxPTZAiIAX9Klfo3&tn=mzpEx8VKjXTflDC7&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT9m_Q6Aj_JBs7O-IbeEpOkg5rnaWSzkqYarXN5z2MnNyQ&oe=630AB077&_nc_sid=8fd12b",
         author: "Learn It +",
         type: 'Photo',
-        caption:
-            "Eles são muito parceiros!",
+        caption: "Eles são muito parceiros!",
         tags: ['marfim', 'elefante', 'carinhosos', "dumbo"],
         photo: 'https://ronaldo913.github.io/ImagensPMovel/images/3.jpeg',
         date: '06/09/2022',
@@ -270,8 +273,7 @@ class BD {
             "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/283991312_3302677446628885_7860643733642281108_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=TXgaYREmCxcAX8p7FWO&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT927w1FIJRklH83dVhyxpT5Wr15LiSPPU7cNaQ1LGIUcQ&oe=630B95BA&_nc_sid=8fd12b",
         author: "Learn It +",
         type: 'Photo',
-        caption:
-            "Lêmures são perigoros :)",
+        caption: "Lêmures são perigoros :)",
         tags: ['perigo', 'enganadores'],
         photo: 'https://ronaldo913.github.io/ImagensPMovel/images/4.jpeg',
         date: '05/09/2022',
@@ -282,8 +284,7 @@ class BD {
             "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/277325659_148711920961973_1107088744007699452_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=_2KrLYruYPcAX-8jRka&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT-yK9tCfunGBQT04oqmms1OcXJaNekyOVu8r46F2jrYTA&oe=630BD1D0&_nc_sid=8fd12b",
         author: "Learn It +",
         type: 'Photo',
-        caption:
-            "Cocoricóó",
+        caption: "Cocoricóó",
         tags: ['Despertar', 'canto', 'galos'],
         photo: 'https://ronaldo913.github.io/ImagensPMovel/images/5.jpeg',
         date: '04/09/2022',
