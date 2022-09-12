@@ -37,7 +37,7 @@ class _QuestPageState extends State<QuestPage> {
           ),
         ],
       ),
-      backgroundColor: Colors.green[100],
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView(

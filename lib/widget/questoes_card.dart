@@ -24,6 +24,7 @@ class _CardQuestoesState extends State<CardQuestoes> {
         ),
         InkWell(
           child: Card(
+            color: Color(widget.questoes.color),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8.0),
             ),
@@ -33,36 +34,57 @@ class _CardQuestoesState extends State<CardQuestoes> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    widget.questoes.enunciado,
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          widget.questoes.enunciado,
+                          textAlign: TextAlign.justify,
+                          style: const TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  SizedBox(height: 10),
-                  Text(
-                    widget.questoes.a,
-                    style: const TextStyle(
-                      fontSize: 20,
-                    ),
-                  ),
-                  Text(
-                    widget.questoes.b,
-                    style: const TextStyle(
-                      fontSize: 20,
-                    ),
-                  ),
-                  Text(
-                    widget.questoes.c,
-                    style: const TextStyle(
-                      fontSize: 20,
-                    ),
-                  ),
-                  Text(
-                    widget.questoes.d,
-                    style: const TextStyle(
-                      fontSize: 20,
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.questoes.a,
+                          textAlign: TextAlign.left,
+                          style: const TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Text(
+                          widget.questoes.b,
+                          style: const TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Text(
+                          widget.questoes.c,
+                          style: const TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Text(
+                          widget.questoes.d,
+                          style: const TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   SizedBox(height: 14),
@@ -79,7 +101,7 @@ class _CardQuestoesState extends State<CardQuestoes> {
                       },
                       child: const Padding(
                         padding: EdgeInsets.all(16),
-                        child: Text("CLIQUE AQUI PARA VER A RESPOSTA"),
+                        child: Text("CLIQUE AQUI PARA VER A RESPOSTA", style: const TextStyle(color: Colors.white),),
                       ),
                     ),
                   ),

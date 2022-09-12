@@ -12,6 +12,7 @@ class PacotePage extends StatefulWidget {
 
 class _PacotePageState extends State<PacotePage> {
   Future<List<PacoteEstudo>> lista = BD.getPacoteEstudo();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

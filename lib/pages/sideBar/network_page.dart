@@ -1,9 +1,6 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:learnit2/domain/network.dart';
-import 'package:learnit2/widget/cardNetwork/post_bar_card.dart';
-import 'package:learnit2/widget/cardNetwork/post_card.dart';
 import 'package:learnit2/data/bd.dart';
 import 'package:learnit2/widget/cardNetwork/posts_card.dart';
 
