@@ -77,6 +77,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   ),
                   const SizedBox(height: 16),
                   TextFormField(
+                      keyboardType: TextInputType.number,
                     controller: _dataController,
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(
@@ -97,6 +98,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   ),
                   const SizedBox(height: 16),
                   TextFormField(
+                      keyboardType: TextInputType.number,
                     controller: _phoneController,
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(
@@ -137,6 +139,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   ),
                   const SizedBox(height: 16),
                   TextFormField(
+                    keyboardType: TextInputType.number,
                     controller: _cpfController,
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(
