@@ -22,11 +22,11 @@ class _CardCronograma extends State<CardCronograma> {
 
     return Column(
       children: [
-        SizedBox(
+        const SizedBox(
           height: 30,
         ),
         Card(
-          color: Color(widget.cronogramaCard.color),
+            color: Color(widget.cronogramaCard.color),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8.0),
             ),
@@ -38,30 +38,43 @@ class _CardCronograma extends State<CardCronograma> {
                   Text(
                     widget.cronogramaCard.title,
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+                    style: const TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 16.0,
                   ),
-                  Icon(
-                    Icons.alarm, color: Colors.white,
-                  ),
-                  SizedBox(width: 8.0),
-                  Text(
-                    '${widget.cronogramaCard.hour}:${widget.cronogramaCard.minute}',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
-                  ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Icon(
-                        Icons.event, color: Colors.white,
+                      const Icon(
+                        Icons.alarm,
+                        color: Colors.white,
                       ),
-                      SizedBox(width: 4.0),
+                      const SizedBox(width: 4.0),
+                      Text(
+                        '${widget.cronogramaCard.hour}:${widget.cronogramaCard.minute}',
+                        style: const TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
+                      const SizedBox(
+                        width: 32.0,
+                      ),
+                      const Icon(
+                        Icons.event,
+                        color: Colors.white,
+                      ),
+                      const SizedBox(width: 4.0),
                       Text(
                         widget.cronogramaCard.day,
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+                        style: const TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
                       ),
                     ],
                   ),
