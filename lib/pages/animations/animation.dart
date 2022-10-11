@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnit2/pages/Previous/login_page.dart';
+// import 'package:audioplayers/audioplayers.dart';
 
 class AnimationPage extends StatefulWidget {
   final Widget page;
@@ -15,7 +15,19 @@ class _AnimationPageState extends State<AnimationPage> {
   void initState() {
     super.initState();
     animacao();
+    // player = AudioPlayer();
   }
+
+  // AudioPlayer? player;
+  //
+  // void runAudio(String url) async {
+  //   AudioPlayer audio = AudioPlayer();
+  //   try {
+  //     var resultado =  await audio.play(AssetSource(url));
+  //   } catch(e) {
+  //     print(e.toString());
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +40,7 @@ class _AnimationPageState extends State<AnimationPage> {
                 height: 650,
                 width: 650,
                 child: Image.network('https://ronaldo913.github.io/ImagensPMovel/images/logo.png'),
+                // runAudio("som-abertura.mp3");
               ),
             )),
       ),
