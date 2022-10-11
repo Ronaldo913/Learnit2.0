@@ -226,175 +226,175 @@ class BD {
     return lista3;
   }
 
-  static List<Network> posts = [
-    Network(
-        avatar:
-            "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/280601979_321098190011099_2298139029896812518_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=Qn5P0L4qNuQAX-XsOUm&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT_LBkbbJ7_UQ46MIlb2XIbxhuDqh35BR-GiMn4sMBdcKQ&oe=630A298E&_nc_sid=8fd12b",
-        author: "Learn It +",
-        type: 'Photo',
-        caption: "Abelhas nos protegem.",
-        tags: [
-          'abelhas',
-          'protetora',
-          'polen',
-          'pequena',
-          'fofa',
-          'beemovie',
-          'mel'
-        ],
-        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/1.jpeg',
-        date: '08/09/2022',
-        likeCount: 856,
-        commentCount: 85),
-    Network(
-        avatar:
-            "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
-        author: "Learn It +",
-        type: 'Photo',
-        caption: "Não a extinção!",
-        tags: ['rinoceronte', 'grande', 'marfim'],
-        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/2.jpeg',
-        date: '07/09/2022',
-        likeCount: 1175,
-        commentCount: 98),
-    Network(
-        avatar:
-            "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/295310263_2005323692988879_192442431266284434_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=1&_nc_ohc=_OycxPTZAiIAX9Klfo3&tn=mzpEx8VKjXTflDC7&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT9m_Q6Aj_JBs7O-IbeEpOkg5rnaWSzkqYarXN5z2MnNyQ&oe=630AB077&_nc_sid=8fd12b",
-        author: "Learn It +",
-        type: 'Photo',
-        caption: "Eles são muito parceiros!",
-        tags: ['marfim', 'elefante', 'carinhosos', "dumbo"],
-        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/3.jpeg',
-        date: '06/09/2022',
-        likeCount: 2458,
-        commentCount: 125),
-    Network(
-        avatar:
-            "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/283991312_3302677446628885_7860643733642281108_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=TXgaYREmCxcAX8p7FWO&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT927w1FIJRklH83dVhyxpT5Wr15LiSPPU7cNaQ1LGIUcQ&oe=630B95BA&_nc_sid=8fd12b",
-        author: "Learn It +",
-        type: 'Photo',
-        caption: "Lêmures são perigoros :)",
-        tags: ['perigo', 'enganadores'],
-        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/4.jpeg',
-        date: '05/09/2022',
-        likeCount: 412,
-        commentCount: 75),
-    Network(
-        avatar:
-            "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/277325659_148711920961973_1107088744007699452_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=_2KrLYruYPcAX-8jRka&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT-yK9tCfunGBQT04oqmms1OcXJaNekyOVu8r46F2jrYTA&oe=630BD1D0&_nc_sid=8fd12b",
-        author: "Learn It +",
-        type: 'Photo',
-        caption: "Cocoricóó",
-        tags: ['Despertar', 'canto', 'galos'],
-        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/5.jpeg',
-        date: '04/09/2022',
-        likeCount: 135,
-        commentCount: 18),
-    Network(
-        avatar:
-            "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/295310263_2005323692988879_192442431266284434_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=1&_nc_ohc=_OycxPTZAiIAX9Klfo3&tn=mzpEx8VKjXTflDC7&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT9m_Q6Aj_JBs7O-IbeEpOkg5rnaWSzkqYarXN5z2MnNyQ&oe=630AB077&_nc_sid=8fd12b",
-        author: "Learn It +",
-        type: 'Photo',
-        caption: "Happy Feet",
-        tags: ['happyfeetofilme', 'ave', 'ovos', 'antártida', 'surfe'],
-        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/13.jpeg',
-        date: '03/09/2022',
-        likeCount: 4,
-        commentCount: 2),
-    Network(
-        avatar:
-            "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
-        author: "Learn It +",
-        type: 'Photo',
-        caption: "Que preguiça!",
-        tags: ['sono', 'preguicinha', 'fofura'],
-        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/6.jpeg',
-        date: '02/09/2022',
-        likeCount: 1175,
-        commentCount: 98),
-    Network(
-        avatar:
-            "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
-        author: "Learn It +",
-        type: 'Photo',
-        caption: "béééééééé",
-        tags: ['ovelhas', 'lã', 'língua'],
-        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/14.jpeg',
-        date: '01/09/2022',
-        likeCount: 1175,
-        commentCount: 98),
-    Network(
-        avatar:
-            "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
-        author: "Learn It +",
-        type: 'Simplesmente alpacas.',
-        caption: "Custom line chart with flutter!",
-        tags: ['alpacas', 'naobrasil', 'dentes'],
-        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/7.jpeg',
-        date: '30/08/2022',
-        likeCount: 1175,
-        commentCount: 98),
-    Network(
-        avatar:
-            "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
-        author: "Learn It +",
-        type: 'Photo',
-        caption: "Sentimentos",
-        tags: ['elefantes', 'carinho', 'família'],
-        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/15.jpeg',
-        date: '29/08/2022',
-        likeCount: 1175,
-        commentCount: 98),
-    Network(
-        avatar:
-            "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
-        author: "Learn It +",
-        type: 'Photo',
-        caption: "Tartabundas",
-        tags: ['respirar', 'bundinha', 'tartarugas'],
-        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/8.jpeg',
-        date: '28/08/2022',
-        likeCount: 1175,
-        commentCount: 98),
-    Network(
-        avatar:
-            "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
-        author: "Learn It +",
-        type: 'Photo',
-        caption: "doguinho",
-        tags: ['paixão', 'melhioramigo', 'carinho'],
-        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/9.jpeg',
-        date: '27/08/2022',
-        likeCount: 1175,
-        commentCount: 98),
-    Network(
-        avatar:
-            "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
-        author: "Learn It +",
-        type: 'Photo',
-        caption: "Eu sou uma foca!",
-        tags: ['lucasneto', 'felipe', 'dormir'],
-        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/10.jpeg',
-        date: '26/08/2022',
-        likeCount: 1175,
-        commentCount: 98),
-    Network(
-        avatar:
-            "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
-        author: "Learn It +",
-        type: 'Photo',
-        caption: "ratinho diferente",
-        tags: ['hamster', 'rato', 'dentes'],
-        photo: 'https://ronaldo913.github.io/ImagensPMovel/images/11.jpeg',
-        date: '25/08/2022',
-        likeCount: 1175,
-        commentCount: 98),
-  ];
+  // static List<Network> posts = [
+  //   Network(
+  //       avatar:
+  //           "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/280601979_321098190011099_2298139029896812518_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=Qn5P0L4qNuQAX-XsOUm&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT_LBkbbJ7_UQ46MIlb2XIbxhuDqh35BR-GiMn4sMBdcKQ&oe=630A298E&_nc_sid=8fd12b",
+  //       author: "Learn It +",
+  //       type: 'Photo',
+  //       caption: "Abelhas nos protegem.",
+  //       tags: [
+  //         'abelhas',
+  //         'protetora',
+  //         'polen',
+  //         'pequena',
+  //         'fofa',
+  //         'beemovie',
+  //         'mel'
+  //       ],
+  //       photo: 'https://ronaldo913.github.io/ImagensPMovel/images/1.jpeg',
+  //       date: '08/09/2022',
+  //       likeCount: 856,
+  //       commentCount: 85),
+  //   Network(
+  //       avatar:
+  //           "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
+  //       author: "Learn It +",
+  //       type: 'Photo',
+  //       caption: "Não a extinção!",
+  //       tags: ['rinoceronte', 'grande', 'marfim'],
+  //       photo: 'https://ronaldo913.github.io/ImagensPMovel/images/2.jpeg',
+  //       date: '07/09/2022',
+  //       likeCount: 1175,
+  //       commentCount: 98),
+  //   Network(
+  //       avatar:
+  //           "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/295310263_2005323692988879_192442431266284434_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=1&_nc_ohc=_OycxPTZAiIAX9Klfo3&tn=mzpEx8VKjXTflDC7&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT9m_Q6Aj_JBs7O-IbeEpOkg5rnaWSzkqYarXN5z2MnNyQ&oe=630AB077&_nc_sid=8fd12b",
+  //       author: "Learn It +",
+  //       type: 'Photo',
+  //       caption: "Eles são muito parceiros!",
+  //       tags: ['marfim', 'elefante', 'carinhosos', "dumbo"],
+  //       photo: 'https://ronaldo913.github.io/ImagensPMovel/images/3.jpeg',
+  //       date: '06/09/2022',
+  //       likeCount: 2458,
+  //       commentCount: 125),
+  //   Network(
+  //       avatar:
+  //           "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/283991312_3302677446628885_7860643733642281108_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=TXgaYREmCxcAX8p7FWO&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT927w1FIJRklH83dVhyxpT5Wr15LiSPPU7cNaQ1LGIUcQ&oe=630B95BA&_nc_sid=8fd12b",
+  //       author: "Learn It +",
+  //       type: 'Photo',
+  //       caption: "Lêmures são perigoros :)",
+  //       tags: ['perigo', 'enganadores'],
+  //       photo: 'https://ronaldo913.github.io/ImagensPMovel/images/4.jpeg',
+  //       date: '05/09/2022',
+  //       likeCount: 412,
+  //       commentCount: 75),
+  //   Network(
+  //       avatar:
+  //           "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/277325659_148711920961973_1107088744007699452_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=_2KrLYruYPcAX-8jRka&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT-yK9tCfunGBQT04oqmms1OcXJaNekyOVu8r46F2jrYTA&oe=630BD1D0&_nc_sid=8fd12b",
+  //       author: "Learn It +",
+  //       type: 'Photo',
+  //       caption: "Cocoricóó",
+  //       tags: ['Despertar', 'canto', 'galos'],
+  //       photo: 'https://ronaldo913.github.io/ImagensPMovel/images/5.jpeg',
+  //       date: '04/09/2022',
+  //       likeCount: 135,
+  //       commentCount: 18),
+  //   Network(
+  //       avatar:
+  //           "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/295310263_2005323692988879_192442431266284434_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=1&_nc_ohc=_OycxPTZAiIAX9Klfo3&tn=mzpEx8VKjXTflDC7&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT9m_Q6Aj_JBs7O-IbeEpOkg5rnaWSzkqYarXN5z2MnNyQ&oe=630AB077&_nc_sid=8fd12b",
+  //       author: "Learn It +",
+  //       type: 'Photo',
+  //       caption: "Happy Feet",
+  //       tags: ['happyfeetofilme', 'ave', 'ovos', 'antártida', 'surfe'],
+  //       photo: 'https://ronaldo913.github.io/ImagensPMovel/images/13.jpeg',
+  //       date: '03/09/2022',
+  //       likeCount: 4,
+  //       commentCount: 2),
+  //   Network(
+  //       avatar:
+  //           "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
+  //       author: "Learn It +",
+  //       type: 'Photo',
+  //       caption: "Que preguiça!",
+  //       tags: ['sono', 'preguicinha', 'fofura'],
+  //       photo: 'https://ronaldo913.github.io/ImagensPMovel/images/6.jpeg',
+  //       date: '02/09/2022',
+  //       likeCount: 1175,
+  //       commentCount: 98),
+  //   Network(
+  //       avatar:
+  //           "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
+  //       author: "Learn It +",
+  //       type: 'Photo',
+  //       caption: "béééééééé",
+  //       tags: ['ovelhas', 'lã', 'língua'],
+  //       photo: 'https://ronaldo913.github.io/ImagensPMovel/images/14.jpeg',
+  //       date: '01/09/2022',
+  //       likeCount: 1175,
+  //       commentCount: 98),
+  //   Network(
+  //       avatar:
+  //           "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
+  //       author: "Learn It +",
+  //       type: 'Simplesmente alpacas.',
+  //       caption: "Custom line chart with flutter!",
+  //       tags: ['alpacas', 'naobrasil', 'dentes'],
+  //       photo: 'https://ronaldo913.github.io/ImagensPMovel/images/7.jpeg',
+  //       date: '30/08/2022',
+  //       likeCount: 1175,
+  //       commentCount: 98),
+  //   Network(
+  //       avatar:
+  //           "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
+  //       author: "Learn It +",
+  //       type: 'Photo',
+  //       caption: "Sentimentos",
+  //       tags: ['elefantes', 'carinho', 'família'],
+  //       photo: 'https://ronaldo913.github.io/ImagensPMovel/images/15.jpeg',
+  //       date: '29/08/2022',
+  //       likeCount: 1175,
+  //       commentCount: 98),
+  //   Network(
+  //       avatar:
+  //           "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
+  //       author: "Learn It +",
+  //       type: 'Photo',
+  //       caption: "Tartabundas",
+  //       tags: ['respirar', 'bundinha', 'tartarugas'],
+  //       photo: 'https://ronaldo913.github.io/ImagensPMovel/images/8.jpeg',
+  //       date: '28/08/2022',
+  //       likeCount: 1175,
+  //       commentCount: 98),
+  //   Network(
+  //       avatar:
+  //           "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
+  //       author: "Learn It +",
+  //       type: 'Photo',
+  //       caption: "doguinho",
+  //       tags: ['paixão', 'melhioramigo', 'carinho'],
+  //       photo: 'https://ronaldo913.github.io/ImagensPMovel/images/9.jpeg',
+  //       date: '27/08/2022',
+  //       likeCount: 1175,
+  //       commentCount: 98),
+  //   Network(
+  //       avatar:
+  //           "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
+  //       author: "Learn It +",
+  //       type: 'Photo',
+  //       caption: "Eu sou uma foca!",
+  //       tags: ['lucasneto', 'felipe', 'dormir'],
+  //       photo: 'https://ronaldo913.github.io/ImagensPMovel/images/10.jpeg',
+  //       date: '26/08/2022',
+  //       likeCount: 1175,
+  //       commentCount: 98),
+  //   Network(
+  //       avatar:
+  //           "https://instagram.fcmb11-1.fna.fbcdn.net/v/t51.2885-19/276978157_264760199193892_6709045983454783025_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fcmb11-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=U6B5kXFpBGcAX89zTGq&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AT8EHlbB5d7O-kGD7sVoczwHb8S170-W233TytHsoKjwnQ&oe=630B035F&_nc_sid=8fd12b",
+  //       author: "Learn It +",
+  //       type: 'Photo',
+  //       caption: "ratinho diferente",
+  //       tags: ['hamster', 'rato', 'dentes'],
+  //       photo: 'https://ronaldo913.github.io/ImagensPMovel/images/11.jpeg',
+  //       date: '25/08/2022',
+  //       likeCount: 1175,
+  //       commentCount: 98),
+  // ];
 
-  static Future<List<Network>> getNetwork() async {
-    await Future.delayed(const Duration(seconds: 1));
-    return posts;
-  }
+  // static Future<List<Network>> getNetwork() async {
+  //   await Future.delayed(const Duration(seconds: 1));
+  //   return posts;
+  // }
 
   static List<Cronograma> listacrono = [
     Cronograma(

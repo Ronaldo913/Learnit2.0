@@ -207,16 +207,16 @@ class _PostsCardState extends State<PostsCard> {
                             const TextStyle(color: Colors.white, fontSize: 15),
                       ),
                       const SizedBox(height: 8),
-                      Wrap(
-                        children: widget.post.tags
-                            .map((e) => Text(
-                                  "#$e ",
-                                  textAlign: TextAlign.justify,
-                                  style:
-                                      const TextStyle(color: Color(0xff05AAAB)),
-                                ))
-                            .toList(),
-                      ),
+                      // Wrap(
+                      //   children: widget.post.tags
+                      //       .map((e) => Text(
+                      //             "#$e ",
+                      //             textAlign: TextAlign.justify,
+                      //             style:
+                      //                 const TextStyle(color: Color(0xff05AAAB)),
+                      //           ))
+                      //       .toList(),
+                      // ),
                       const SizedBox(height: 10)
                     ],
                   ),

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:learnit2/domain/network.dart';
 import 'package:learnit2/data/bd.dart';
+import 'package:learnit2/data/posts_dao.dart';
+import 'package:learnit2/domain/network.dart';
 import 'package:learnit2/widget/cardNetwork/posts_card.dart';
 
 class NetworkPage extends StatefulWidget {
@@ -12,7 +14,9 @@ class NetworkPage extends StatefulWidget {
 }
 
 class _NetworkPageState extends State<NetworkPage> {
-  Future<List<Network>> posts = BD.getNetwork();
+  // Future<List<Network>> posts = BD.getNetwork();
+  Future<List<Network>> posts = PostsDao().listarPosts();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
