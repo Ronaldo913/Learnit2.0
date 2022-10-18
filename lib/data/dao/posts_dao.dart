@@ -1,4 +1,4 @@
-import 'package:learnit2/data/bd_posts_helper.dart';
+import 'package:learnit2/data/bd_helper.dart';
 import 'package:learnit2/domain/network.dart';
 import 'package:sqflite/sqflite.dart';
 

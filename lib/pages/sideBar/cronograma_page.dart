@@ -5,7 +5,7 @@ import 'package:learnit2/domain/cronograma.dart';
 import 'package:learnit2/widget/cronograma_card.dart';
 import '../home/home_page.dart';
 import 'create_crono_page.dart';
-import 'package:learnit2/data/bd.dart';
+import 'package:learnit2/data/oldData/bd.dart';
 
 class CronogramaPage extends StatefulWidget {
   const CronogramaPage({Key? key}) : super(key: key);

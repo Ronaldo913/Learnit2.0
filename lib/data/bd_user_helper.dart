@@ -3,6 +3,11 @@ import 'dart:async';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
+//
+// OS ARQUIVOS dao QUE SÃO DE CADA COISA E QUE TEM QUE TER(NUM SEI SE DEU PARA ENTENDER)
+// SÓ EXISTE UM HELPER !!!!
+//
+//
 class DBHelper {
   initDB() async {
     String databasePath = await getDatabasesPath();

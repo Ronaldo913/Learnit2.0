@@ -41,7 +41,8 @@ class Network {
     author = json['author'];
     type = json['type'];
     caption = json['caption'];
-    photo = json['urlPost'];
+    photo = json['url_post'];
+
     date = json['date'];
     likeCount = json['likeCount'];
     commentCount = json['commentCount'];

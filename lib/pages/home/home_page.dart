@@ -113,6 +113,60 @@ class _HomePageState extends State<HomePage> {
                   );
                 },
               ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.event_note,
+              ),
+              title: const Text("Sobre",
+                style: TextStyle(
+                    fontSize: 24
+                ),
+              ),
+              subtitle: const Text("Conheça-nos",
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+              trailing: IconButton(
+                icon: const Icon(Icons.arrow_forward_outlined),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return const CronogramaPage();
+                      },
+                    ),
+                  );
+                },
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.event_note,
+              ),
+              title: const Text("Sair",
+                style: TextStyle(
+                    fontSize: 24
+                ),
+              ),
+              subtitle: const Text("Tchauzin",
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+              trailing: IconButton(
+                icon: const Icon(Icons.arrow_forward_outlined),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return const CronogramaPage();
+                      },
+                    ),
+                  );
+                },
+              ),
             )
           ],
         ),

@@ -4,7 +4,7 @@ import 'package:learnit2/pages/animations/animation.dart';
 import 'package:learnit2/pages/home/home_page.dart';
 import 'package:learnit2/pages/Previous/registration_page.dart';
 import 'package:learnit2/pages/Previous/recuperacao.dart';
-import 'package:learnit2/data/bd.dart';
+import 'package:learnit2/data/oldData/bd.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Loginpage extends StatefulWidget {
