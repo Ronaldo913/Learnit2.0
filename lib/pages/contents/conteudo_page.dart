@@ -13,12 +13,12 @@ class _TelaAssuntosState extends State<TelaAssuntos> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('CITOLOGIA'),
+          title: const Text('CITOLOGIA'),
           backgroundColor: Color(0xFF0B4619),
           toolbarHeight: 64,
           actions: [
             IconButton(
-              icon: Icon(Icons.home),
+              icon: const Icon(Icons.home),
               onPressed: () {
                 Navigator.push(
                   context,

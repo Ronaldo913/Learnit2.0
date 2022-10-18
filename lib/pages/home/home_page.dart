@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:learnit2/pages/home/about_page.dart';
 import 'package:learnit2/pages/home/assuntos_page.dart';
 import 'package:learnit2/pages/sideBar/bottom_navigation_page.dart';
 import 'package:learnit2/pages/sideBar/cronograma_page.dart';
 import 'package:learnit2/pages/home/home.dart';
 import 'package:learnit2/pages/sideBar/perfil_page.dart';
 import 'package:learnit2/pages/home/questoes_page.dart';
-import 'package:learnit2/pages/sideBar/network_page.dart';
 import 'package:flutter/cupertino.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,7 +23,6 @@ class _HomePageState extends State<HomePage> {
     AssuntosPage(),
     Center(child: Text('Page Temporaria', style: TextStyle(fontSize: 36))),
   ];
-
 
   @override
   Widget build(BuildContext context) {
@@ -134,7 +133,7 @@ class _HomePageState extends State<HomePage> {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return const CronogramaPage();
+                        return const AboutPage();
                       },
                     ),
                   );
@@ -202,9 +201,7 @@ class _HomePageState extends State<HomePage> {
             label: 'Quiz',
           ),
         ],
-
       ),
-
     );
   }
 }

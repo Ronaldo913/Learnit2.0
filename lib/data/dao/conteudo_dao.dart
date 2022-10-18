@@ -1,8 +1,8 @@
-import 'package:learnit2/data/bd_conteudo_helper.dart';
+import 'package:learnit2/data/db_conteudo_helper.dart';
 
 import 'package:sqflite/sqflite.dart';
 
-import '../domain/conteudo.dart';
+import '../../domain/conteudo.dart';
 
 class PacoteDao {
 
