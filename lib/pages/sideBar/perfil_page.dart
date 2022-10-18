@@ -34,7 +34,7 @@ class _PerfilPageState extends State<PerfilPage> {
             // add more IconButton
           ],
         ),
-        body: SingleChildScrollView(child: buildPerfil(email: "e-mail do aluno:", nome: "nome de usuário:", email_escrito: "E-maildoaluno@dominio", nome_escrito: "eeuestudante", imagem: "https://curriculo.jheniffermaia.repl.co/grafico.png")));
+        body: SingleChildScrollView(child: buildPerfil(email: "e-mail do aluno:", nome: "nome de usuário:", email_escrito: "E-maildoaluno@dominio", nome_escrito: "eeuestudante")));
   }
 
   void onPressedButton() {
@@ -48,7 +48,7 @@ class _PerfilPageState extends State<PerfilPage> {
     );
   }//fim do onPressedButton
 
-  buildPerfil({required String email, required String nome, required String email_escrito, required String nome_escrito, required String imagem}) {
+  buildPerfil({required String email, required String nome, required String email_escrito, required String nome_escrito}) {
     return SingleChildScrollView(
       padding: const EdgeInsets.all(20),
       child: Column(
@@ -77,16 +77,10 @@ class _PerfilPageState extends State<PerfilPage> {
             ],
           ),
           SizedBox(
-            height: 12,
+            height: 120,
           ),
-          Padding(
-            padding: const EdgeInsets.all(20),
-            child: Text(
-              "PROGRESSO",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-          ),
-          Image.network(imagem),
+
+
           ElevatedButton(
             onPressed: onPressedButton,
             child: const Text(
