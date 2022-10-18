@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 
 class Conteudo {
-  final String paragrafo1;
-  final String paragrafo2;
-  final String titulo2;
-  final String subtitulo;
-  final String paragrafo3;
-  final String subtitulo2;
-  final String paragrafo4;
-  final String titulo3;
-  final String paragrafo5;
-  final String subtitulo3;
-  final String paragrafo6;
-  final String subtitulo4;
-  final String paragrafo7;
-  final String paragrafo8;
-  final String subtitulo5;
-  final String paragrafo9;
-  final String espaco1;
-  final String imagem;
-  final String espaco2;
-  
+  late final String paragrafo1;
+  late final String paragrafo2 ;
+  late final String titulo2;
+  late final String subtitulo;
+  late final String paragrafo3;
+  late final String subtitulo2;
+  late final String paragrafo4;
+  late final String titulo3;
+  late final String paragrafo5;
+  late final String subtitulo3;
+  late final String paragrafo6;
+  late final String subtitulo4;
+  late final String paragrafo7;
+  late final String paragrafo8;
+  late final String subtitulo5;
+  late final String paragrafo9;
+  late  final String espaco1;
+  late  final String imagem;
+  late  final String espaco2;
+
   Conteudo({
     required this.paragrafo1,
     required this.paragrafo2,
@@ -42,5 +42,52 @@ class Conteudo {
     required this.imagem,
     required this.espaco2,
   });
+
+  Map<String, Object?> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+
+    data['paragrafo1'] = paragrafo1;
+    data['paragrafo2'] = paragrafo2;
+    data['titulo2'] = titulo2;
+    data['subtitulo'] = subtitulo;
+    data['paragrafo3'] = paragrafo3;
+    data['subtitulo2'] = subtitulo2;
+    data['paragrafo4'] = paragrafo4;
+    data['titulo3'] = titulo3;
+    data['paragrafo5'] = paragrafo5;
+    data['subtitulo3'] = subtitulo3;
+    data['paragrafo6'] = paragrafo6;
+    data['subtitulo4'] = subtitulo4;
+    data['paragrafo7'] = paragrafo7;
+    data['paragrafo8'] = paragrafo8;
+    data['paragrafo9'] = paragrafo9;
+    data['espaco1'] = espaco1;
+    data['imagem'] = imagem;
+    data['espaco2'] = espaco2;
+
+    return data;
+  }
+
+  Conteudo.fromJson(Map<String, dynamic> json) {
+    paragrafo1 = json['paragrafo1'];
+    paragrafo2 = json['paragrafo2'];
+    titulo2 = json['titulo2'];
+    subtitulo = json['subtitulo'];
+    paragrafo3 = json['paragrafo3'];
+    subtitulo2 = json['subtitulo2'];
+    paragrafo4 = json['paragrafo4'];
+    titulo3 = json['titulo3'];
+    paragrafo5 = json['paragrafo5'];
+    subtitulo3 = json['subtitulo3'];
+    paragrafo6 = json['paragrafo6'];
+    subtitulo4 = json['subtitulo4'];
+    paragrafo7 = json['paragrafo7'];
+    paragrafo8 = json['paragrafo8'];
+    paragrafo9 = json['paragrafo9'];
+    espaco1 = json['espaco1'];
+    imagem = json['imagem'];
+    espaco2 = json['espaco2'];
+
+  }
 }
 
