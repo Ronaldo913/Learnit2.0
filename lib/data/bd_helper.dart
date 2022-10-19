@@ -76,5 +76,14 @@ class DBHelper {
     sql =
         "INSERT INTO POSTS (id, url_avatar, author, type, caption, url_post, date, likeCount, commentCount) VALUES (14, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTES5uHqJKiVthJ16rmdpbOB6-oSDFNoZEt4xJDb3qD&s', 'Learn It +', 'Photo', 'ratinho diferente', 'https://ronaldo913.github.io/ImagensPMovel/images/11.jpeg', '15/08/2022', 613, 49);";
     await db.execute(sql);
+
+    ///////////////////////////////////////////////
+
+    String sql2 = 'create table USUARIO (cpf INTEGER PRIMARY KEY, nome varchar(500), email varchar(100), username varchar(100), senha varchar(100), sobrenome varchar(500), tel varchar(100), data_nasc varchar(10));';
+    await db.execute(sql2);
+
+    sql2 =
+    "INSERT INTO USUARIO (cpf, nome, email, username, senha, sobrenome, tel, data_nasc) VALUES (12345678901, 'Tarsis', 'melhorprofessordoifal@email.com', 'tarsis123@email.com', 'tarsis123', 'Marinho', '82912345678', '01/01/1970');";
+    await db.execute(sql2);
   }
 }
