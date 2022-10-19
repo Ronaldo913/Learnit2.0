@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:learnit2/domain/questoes.dart';
+import 'package:learnit2/domain/about.dart';
+import '../domain/about.dart';
 
 class AboutCard extends StatefulWidget {
-  final Questoes questoes;
+  final About about;
 
   const AboutCard({
     Key? key,
-    required this.questoes,
+    required this.about,
   }) : super(key: key);
 
   @override
@@ -16,103 +17,60 @@ class AboutCard extends StatefulWidget {
 class _AboutCardState extends State<AboutCard> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: 30,
-        ),
-        InkWell(
-          child: Card(
-            color: Color(widget.questoes.color),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8.0),
-            ),
-            child: Padding(
-              padding:
-              const EdgeInsets.only(bottom: 30.0, top: 30.0, right: 8.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          widget.questoes.enunciado,
-                          textAlign: TextAlign.justify,
-                          style: const TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
+    return Card(
+      color: Color(0xFF02A676),
+      margin: EdgeInsets.only(bottom: 25),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Stack(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  widget.about.title,
+                  textAlign: TextAlign.justify,
+                  style: const TextStyle(
+                    fontSize: 30,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          widget.questoes.a,
-                          textAlign: TextAlign.left,
-                          style: const TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
+                ),
+                const SizedBox(
+                  height: 20.0,
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: Colors.white10,
+                      image: DecorationImage(
+                          image: NetworkImage(
+                            widget.about.image,
                           ),
-                        ),
-                        Text(
-                          widget.questoes.b,
-                          style: const TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                          ),
-                        ),
-                        Text(
-                          widget.questoes.c,
-                          style: const TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                          ),
-                        ),
-                        Text(
-                          widget.questoes.d,
-                          style: const TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
+                          fit: BoxFit.cover)),
+                  width: 400,
+                  height: 300,
+                ),
+                const SizedBox(
+                  height: 20.0,
+                ),
+                Text(
+                  widget.about.text,
+                  textAlign: TextAlign.justify,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
                   ),
-                  SizedBox(height: 14),
-                  Padding(
-                    padding: EdgeInsets.all(16),
-                    child: InkWell(
-                      splashColor: Color(0xFF0B4619),
-                      onTap: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text(widget.questoes.resp),
-                          ),
-                        );
-                      },
-                      child: const Padding(
-                        padding: EdgeInsets.all(16),
-                        child: Text(
-                          "CLIQUE AQUI PARA VER A RESPOSTA",
-                          style: const TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
-        )
-      ],
+        ],
+      ),
     );
   }
 }

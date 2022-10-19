@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:learnit2/domain/questoes.dart';
 
+import '../../data/dao/about_dao.dart';
 import '../../data/oldData/bd.dart';
-import '../../domain/questoes_conteudo.dart';
+import '../../domain/about.dart';
+import '../../widget/about_card.dart';
 import '../../widget/questoes_card.dart';
 import 'home_page.dart';
 
@@ -14,7 +16,8 @@ class AboutPage extends StatefulWidget {
 }
 
 class _AboutPageState extends State<AboutPage> {
-  Future<List<Questoes>> lista3 = BD.getQuestoes();
+  // Future<List<About>> lista = BD.getAbout();
+  Future<List<About>> lista = AboutDao().listarPosts();
 
   @override
   Widget build(BuildContext context) {
@@ -61,22 +64,22 @@ class _AboutPageState extends State<AboutPage> {
   }
 
   buildListView() {
-    return FutureBuilder<List<Questoes>>(
-      future: lista3,
+    return FutureBuilder<List<About>>(
+      future: lista,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          List<Questoes> lista3 = snapshot.data ?? [];
+          List<About> lista = snapshot.data ?? [];
 
           return ListView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            itemCount: lista3.length,
+            itemCount: lista.length,
             itemBuilder: (BuildContext context, int index) {
-              return CardQuestoes(questoes: lista3[index]);
+              return AboutCard(about: lista[index]);
             },
           );
         }
-        return Center(child: const CircularProgressIndicator());
+        return const Center(child: CircularProgressIndicator());
       },
     );
   }

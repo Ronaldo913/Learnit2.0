@@ -42,7 +42,6 @@ class Network {
     type = json['type'];
     caption = json['caption'];
     photo = json['url_post'];
-
     date = json['date'];
     likeCount = json['likeCount'];
     commentCount = json['commentCount'];
