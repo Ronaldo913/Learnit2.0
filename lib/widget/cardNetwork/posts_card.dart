@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'dart:ui';
 import '../../domain/network.dart';
-import 'package:learnit2/pages/sideBar/redes/comentario_page.dart';
+import 'package:learnit2/pages/sideBar/redes/publication/comentario_page.dart';
 
 class PostsCard extends StatefulWidget {
   final Network post;

@@ -12,9 +12,9 @@ class _ComentarioPageState extends State<ComentarioPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Padding(
-      padding: EdgeInsets.only(top: 50),
+      padding: const EdgeInsets.only(top: 50, left: 10, right: 10),
       child: TextFormField(
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.black,
         ),
         keyboardType: TextInputType.text,
@@ -25,7 +25,7 @@ class _ComentarioPageState extends State<ComentarioPage> {
             fontSize: 16,
           ),
           hintText: "Comente algo",
-          prefixIcon: const Icon(
+          prefixIcon: Icon(
             Icons.email,
             color: Colors.grey,
           ),

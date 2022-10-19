@@ -41,6 +41,7 @@ dependencies:
   hooks_riverpod: ^0.12.4
   html_character_entities: ^0.1.2+4
   meta: ^1.2.4
+  flash_card: ^0.0.5
 
 
   # The following adds the Cupertino Icons font to your application.

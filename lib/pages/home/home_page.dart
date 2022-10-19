@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
             ListTile(
               leading: const Icon(Icons.wifi,
               ),
-              title: const Text("Redes",
+              title: const Text("Comunidade",
                 style: TextStyle(
                     fontSize: 24
                 ),

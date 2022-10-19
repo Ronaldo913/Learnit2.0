@@ -5,7 +5,8 @@ import 'package:learnit2/domain/network.dart';
 import '../home/assuntos_page.dart';
 import '../home/home.dart';
 import '../home/questoes_page.dart';
-import 'package:learnit2/pages/sideBar/network_page.dart';
+import 'package:learnit2/pages/sideBar/redes/publication/network_page.dart';
+import 'package:learnit2/pages/sideBar/redes/procura/procura.dart';
 
 class BottomNavigationPage extends StatefulWidget {
   const BottomNavigationPage({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
   int selectedIndex = 0;
   List pages = const [
     NetworkPage(),
-    Center(child: Text('Page Temporaria', style: TextStyle(fontSize: 36))),
+    Procura(),
     Center(child: Text('Page Temporaria', style: TextStyle(fontSize: 36))),
     Center(child: Text('Page Temporaria', style: TextStyle(fontSize: 36))),
     Center(child: Text('Page Temporaria', style: TextStyle(fontSize: 36))),
