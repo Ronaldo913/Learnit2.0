@@ -1,14 +1,15 @@
 import 'package:learnit2/data/db_conteudo_helper.dart';
+import 'package:learnit2/data/db_helper.dart';
 import 'package:sqflite/sqflite.dart';
 import '../../domain/conteudo.dart';
 
-class PacoteDao {
+class ConteudoDao {
 
   Future<List<Conteudo>> listarConteudos() async {
     DBHelper dbHelper = DBHelper();
     Database db = await dbHelper.initDB();
 
-    String sql = 'SELECT * FROM PACOTE;';
+    String sql = 'SELECT * FROM CONTEUDO;';
     final result = await db.rawQuery(sql);
 
     List<Conteudo> lista = <Conteudo>[];
