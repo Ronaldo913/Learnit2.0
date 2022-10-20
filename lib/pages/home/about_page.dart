@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:learnit2/domain/questoes.dart';
-
 import '../../data/dao/about_dao.dart';
-import '../../data/oldData/bd.dart';
 import '../../domain/about.dart';
 import '../../widget/about_card.dart';
-import '../../widget/questoes_card.dart';
 import 'home_page.dart';
 
 class AboutPage extends StatefulWidget {

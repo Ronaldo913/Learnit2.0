@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learnit2/pages/Previous/login_page.dart';
 import 'package:learnit2/pages/home/about_page.dart';
 import 'package:learnit2/pages/home/assuntos_page.dart';
 import 'package:learnit2/pages/sideBar/bottom_navigation_page.dart';
@@ -116,6 +117,60 @@ class _HomePageState extends State<HomePage> {
             ListTile(
               leading: const Icon(Icons.event_note,
               ),
+              title: const Text("FlashCard",
+                style: TextStyle(
+                    fontSize: 24
+                ),
+              ),
+              subtitle: const Text("Memorize",
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+              trailing: IconButton(
+                icon: const Icon(Icons.arrow_forward_outlined),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return const CronogramaPage();
+                      },
+                    ),
+                  );
+                },
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.settings,
+              ),
+              title: const Text("Configurações",
+                style: TextStyle(
+                    fontSize: 23
+                ),
+              ),
+              subtitle: const Text("Configure",
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+              trailing: IconButton(
+                icon: const Icon(Icons.arrow_forward_outlined),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return const CronogramaPage();
+                      },
+                    ),
+                  );
+                },
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.favorite_outlined,
+              ),
               title: const Text("Sobre",
                 style: TextStyle(
                     fontSize: 24
@@ -156,11 +211,11 @@ class _HomePageState extends State<HomePage> {
               trailing: IconButton(
                 icon: const Icon(Icons.arrow_forward_outlined),
                 onPressed: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return const CronogramaPage();
+                        return const Loginpage();
                       },
                     ),
                   );
@@ -176,7 +231,8 @@ class _HomePageState extends State<HomePage> {
         type: BottomNavigationBarType.fixed,
         showUnselectedLabels: true,
         unselectedItemColor: Colors.grey,
-        selectedItemColor: Color(0xFF012340),
+        selectedItemColor: const Color(0xFF012340),
+        backgroundColor: Colors.white,
         currentIndex: selectedIndex,
         onTap: (index) {
           setState(() {

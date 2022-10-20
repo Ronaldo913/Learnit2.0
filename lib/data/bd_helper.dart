@@ -5,11 +5,12 @@ import 'package:sqflite/sqflite.dart';
 class DBHelper {
   initDB() async {
     String databasePath = await getDatabasesPath();
-    String path = join(databasePath, "pacote9.db");
+    String path = join(databasePath, "pacote13.db");
     Database database = await openDatabase(
       path,
-      version: 1,
+      version: 2,
       onCreate: onCreate,
+      onUpgrade: onUpgrade,
     );
 
     print(path);
@@ -79,20 +80,24 @@ class DBHelper {
 
     ///////////////////////////////////////////////
 
-    String sql2 = 'create table USUARIO (cpf INTEGER PRIMARY KEY, nome varchar(500), email varchar(100), username varchar(100), senha varchar(100), sobrenome varchar(500), tel varchar(100), data_nasc varchar(10));';
-    await db.execute(sql2);
-
-    sql2 =
-    "INSERT INTO USUARIO (cpf, nome, email, username, senha, sobrenome, tel, data_nasc) VALUES (12345678901, 'Tarsis', 'melhorprofessordoifal@email.com', 'tarsis123@email.com', 'tarsis123', 'Marinho', '82912345678', '01/01/1970');";
-    await db.execute(sql2);
-
-    ///////////////////////////////////////////////
-
-    String sql3 = 'create table SOBRE (id INTEGER PRIMARY KEY, title varchar(100), image varchar(500), text varchar(500));';
+    String sql3 =
+        'create table ABOUT (id INTEGER PRIMARY KEY, title varchar(100), image varchar(500), text varchar(500));';
     await db.execute(sql3);
 
     sql3 =
-    "INSERT INTO SOBRE (id, text, title, image) VALUES (1, 'Learn It + é um aplicativo de estudos que ajuda os estudantes a ter uma melhor compreensão da disciplina de biologia. Nele, contém explicações de cada conteúdo, seja ele escrito ou por vídeo. Junto aos conteúdos vem exercícios que devem ser resolvidas para uma melhor fixação do seu aprendizado. Além disso, o app conta com uma parte premium, a qual quem assinar terá regalias e direitos a outros serviços como mais questões, por exemplo. Além do mais, o Learn conta com uma rede social própria onde os usuários podem interagir entre eles nas diversas postagens em seu chat e e que também conta com status(mas tudo conforme as regras). Pensando de uma forma diferente e menos cansativa de ensino, o aplicativo tem formas de ensino através de quiz, flashcards e muitos mais.', 'Sobre nós', 'https://ronaldo913.github.io/ImagensPMovel/images/logo.png');";
+        "INSERT INTO ABOUT (id, text, title, image) VALUES (1, 'Learn It + é um aplicativo de estudos que ajuda os estudantes a ter uma melhor compreensão da disciplina de biologia. Nele, contém explicações de cada conteúdo, seja ele escrito ou por vídeo. Junto aos conteúdos vem exercícios que devem ser resolvidas para uma melhor fixação do seu aprendizado. Além disso, o app conta com uma parte premium, a qual quem assinar terá regalias e direitos a outros serviços como mais questões, por exemplo. Além do mais, o Learn conta com uma rede social própria onde os usuários podem interagir entre eles nas diversas postagens em seu chat e e que também conta com status(mas tudo conforme as regras). Pensando de uma forma diferente e menos cansativa de ensino, o aplicativo tem formas de ensino através de quiz, flashcards e muitos mais.', 'Sobre nós', 'https://ronaldo913.github.io/ImagensPMovel/images/logo.png');";
     await db.execute(sql3);
+  }
+
+  Future<void> onUpgrade(Database database, int oldVersion, int newVersion) async {
+    if (oldVersion == 1 && newVersion == 2) {
+      String sql2 =
+          'create table USER (cpf INTEGER PRIMARY KEY, nome varchar(500), email varchar(100), username varchar(100), senha varchar(100), sobrenome varchar(500), celular varchar(100), nascimento varchar(10));';
+      await database.execute(sql2);
+
+      sql2 =
+          "INSERT INTO USER (cpf, nome, email, username, senha, sobrenome, celular, nascimento) VALUES (12345678901, 'Tarsis', 'tarsis@email.com', 'tarsis123@email.com', 'tarsis123', 'Marinho', '82912345678', '01/01/1970');";
+      await database.execute(sql2);
+    }
   }
 }

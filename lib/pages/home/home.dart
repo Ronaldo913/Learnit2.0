@@ -62,7 +62,7 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                 ),
-                SizedBox(height: 24),
+                const SizedBox(height: 24),
                 Padding(padding: EdgeInsets.all(20),
                   child: ElevatedButton(onPressed: onPressedButton3,
                     child: const Padding(padding: EdgeInsets.symmetric(vertical: 24),
@@ -75,7 +75,7 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                     style: ElevatedButton.styleFrom(
-                        primary: Color(0xFF012340),
+                        primary: const Color(0xFF012340),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(35.0)
                         )
