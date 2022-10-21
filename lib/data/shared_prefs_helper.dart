@@ -20,11 +20,5 @@ class SharedPrefsHelper {
     bool? isLogged = sharedPrefs.getBool('USER');
 
     return isLogged ?? false;
-
-    // Opcao 2
-    /*if(isLogged == null) {
-      return false;
-    }
-    return isLogged;*/
   }
 }

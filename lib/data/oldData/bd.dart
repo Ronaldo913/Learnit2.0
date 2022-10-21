@@ -1,6 +1,6 @@
 import 'package:learnit2/domain/about.dart';
 import 'package:learnit2/domain/network.dart';
-import 'package:learnit2/domain/usuario.dart';
+import 'package:learnit2/domain/user.dart';
 import 'package:learnit2/domain/pacote_estudo.dart';
 import 'package:learnit2/domain/questoes_conteudo.dart';
 import 'package:learnit2/domain/questoes.dart';
@@ -9,63 +9,63 @@ import 'package:learnit2/pages/questions/quest.dart';
 import 'package:learnit2/pages/contents/conteudo_page.dart';
 
 class BD {
-  static final List<Usuario> lista = [
-    Usuario(
-      nome: 'Mayara',
-      sobrenome: 'Silva',
-      nascimento: '25/04/2004',
-      celular: '82999000364',
-      email: 'mayara@email.com',
-      cpf: '123.456.789-00',
-      username: 'mayarinhan',
-      senha: '123456789',
-    ),
-    Usuario(
-      nome: 'Ronaldo',
-      sobrenome: 'Noberto',
-      nascimento: '29/11/2004',
-      celular: '82999000364',
-      email: 'ronaldo@email.com',
-      cpf: '123.456.789-00',
-      username: 'RonaldoN',
-      senha: '123456789',
-    ),
-    Usuario(
-      nome: 'Waldemar',
-      sobrenome: 'Philype',
-      nascimento: '25/09/2004',
-      celular: '82999000364',
-      email: 'waldemar@email.com',
-      cpf: '123.456.789-00',
-      username: 'WaldemarP',
-      senha: '123456789',
-    ),
-    Usuario(
-      nome: 'João',
-      sobrenome: 'Pedro',
-      nascimento: '29/11/2005',
-      celular: '82999000364',
-      email: 'joao@email.com',
-      cpf: '123.456.789-00',
-      username: 'JoãoP',
-      senha: '123456789',
-    ),
-    Usuario(
-      nome: 'Jhennifer',
-      sobrenome: 'Maia',
-      nascimento: '29/11/2004',
-      celular: '82999000364',
-      email: 'Jhennifer@email.com',
-      cpf: '123.456.789-00',
-      username: 'JhenniferM',
-      senha: '123456789',
-    ),
-  ];
-
-  static Future<List<Usuario>> getUsuario() async {
-    await Future.delayed(const Duration(seconds: 1));
-    return lista;
-  }
+  // static final List<Usuario> lista = [
+  //   Usuario(
+  //     nome: 'Mayara',
+  //     sobrenome: 'Silva',
+  //     nascimento: '25/04/2004',
+  //     celular: '82999000364',
+  //     email: 'mayara@email.com',
+  //     cpf: '123.456.789-00',
+  //     username: 'mayarinhan',
+  //     senha: '123456789',
+  //   ),
+  //   Usuario(
+  //     nome: 'Ronaldo',
+  //     sobrenome: 'Noberto',
+  //     nascimento: '29/11/2004',
+  //     celular: '82999000364',
+  //     email: 'ronaldo@email.com',
+  //     cpf: '123.456.789-00',
+  //     username: 'RonaldoN',
+  //     senha: '123456789',
+  //   ),
+  //   Usuario(
+  //     nome: 'Waldemar',
+  //     sobrenome: 'Philype',
+  //     nascimento: '25/09/2004',
+  //     celular: '82999000364',
+  //     email: 'waldemar@email.com',
+  //     cpf: '123.456.789-00',
+  //     username: 'WaldemarP',
+  //     senha: '123456789',
+  //   ),
+  //   Usuario(
+  //     nome: 'João',
+  //     sobrenome: 'Pedro',
+  //     nascimento: '29/11/2005',
+  //     celular: '82999000364',
+  //     email: 'joao@email.com',
+  //     cpf: '123.456.789-00',
+  //     username: 'JoãoP',
+  //     senha: '123456789',
+  //   ),
+  //   Usuario(
+  //     nome: 'Jhennifer',
+  //     sobrenome: 'Maia',
+  //     nascimento: '29/11/2004',
+  //     celular: '82999000364',
+  //     email: 'Jhennifer@email.com',
+  //     cpf: '123.456.789-00',
+  //     username: 'JhenniferM',
+  //     senha: '123456789',
+  //   ),
+  // ];
+  //
+  // static Future<List<Usuario>> getUsuario() async {
+  //   await Future.delayed(const Duration(seconds: 1));
+  //   return lista;
+  // }
 
   static final List<PacoteEstudo> lista1 = [
     PacoteEstudo(

@@ -12,7 +12,6 @@ class AboutPage extends StatefulWidget {
 }
 
 class _AboutPageState extends State<AboutPage> {
-  // Future<List<About>> lista = BD.getAbout();
   Future<List<About>> lista = AboutDao().listarPosts();
 
   @override

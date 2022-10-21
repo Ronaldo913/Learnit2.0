@@ -1,4 +1,4 @@
-class Usuario {
+class User {
   late String nome;
   late String sobrenome;
   late String nascimento;
@@ -6,9 +6,9 @@ class Usuario {
   late String email;
   late String cpf;
   late String username;
-  late String senha;
+  late String password;
 
-  Usuario({
+  User({
     required this.nome,
     required this.sobrenome,
     required this.nascimento,
@@ -16,10 +16,10 @@ class Usuario {
     required this.email,
     required this.cpf,
     required this.username,
-    required this.senha,
+    required this.password,
   });
 
-  Usuario.fromJson(Map<String, dynamic> json) {
+  User.fromJson(Map<String, dynamic> json) {
     nome = json['nome'];
     sobrenome = json['sobrenome'];
     nascimento = json['nascimento'];
@@ -27,7 +27,7 @@ class Usuario {
     email = json['email'];
     cpf = json['cpf'];
     username = json['username'];
-    senha = json['senha'];
+    password = json['password'];
   }
 
   Map<String, dynamic> toJson() {
@@ -39,7 +39,7 @@ class Usuario {
     data['email'] = email;
     data['cpf'] = cpf;
     data['username'] = username;
-    data['senha'] = senha;
+    data['password'] = password;
     return data;
   }
 }

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:learnit2/domain/usuario.dart';
+import 'package:learnit2/domain/user.dart';
 import 'package:learnit2/pages/animations/animation.dart';
 import 'package:learnit2/pages/home/home_page.dart';
 import 'package:learnit2/pages/Previous/registration_page.dart';
 import 'package:learnit2/pages/Previous/recuperacao.dart';
 import 'package:learnit2/data/oldData/bd.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+import '../../data/dao/user_dao.dart';
+import '../../data/shared_prefs_helper.dart';
 
 class Loginpage extends StatefulWidget {
   const Loginpage({Key? key}) : super(key: key);
@@ -450,23 +453,17 @@ class _LoginpageState extends State<Loginpage> {
     }
   }
 
-  onPressedLogin() {
+  Future<void> onPressedLogin() async {
     if (_formKey.currentState!.validate()) {
-      List<Usuario> listaUsuario = BD.lista;
+      // List<Usuario> listaUsuario = BD.lista;
       String email = _emailController.text;
       String pass = _passController.text;
-      bool auth = false;
 
-      // Verificando usuarios
-      for (Usuario user in listaUsuario) {
-        //Checando email e senha
-        if (user.email == email && user.senha == pass) {
-          auth = true;
-        }
-      }
+      bool resultado = await UserDao().autenticar(user: email, password: pass);
 
-      if (auth) {
-        // Push para pag de login
+      if (resultado) {
+        SharedPrefsHelper().login();
+
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
@@ -476,14 +473,16 @@ class _LoginpageState extends State<Loginpage> {
           ),
         );
       } else {
-        // Mostrar a mensagem de erro
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text("Usuario e/ou senha incorretos"),
+        final msg = SnackBar(
+          behavior: SnackBarBehavior.floating,
+          content: Text(
+            ("Usuario/Senha incorretos"),
           ),
         );
+        ScaffoldMessenger.of(context).showSnackBar(msg);
       }
+    } else {
+      print("Formulário invalido");
     }
   }
-
 }
