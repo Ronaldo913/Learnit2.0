@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:learnit2/widget/flashcard_card.dart';
 import '../../data/dao/about_dao.dart';
 import '../../domain/about.dart';
 import '../../widget/about_card.dart';
-import 'home_page.dart';
+import 'package:learnit2/pages/home/home_page.dart';
 
-class AboutPage extends StatefulWidget {
-  const AboutPage({Key? key}) : super(key: key);
+class FlashCitologia extends StatefulWidget {
+  const FlashCitologia({Key? key}) : super(key: key);
 
   @override
-  State<AboutPage> createState() => _AboutPageState();
+  State<FlashCitologia> createState() => _FlashCitologiaState();
 }
 
-class _AboutPageState extends State<AboutPage> {
+class _FlashCitologiaState extends State<FlashCitologia> {
   Future<List<About>> lista = AboutDao().listarAbout();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sobre'),
+        title: Text('FlashCitologia'),
         backgroundColor: Color(0xFF0B4619),
         toolbarHeight: 64,
         actions: [
@@ -70,7 +71,7 @@ class _AboutPageState extends State<AboutPage> {
             physics: const NeverScrollableScrollPhysics(),
             itemCount: lista.length,
             itemBuilder: (BuildContext context, int index) {
-              return AboutCard(about: lista[index]);
+              return Flashcard(about: lista[index]);
             },
           );
         }
