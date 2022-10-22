@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Conteudo {
   late final String paragrafo1;
-  late final String paragrafo2 ;
+  late final String paragrafo2;
   late final String titulo2;
   late final String subtitulo;
   late final String paragrafo3;
@@ -17,9 +17,9 @@ class Conteudo {
   late final String paragrafo8;
   late final String subtitulo5;
   late final String paragrafo9;
-  late  final String espaco1;
-  late  final String imagem;
-  late  final String espaco2;
+  late final String espaco1;
+  late final String imagem;
+  late final String espaco2;
 
   Conteudo({
     required this.paragrafo1,
@@ -60,6 +60,7 @@ class Conteudo {
     data['subtitulo4'] = subtitulo4;
     data['paragrafo7'] = paragrafo7;
     data['paragrafo8'] = paragrafo8;
+    data['subtitulo5'] = subtitulo5;
     data['paragrafo9'] = paragrafo9;
     data['espaco1'] = espaco1;
     data['imagem'] = imagem;
@@ -83,11 +84,10 @@ class Conteudo {
     subtitulo4 = json['subtitulo4'];
     paragrafo7 = json['paragrafo7'];
     paragrafo8 = json['paragrafo8'];
+    subtitulo5 = json['subtitulo5'];
     paragrafo9 = json['paragrafo9'];
     espaco1 = json['espaco1'];
     imagem = json['imagem'];
     espaco2 = json['espaco2'];
-
   }
 }
-
