@@ -7,6 +7,8 @@ import 'package:learnit2/domain/questoes.dart';
 import 'package:learnit2/domain/cronograma.dart';
 import 'package:learnit2/pages/questions/quest.dart';
 import 'package:learnit2/pages/contents/conteudo_page.dart';
+import '../../domain/conteudo.dart';
+import '../../pages/contents/conteudo2_page.dart';
 
 class BD {
   // static final List<Usuario> lista = [
@@ -118,7 +120,7 @@ class BD {
   static List<QuestoesConteudo> listaquest = [
     QuestoesConteudo(titulo: 'Citologia', color: 0xFF02A676, page: QuestPage()),
     QuestoesConteudo(
-        titulo: 'Embriologia', color: 0xFF008C72, page: QuestPage()),
+        titulo: 'Embriologia', color: 0xFF008C72, page: Conteudob()),
     QuestoesConteudo(
         titulo: 'Introdução à Biologia', color: 0xFF007369, page: QuestPage()),
     QuestoesConteudo(titulo: 'Genética', color: 0xFF005A5B, page: QuestPage()),
