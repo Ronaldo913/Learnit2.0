@@ -5,11 +5,12 @@ import 'package:sqflite/sqflite.dart';
 class DBHelper {
   initDB() async {
     String databasePath = await getDatabasesPath();
-    String path = join(databasePath, "pacote19.db");
+    String path = join(databasePath, "pacote9.db");
     Database database = await openDatabase(
       path,
       version: 1,
       onCreate: onCreate,
+      //onUpgrade: onUpgrade
     );
 
     print(path);
@@ -79,34 +80,90 @@ class DBHelper {
 
     ///////////////////////////////////////////////
 
+    String sql2 =
+        'create table USUARIO (cpf INTEGER PRIMARY KEY, nome varchar(500), email varchar(100), username varchar(100), senha varchar(100), sobrenome varchar(500), tel varchar(100), data_nasc varchar(10));';
+    await db.execute(sql2);
+
+    sql2 =
+        "INSERT INTO USUARIO (cpf, nome, email, username, senha, sobrenome, tel, data_nasc) VALUES (12345678901, 'Tarsis', 'melhorprofessordoifal@email.com', 'tarsis123@email.com', 'tarsis123', 'Marinho', '82912345678', '01/01/1970');";
+    await db.execute(sql2);
+
+    ///////////////////////////////////////////////
+
     String sql3 =
-        'create table ABOUT (id INTEGER PRIMARY KEY, title varchar(100), image varchar(500), text varchar(500));';
+        'create table SOBRE (id INTEGER PRIMARY KEY, title varchar(100), image varchar(500), text varchar(500));';
     await db.execute(sql3);
 
     sql3 =
-        "INSERT INTO ABOUT (id, text, title, image) VALUES (1, 'Learn It + é um aplicativo de estudos que ajuda os estudantes a ter uma melhor compreensão da disciplina de biologia. Nele, contém explicações de cada conteúdo, seja ele escrito ou por vídeo. Junto aos conteúdos vem exercícios que devem ser resolvidas para uma melhor fixação do seu aprendizado. Além disso, o app conta com uma parte premium, a qual quem assinar terá regalias e direitos a outros serviços como mais questões, por exemplo. Além do mais, o Learn conta com uma rede social própria onde os usuários podem interagir entre eles nas diversas postagens em seu chat e e que também conta com status(mas tudo conforme as regras). Pensando de uma forma diferente e menos cansativa de ensino, o aplicativo tem formas de ensino através de quiz, flashcards e muitos mais.', 'Sobre nós', 'https://ronaldo913.github.io/ImagensPMovel/images/logo.png');";
+        "INSERT INTO SOBRE (id, text, title, image) VALUES (1, 'Learn It + é um aplicativo de estudos que ajuda os estudantes a ter uma melhor compreensão da disciplina de biologia. Nele, contém explicações de cada conteúdo, seja ele escrito ou por vídeo. Junto aos conteúdos vem exercícios que devem ser resolvidas para uma melhor fixação do seu aprendizado. Além disso, o app conta com uma parte premium, a qual quem assinar terá regalias e direitos a outros serviços como mais questões, por exemplo. Além do mais, o Learn conta com uma rede social própria onde os usuários podem interagir entre eles nas diversas postagens em seu chat e e que também conta com status(mas tudo conforme as regras). Pensando de uma forma diferente e menos cansativa de ensino, o aplicativo tem formas de ensino através de quiz, flashcards e muitos mais.', 'Sobre nós', 'https://ronaldo913.github.io/ImagensPMovel/images/logo.png');";
     await db.execute(sql3);
 
+///////////////////////
+
     String sql4 =
-        'create table USER (cpf INTEGER PRIMARY KEY, nome varchar(500), email varchar(100), username varchar(100), password varchar(100), sobrenome varchar(500), celular varchar(100), nascimento varchar(10));';
+        'create table CONTEUDO (paragrafo1 varchar(2000),paragrafo2 varchar(2000), titulo2 varchar(100), subtitulo varchar(100), paragrafo3 varchar(2000),subtitulo2 varchar(100), paragrafo4 varchar(2000), titulo3 varchar (100), paragrafo5 varchar (2000), subtitulo3 varchar (100), paragrafo6 varchar (2000), subtitulo4 varchar(100), paragrafo7  varchar (2000), paragrafo8 varchar (2000), subtitulo5 varchar (200), paragrafo9 varchar (2000), espaco1 varchar (2), imagem varchar (2000), espaco2 varchar (2));';
     await db.execute(sql4);
 
     sql4 =
-    "INSERT INTO USER (cpf, nome, email, username, password, sobrenome, celular, nascimento) VALUES (12345678901, 'Tarsis', 'tarsis@email.com', 'tarsis123@email.com', 'tarsis123', 'Marinho', '82912345678', '01/01/1970');";
+        "INSERT INTO CONTEUDO(paragrafo1, paragrafo2, titulo2, subtitulo, paragrafo3, subtitulo2, paragrafo4, titulo3, paragrafo5, subtitulo3, paragrafo6, subtitulo4, paragrafo7, paragrafo8, subtitulo5 ,  paragrafo9, espaco1, imagem, espaco2) VALUES ('A citologia é onde as células são estudadas. A citologia passou a desenvolver-se como ciência em 1663, quando Robert Hooke cortou um pedaço de cortiça e observou ao microscópio.', 'Graças ao desenvolvimento da microscopia surgiu a teoria celular, onde há postulados importantes para o ramo da citoligia, como: Todos os seres vivos são constituídos por células, As atividades essenciais que caracterizam a vida ocorrem no interior das células, Novas células se formam pela divisão de células preexistentes através da divisão celular, A célula é a menor unidade da vida.','TIPOS DE CÉLULAS','PROCARIONTES', 'Esta tem como sua principal característica a ausencia da carioteca, assim sendo, o núcleo dessa célula não é individualizado. É importante destacar que as células procariontes são as células mais primitivas e que possuem estruturas celulares mais simples. Na reprodução as células procariontes não se reproduzem por mitose. Exemplo de célula procarionte: bactérias.', 'EUCARIONTES', 'Tais células são mais complaxas do que as procariontes. Ao contrário das procariontes, possuem carioteca individualizando o núcleo e também possuem vários tipos de organelas. Exemplos de células eucariontes: células animais, células vegetais','PARTES DA CÉLULA', 'As células eucariontes possuem partes morfológicas distintas. Suas principais partes são: membrana plasmática, citoplasma e núcleo celular.', 'MEMBRANA PLASMÁTICA', 'Também conhecida como membrana celular. Trata-se de uma estrutura fina e porosa. Sua função é proteger as estruturas celulares no momento em que serve de envoltório para todas as células. Ela atua como um filtro onde meio que decide o que poderá entrar, possibilitando a entrada de substâncias pequenas e impedindo ou dificultando a passagem de substâncias de grande porte, esse processo é nomeado de Permeabilidade Seletiva.', 'CITOPLASMA', 'No citoplasma será encotradas organelas celulares, onde é preenchido por uma matriz viscosa e semitransparente, o hialoplasma ou citosol. As organelas são pequenos órgãos da célula. Cada organela desempenha uma função distinta.', 'Organelas celulares: Mitocôndrias(realiza a respiração celular, que produz a maior parte da energia utilizada nas funções celulares), Retículo Endoplasmático(há 2 tipos de retículo endoplasmático, o liso e o rugoso), Complexo de Golgi (principais funções do complexo de golgi são são modificar, armazenar e exportar proteínas sintetizadas no retículo endoplasmático rugoso. Ele também origina os lisossomos e os acrossomos dos espermatozoides), Lisossomos (responsáveis pela digestão intracelular. Essas organelas atuam como sacos de enzimas digestivas, digerindo nutrientes e destruindo substâncias não desejadas), Ribossomos (auxiliar a síntese de proteínas nas células), Peroxissomos (a função dos peroxissomos é a oxidação de ácidos graxos para a síntese de colesterol e respiração celular).', 'NÚCLEO CELULAR','Nele é onde se encontra o DNA, o material genético do organismo. No núcleo ocorre a divisão celular, esse processo é extremamente importante para o crescimento e reprodução das células.', ' ', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVsq0ESSVKM86Va0uG3y7PUDYSevpuNb1KmQ&usqp=CAU', ' ');";
     await db.execute(sql4);
   }
+/*
+  Future<void> onUpgrade(Database db, int oldVersion, int newVersion) async {
+    if (oldVersion == 1 && newVersion == 2) {
+      String sql = '''create table CONTEUDO (
+          paragrafo1 varchar(2000),
+          paragrafo2 varchar(2000), 
+          titulo2 varchar(100), 
+          subtitulo varchar(100), 
+          paragrafo3 varchar(2000),
+          subtitulo2 varchar(100), 
+          paragrafo4 varchar(2000), 
+          titulo3 varchar (100),
+           paragrafo5 varchar (2000), 
+           subtitulo3 varchar (100), 
+           paragrafo6 varchar (2000),
+           subtitulo4 varchar(100), 
+           paragrafo7  varchar (2000), 
+           paragrafo8 varchar (2000),
+           subtitulo5 varchar (200), 
+           paragrafo9 varchar (2000), 
+           espaco1 varchar (2), 
+           imagem varchar (2000), 
+           espaco2 varchar (2));''';
+      await db.execute(sql);
 
-  // Future<void> onUpgrade(Database database, int oldVersion, int newVersion) async {
-  //   if (oldVersion == 1 && newVersion == 2) {
-  //
-  //     // String sql4 =
-  //     //     'create table USER (cpf INTEGER PRIMARY KEY, nome varchar(500), email varchar(100), username varchar(100), password varchar(100), sobrenome varchar(500), celular varchar(100), nascimento varchar(10));';
-  //     // await database.execute(sql4);
-  //     //
-  //     // sql4 =
-  //     // "INSERT INTO USER (cpf, nome, email, username, password, sobrenome, celular, nascimento) VALUES (12345678901, 'Tarsis', 'tarsis@email.com', 'tarsis123@email.com', 'tarsis123', 'Marinho', '82912345678', '01/01/1970');";
-  //     // await database.execute(sql4);
-  //
-  //   }
-  // }
+      sql =
+          "INSERT INTO CONTEUDO(paragrafo1, paragrafo2, titulo2, subtitulo, paragrafo3, subtitulo2, paragrafo4, titulo3, paragrafo5, subtitulo3, paragrafo6, subtitulo4, paragrafo7, paragrafo8, subtitulo5, paragrafo9, espaco1, imagem, espaco2) VALUES ('A citologia é onde as células são estudadas. A citologia passou a desenvolver-se como ciência em 1663, quando Robert Hooke cortou um pedaço de cortiça e observou ao microscópio.', 'Graças ao desenvolvimento da microscopia surgiu a teoria celular, onde há postulados importantes para o ramo da citoligia, como: Todos os seres vivos são constituídos por células, As atividades essenciais que caracterizam a vida ocorrem no interior das células, Novas células se formam pela divisão de células preexistentes através da divisão celular, A célula é a menor unidade da vida.','TIPOS DE CÉLULAS','PROCARIONTES', 'Esta tem como sua principal característica a ausencia da carioteca, assim sendo, o núcleo dessa célula não é individualizado. É importante destacar que as células procariontes são as células mais primitivas e que possuem estruturas celulares mais simples. Na reprodução as células procariontes não se reproduzem por mitose. Exemplo de célula procarionte: bactérias.', 'EUCARIONTES', 'Tais células são mais complaxas do que as procariontes. Ao contrário das procariontes, possuem carioteca individualizando o núcleo e também possuem vários tipos de organelas. Exemplos de células eucariontes: células animais, células vegetais','PARTES DA CÉLULA', 'As células eucariontes possuem partes morfológicas distintas. Suas principais partes são: membrana plasmática, citoplasma e núcleo celular.', 'MEMBRANA PLASMÁTICA', 'Também conhecida como membrana celular. Trata-se de uma estrutura fina e porosa. Sua função é proteger as estruturas celulares no momento em que serve de envoltório para todas as células. Ela atua como um filtro onde meio que decide o que poderá entrar, possibilitando a entrada de substâncias pequenas e impedindo ou dificultando a passagem de substâncias de grande porte, esse processo é nomeado de Permeabilidade Seletiva.', 'CITOPLASMA', 'No citoplasma será encotradas organelas celulares, onde é preenchido por uma matriz viscosa e semitransparente, o hialoplasma ou citosol. As organelas são pequenos órgãos da célula. Cada organela desempenha uma função distinta.', 'Organelas celulares: Mitocôndrias(realiza a respiração celular, que produz a maior parte da energia utilizada nas funções celulares), Retículo Endoplasmático(há 2 tipos de retículo endoplasmático, o liso e o rugoso), Complexo de Golgi (principais funções do complexo de golgi são são modificar, armazenar e exportar proteínas sintetizadas no retículo endoplasmático rugoso. Ele também origina os lisossomos e os acrossomos dos espermatozoides), Lisossomos (responsáveis pela digestão intracelular. Essas organelas atuam como sacos de enzimas digestivas, digerindo nutrientes e destruindo substâncias não desejadas), Ribossomos (auxiliar a síntese de proteínas nas células), Peroxissomos (a função dos peroxissomos é a oxidação de ácidos graxos para a síntese de colesterol e respiração celular).', 'NÚCLEO CELULAR','Nele é onde se encontra o DNA, o material genético do organismo. No núcleo ocorre a divisão celular, esse processo é extremamente importante para o crescimento e reprodução das células.', ' ', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVsq0ESSVKM86Va0uG3y7PUDYSevpuNb1KmQ&usqp=CAU', ' ');";
+      await db.execute(sql);
+    }
+
+    if (oldVersion == 2 && newVersion == 3) {
+      String sql = '''create table CONTEUDO (
+          paragrafo1 varchar(2000),
+          paragrafo2 varchar(2000), 
+          titulo2 varchar(100), 
+          subtitulo varchar(100), 
+          paragrafo3 varchar(2000),
+          subtitulo2 varchar(100), 
+          paragrafo4 varchar(2000), 
+          titulo3 varchar (100),
+           paragrafo5 varchar (2000), 
+           subtitulo3 varchar (100), 
+           paragrafo6 varchar (2000),
+           subtitulo4 varchar(100), 
+           paragrafo7  varchar (2000), 
+           paragrafo8 varchar (2000),
+           subtitulo5 varchar (200), 
+           paragrafo9 varchar (2000), 
+           espaco1 varchar (2), 
+           imagem varchar (2000), 
+           espaco2 varchar (2));''';
+      await db.execute(sql);
+
+      sql =
+          "INSERT INTO CONTEUDO(paragrafo1, paragrafo2, titulo2, subtitulo, paragrafo3, subtitulo2, paragrafo4, titulo3, paragrafo5, subtitulo3, paragrafo6, subtitulo4, paragrafo7, paragrafo8, subtitulo5, paragrafo9, espaco1, imagem, espaco2) VALUES ('A citologia é onde as células são estudadas. A citologia passou a desenvolver-se como ciência em 1663, quando Robert Hooke cortou um pedaço de cortiça e observou ao microscópio.', 'Graças ao desenvolvimento da microscopia surgiu a teoria celular, onde há postulados importantes para o ramo da citoligia, como: Todos os seres vivos são constituídos por células, As atividades essenciais que caracterizam a vida ocorrem no interior das células, Novas células se formam pela divisão de células preexistentes através da divisão celular, A célula é a menor unidade da vida.','TIPOS DE CÉLULAS','PROCARIONTES', 'Esta tem como sua principal característica a ausencia da carioteca, assim sendo, o núcleo dessa célula não é individualizado. É importante destacar que as células procariontes são as células mais primitivas e que possuem estruturas celulares mais simples. Na reprodução as células procariontes não se reproduzem por mitose. Exemplo de célula procarionte: bactérias.', 'EUCARIONTES', 'Tais células são mais complaxas do que as procariontes. Ao contrário das procariontes, possuem carioteca individualizando o núcleo e também possuem vários tipos de organelas. Exemplos de células eucariontes: células animais, células vegetais','PARTES DA CÉLULA', 'As células eucariontes possuem partes morfológicas distintas. Suas principais partes são: membrana plasmática, citoplasma e núcleo celular.', 'MEMBRANA PLASMÁTICA', 'Também conhecida como membrana celular. Trata-se de uma estrutura fina e porosa. Sua função é proteger as estruturas celulares no momento em que serve de envoltório para todas as células. Ela atua como um filtro onde meio que decide o que poderá entrar, possibilitando a entrada de substâncias pequenas e impedindo ou dificultando a passagem de substâncias de grande porte, esse processo é nomeado de Permeabilidade Seletiva.', 'CITOPLASMA', 'No citoplasma será encotradas organelas celulares, onde é preenchido por uma matriz viscosa e semitransparente, o hialoplasma ou citosol. As organelas são pequenos órgãos da célula. Cada organela desempenha uma função distinta.', 'Organelas celulares: Mitocôndrias(realiza a respiração celular, que produz a maior parte da energia utilizada nas funções celulares), Retículo Endoplasmático(há 2 tipos de retículo endoplasmático, o liso e o rugoso), Complexo de Golgi (principais funções do complexo de golgi são são modificar, armazenar e exportar proteínas sintetizadas no retículo endoplasmático rugoso. Ele também origina os lisossomos e os acrossomos dos espermatozoides), Lisossomos (responsáveis pela digestão intracelular. Essas organelas atuam como sacos de enzimas digestivas, digerindo nutrientes e destruindo substâncias não desejadas), Ribossomos (auxiliar a síntese de proteínas nas células), Peroxissomos (a função dos peroxissomos é a oxidação de ácidos graxos para a síntese de colesterol e respiração celular).', 'NÚCLEO CELULAR','Nele é onde se encontra o DNA, o material genético do organismo. No núcleo ocorre a divisão celular, esse processo é extremamente importante para o crescimento e reprodução das células.', ' ', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVsq0ESSVKM86Va0uG3y7PUDYSevpuNb1KmQ&usqp=CAU', ' ');";
+      await db.execute(sql);
+    }
+  }*/
 }
