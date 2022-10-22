@@ -1,6 +1,6 @@
 import 'package:learnit2/domain/about.dart';
 import 'package:learnit2/domain/network.dart';
-import 'package:learnit2/domain/user.dart';
+import 'package:learnit2/domain/usuario.dart';
 import 'package:learnit2/domain/pacote_estudo.dart';
 import 'package:learnit2/domain/questoes_conteudo.dart';
 import 'package:learnit2/domain/questoes.dart';
@@ -8,64 +8,67 @@ import 'package:learnit2/domain/cronograma.dart';
 import 'package:learnit2/pages/questions/quest.dart';
 import 'package:learnit2/pages/contents/conteudo_page.dart';
 
+import '../../domain/conteudo.dart';
+import '../../pages/contents/conteudo2_page.dart';
+
 class BD {
-  // static final List<Usuario> lista = [
-  //   Usuario(
-  //     nome: 'Mayara',
-  //     sobrenome: 'Silva',
-  //     nascimento: '25/04/2004',
-  //     celular: '82999000364',
-  //     email: 'mayara@email.com',
-  //     cpf: '123.456.789-00',
-  //     username: 'mayarinhan',
-  //     senha: '123456789',
-  //   ),
-  //   Usuario(
-  //     nome: 'Ronaldo',
-  //     sobrenome: 'Noberto',
-  //     nascimento: '29/11/2004',
-  //     celular: '82999000364',
-  //     email: 'ronaldo@email.com',
-  //     cpf: '123.456.789-00',
-  //     username: 'RonaldoN',
-  //     senha: '123456789',
-  //   ),
-  //   Usuario(
-  //     nome: 'Waldemar',
-  //     sobrenome: 'Philype',
-  //     nascimento: '25/09/2004',
-  //     celular: '82999000364',
-  //     email: 'waldemar@email.com',
-  //     cpf: '123.456.789-00',
-  //     username: 'WaldemarP',
-  //     senha: '123456789',
-  //   ),
-  //   Usuario(
-  //     nome: 'João',
-  //     sobrenome: 'Pedro',
-  //     nascimento: '29/11/2005',
-  //     celular: '82999000364',
-  //     email: 'joao@email.com',
-  //     cpf: '123.456.789-00',
-  //     username: 'JoãoP',
-  //     senha: '123456789',
-  //   ),
-  //   Usuario(
-  //     nome: 'Jhennifer',
-  //     sobrenome: 'Maia',
-  //     nascimento: '29/11/2004',
-  //     celular: '82999000364',
-  //     email: 'Jhennifer@email.com',
-  //     cpf: '123.456.789-00',
-  //     username: 'JhenniferM',
-  //     senha: '123456789',
-  //   ),
-  // ];
-  //
-  // static Future<List<Usuario>> getUsuario() async {
-  //   await Future.delayed(const Duration(seconds: 1));
-  //   return lista;
-  // }
+  static final List<Usuario> lista = [
+    Usuario(
+      nome: 'Mayara',
+      sobrenome: 'Silva',
+      nascimento: '25/04/2004',
+      celular: '82999000364',
+      email: 'mayara@email.com',
+      cpf: '123.456.789-00',
+      username: 'mayarinhan',
+      senha: '123456789',
+    ),
+    Usuario(
+      nome: 'Ronaldo',
+      sobrenome: 'Noberto',
+      nascimento: '29/11/2004',
+      celular: '82999000364',
+      email: 'ronaldo@email.com',
+      cpf: '123.456.789-00',
+      username: 'RonaldoN',
+      senha: '123456789',
+    ),
+    Usuario(
+      nome: 'Waldemar',
+      sobrenome: 'Philype',
+      nascimento: '25/09/2004',
+      celular: '82999000364',
+      email: 'waldemar@email.com',
+      cpf: '123.456.789-00',
+      username: 'WaldemarP',
+      senha: '123456789',
+    ),
+    Usuario(
+      nome: 'João',
+      sobrenome: 'Pedro',
+      nascimento: '29/11/2005',
+      celular: '82999000364',
+      email: 'joao@email.com',
+      cpf: '123.456.789-00',
+      username: 'JoãoP',
+      senha: '123456789',
+    ),
+    Usuario(
+      nome: 'Jhennifer',
+      sobrenome: 'Maia',
+      nascimento: '29/11/2004',
+      celular: '82999000364',
+      email: 'Jhennifer@email.com',
+      cpf: '123.456.789-00',
+      username: 'JhenniferM',
+      senha: '123456789',
+    ),
+  ];
+
+  static Future<List<Usuario>> getUsuario() async {
+    await Future.delayed(const Duration(seconds: 1));
+    return lista;
+  }
 
   static final List<PacoteEstudo> lista1 = [
     PacoteEstudo(
@@ -148,7 +151,7 @@ class BD {
     QuestoesConteudo(
         titulo: 'Citologia', color: 0xFF02A676, page: TelaAssuntos()),
     QuestoesConteudo(
-        titulo: 'Embriologia', color: 0xFF008C72, page: TelaAssuntos()),
+        titulo: 'Embriologia', color: 0xFF008C72, page: Conteudob()),
     QuestoesConteudo(
         titulo: 'Introdução à Biologia',
         color: 0xFF007369,
@@ -176,40 +179,6 @@ class BD {
   static Future<List<QuestoesConteudo>> getListaConstents() async {
     await Future.delayed(const Duration(seconds: 1));
     return listcontents;
-  }
-
-  static List<QuestoesConteudo> listflashcard = [
-    QuestoesConteudo(
-        titulo: 'Citologia', color: 0xFF02A676, page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Embriologia', color: 0xFF008C72, page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Introdução à Biologia',
-        color: 0xFF007369,
-        page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Genética', color: 0xFF005A5B, page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Biofísica', color: 0xFF003840, page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Botânica I (Morfologia e Anatomia Vegetal)',
-        color: 0xFF003840,
-        page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Botânica II', color: 0xFF005A5B, page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Anatomia Humana', color: 0xFF007369, page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Biologia Celular', color: 0xFF008C72, page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Ecologia Geral', color: 0xFF02A676, page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Histologia', color: 0xFF02A676, page: TelaAssuntos())
-  ];
-
-  static Future<List<QuestoesConteudo>> getListaFlashCard() async {
-    await Future.delayed(const Duration(seconds: 1));
-    return listflashcard;
   }
 
   static List<Questoes> lista3 = [
@@ -480,5 +449,44 @@ class BD {
   static Future<List<Cronograma>> getListaCrono() async {
     await Future.delayed(const Duration(seconds: 1));
     return listacrono;
+  }
+
+  static List<Conteudo> conteudos = [
+    Conteudo(
+      paragrafo1:
+          'A citologia é onde as células são estudadas. A citologia passou a desenvolver-se como ciência em 1663, quando Robert Hooke cortou um pedaço de cortiça e observou ao microscópio.',
+      paragrafo2:
+          'Graças ao desenvolvimento da microscopia surgiu a teoria celular, onde há postulados importantes para o ramo da citoligia, como: Todos os seres vivos são constituídos por células, As atividades essenciais que caracterizam a vida ocorrem no interior das células, Novas células se formam pela divisão de células preexistentes através da divisão celular, A célula é a menor unidade da vida.',
+      titulo2: 'TIPOS DE CÉLULAS',
+      subtitulo: 'PROCARIONTES',
+      paragrafo3:
+          'Esta tem como sua principal característica a ausencia da carioteca, assim sendo, o núcleo dessa célula não é individualizado. É importante destacar que as células procariontes são as células mais primitivas e que possuem estruturas celulares mais simples. Na reprodução as células procariontes não se reproduzem por mitose. Exemplo de célula procarionte: bactérias.',
+      subtitulo2: 'EUCARIONTES',
+      paragrafo4:
+          'Tais células são mais complaxas do que as procariontes. Ao contrário das procariontes, possuem carioteca individualizando o núcleo e também possuem vários tipos de organelas. Exemplos de células eucariontes: células animais, células vegetais',
+      titulo3: 'PARTES DA CÉLULA',
+      paragrafo5:
+          'As células eucariontes possuem partes morfológicas distintas. Suas principais partes são: membrana plasmática, citoplasma e núcleo celular.',
+      subtitulo3: 'MEMBRANA PLASMÁTICA',
+      paragrafo6:
+          'Também conhecida como membrana celular. Trata-se de uma estrutura fina e porosa. Sua função é proteger as estruturas celulares no momento em que serve de envoltório para todas as células. Ela atua como um filtro onde meio que decide o que poderá entrar, possibilitando a entrada de substâncias pequenas e impedindo ou dificultando a passagem de substâncias de grande porte, esse processo é nomeado de Permeabilidade Seletiva.',
+      subtitulo4: 'CITOPLASMA',
+      paragrafo7:
+          'No citoplasma será encotradas organelas celulares, onde é preenchido por uma matriz viscosa e semitransparente, o hialoplasma ou citosol. As organelas são pequenos órgãos da célula. Cada organela desempenha uma função distinta.',
+      paragrafo8:
+          'Organelas celulares: Mitocôndrias(realiza a respiração celular, que produz a maior parte da energia utilizada nas funções celulares), Retículo Endoplasmático(há 2 tipos de retículo endoplasmático, o liso e o rugoso), Complexo de Golgi (principais funções do complexo de golgi são são modificar, armazenar e exportar proteínas sintetizadas no retículo endoplasmático rugoso. Ele também origina os lisossomos e os acrossomos dos espermatozoides), Lisossomos (responsáveis pela digestão intracelular. Essas organelas atuam como sacos de enzimas digestivas, digerindo nutrientes e destruindo substâncias não desejadas), Ribossomos (auxiliar a síntese de proteínas nas células), Peroxissomos (a função dos peroxissomos é a oxidação de ácidos graxos para a síntese de colesterol e respiração celular). ',
+      subtitulo5: 'NÚCLEO CELULAR',
+      paragrafo9:
+          'Nele é onde se encontra o DNA, o material genético do organismo. No núcleo ocorre a divisão celular, esse processo é extremamente importante para o crescimento e reprodução das células.',
+      espaco1: ' ',
+      imagem:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVsq0ESSVKM86Va0uG3y7PUDYSevpuNb1KmQ&usqp=CAU',
+      espaco2: ' ',
+    )
+  
+  ];
+   static Future<List<Conteudo>> getListaConteudo() async {
+    await Future.delayed(const Duration(seconds: 2));
+    return conteudos;
   }
 }
