@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learnit2/data/dao/pacote_dao.dart';
 import 'package:learnit2/domain/pacote_estudo.dart';
 import 'package:learnit2/widget/pacote_estudo_card.dart';
 import 'package:learnit2/data/oldData/bd.dart';
@@ -11,7 +12,8 @@ class PacotePage extends StatefulWidget {
 }
 
 class _PacotePageState extends State<PacotePage> {
-  Future<List<PacoteEstudo>> lista = BD.getPacoteEstudo();
+  Future<List<PacoteEstudo>> lista = PacotesDao().listarPacotes();
+
 
   @override
   Widget build(BuildContext context) {

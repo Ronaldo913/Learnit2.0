@@ -6,7 +6,7 @@ class DBHelper {
   initDB() async {
     String databasePath = await getDatabasesPath();
 
-    String path = join(databasePath, "pacote28.db");
+    String path = join(databasePath, "pacote35.db");
 
     Database database = await openDatabase(
       path,
@@ -280,6 +280,24 @@ class DBHelper {
     sql8 =
         "INSERT INTO QUESTS(id, title, color, page) VALUES (11,'Histologia', '0xFF02A676', 'QuestPage()');";
     await db.execute(sql8);
+
+    ///////////////////////////////////////
+
+    String sql9 =
+        'create table PACOTES (id INTEGER PRIMARY KEY, imagem varchar(800), redacao integer, titulo varchar(100), desconto integer, numParcelas integer, precoAntigo real, precoAtual real, aula integer, exercicio integer, horas integer, duvida integer);';
+    await db.execute(sql9);
+
+    sql9 =
+        "INSERT INTO PACOTES (id, imagem, redacao, titulo, desconto, numParcelas, precoAntigo, precoAtual, aula, exercicio, horas, duvida) VALUES (1, 'https://ronaldo913.github.io/ImagensPMovel/images/foco.png', 1, 'Pacote Foco', 10, 6, 19.90, 9.90, 100, 300, 10, 0);";
+    await db.execute(sql9);
+
+    sql9 =
+        "INSERT INTO PACOTES (id, imagem, redacao, titulo, desconto, numParcelas, precoAntigo, precoAtual, aula, exercicio, horas, duvida) VALUES (2, 'https://ronaldo913.github.io/ImagensPMovel/images/avan%C3%A7ado.png', 3, 'Pacote Médio', 10, 8, 35.00, 20.00, 150, 500, 15, 1);";
+    await db.execute(sql9);
+
+    sql9 =
+        "INSERT INTO PACOTES (id, imagem, redacao, titulo, desconto, numParcelas, precoAntigo, precoAtual, aula, exercicio, horas, duvida) VALUES (3, 'https://ronaldo913.github.io/ImagensPMovel/images/learnmed.png', 5, 'Pacote LearnMed', 10, 10, 50.00, 30.00, 200, 500, 20, 3);";
+    await db.execute(sql9);
   }
 
   // Future<void> onUpgrade(Database database, int oldVersion, int newVersion) async {
