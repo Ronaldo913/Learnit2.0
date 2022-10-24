@@ -5,7 +5,9 @@ import 'package:sqflite/sqflite.dart';
 class DBHelper {
   initDB() async {
     String databasePath = await getDatabasesPath();
+
     String path = join(databasePath, "pacote28.db");
+
     Database database = await openDatabase(
       path,
       version: 1,
@@ -78,6 +80,29 @@ class DBHelper {
     await db.execute(sql);
 
     ///////////////////////////////////////////////
+
+    String sql1 =
+        'create table QUESTCITOLOGIA (id INTEGER PRIMARY KEY, title varchar(2000), a varchar(500), b varchar(500), c varchar(500), d varchar(500), answer varchar(250), color int);';
+    await db.execute(sql1);
+
+    sql1 =
+        "INSERT INTO QUESTCITOLOGIA (id, title, a, b, c, d, answer, color) VALUES (1, '1) Costuma-se dizer que as células são formadas por membrana, citoplasma e núcleo. Entretanto, não são todas as células que apresentam um núcleo definido e delimitado por membrana nuclear. Baseando-se nisso, o mais correto seria afirmar que todas as células possuem membrana, citoplasma e material genético. As células que apresentam núcleo definido são chamadas de:', 'a) Autotróficas', 'b) Heterotróficas', 'c) Eucarióticas', 'd) Procarióticas', 'c) Eucarióticas', 0xFF02A676);";
+    await db.execute(sql1);
+
+    sql1 =
+        "INSERT INTO QUESTCITOLOGIA (id, title, a, b, c, d, answer, color) VALUES (2, '2) A Biologia Celular, ou citologia, é a parte da Biologia responsável por estudar o funcionamento das células e suas estruturas. Qual das alternativas abaixo indica corretamente o nome do pesquisador que denominou essas estruturas funcionais dos seres vivos de células?', 'a) Theodor Schwann', 'b) Robert Hooke', 'c) Rudolf Virchow', 'd) Walther Flemming', 'b) Robert Hooke', 0xFF008C72);";
+    await db.execute(sql1);
+
+    sql1 =
+        "INSERT INTO QUESTCITOLOGIA (id, title, a, b, c, d, answer, color) VALUES (3, '3) A Teoria Celular pode ser resumida, atualmente, em três pontos principais. Analise e marque a alternativa que não apresenta uma afirmação relacionada com essa teoria.', 'a) Todos os seres vivos são formadas por uma ou mais células', 'b) Todas as células são formadas por membrana, citoplasma e núcleo', 'c) As células são as unidades funcionais dos organismos vivos', 'd) Uma célula só pode originar-se de outra existente', 'Letra B. Não se pode afirmar que todas as células possuem núcleo, pois as procariontes não possuem material genético delimitado por membrana nuclear.', 0xFF007369);";
+    await db.execute(sql1);
+
+    sql1 =
+        "INSERT INTO QUESTCITOLOGIA (id, title, a, b, c, d, answer, color) VALUES (4, '4) Analise atentamente as alternativas seguintes e marque aquela que indica a função das mitocôndrias.', 'a) Realizam a respiração celular', 'b) Auxiliam na síntese de proteínas nas células', 'c) Responsáveis pela digestão intracelular', 'd) Realizam a fotossíntese', 'a) Realizam a respiração celular', 0xFF005A5B);";
+    await db.execute(sql1);
+
+    ///////////////////////////////////////////////
+
     String sql3 =
         'create table ABOUT (id INTEGER PRIMARY KEY, title varchar(100), image varchar(500), text varchar(500));';
     await db.execute(sql3);
@@ -93,11 +118,11 @@ class DBHelper {
     await db.execute(sql4);
 
     sql4 =
-    "INSERT INTO USER (cpf, nome, email, username, password, sobrenome, celular, nascimento) VALUES (12345678901, 'Tarsis', 'tarsis@email.com', 'tarsis123@email.com', 'tarsis123', 'Marinho', '82912345678', '01/01/1970');";
+        "INSERT INTO USER (cpf, nome, email, username, password, sobrenome, celular, nascimento) VALUES (12345678901, 'Tarsis', 'tarsis@email.com', 'tarsis123@email.com', 'tarsis123', 'Marinho', '82912345678', '01/01/1970');";
     await db.execute(sql4);
 
     ///////////////////////////////////////////////
-  
+
     String sql5 =
         'create table CONTEUDO (paragrafo1 varchar(2000),paragrafo2 varchar(2000), titulo2 varchar(100), subtitulo varchar(100), paragrafo3 varchar(2000),subtitulo2 varchar(100), paragrafo4 varchar(2000), titulo3 varchar (100), paragrafo5 varchar (2000), subtitulo3 varchar (100), paragrafo6 varchar (2000), subtitulo4 varchar(100), paragrafo7  varchar (2000), paragrafo8 varchar (2000), subtitulo5 varchar (200), paragrafo9 varchar (2000), espaco1 varchar (2), imagem varchar (2000), espaco2 varchar (2));';
     await db.execute(sql5);
@@ -113,47 +138,47 @@ class DBHelper {
     await db.execute(sql6);
 
     sql6 =
-    "INSERT INTO FLASHCARD(id, title, color, page) VALUES (1, 'Citologia', '0xFF02A676', 'TelaAssuntos()');";
+        "INSERT INTO FLASHCARD(id, title, color, page) VALUES (1, 'Citologia', '0xFF02A676', 'TelaAssuntos()');";
     await db.execute(sql6);
 
     sql6 =
-    "INSERT INTO FLASHCARD(id, title, color, page) VALUES (2,'Embriologia','0xFF008C72', 'TelaAssuntos()');";
+        "INSERT INTO FLASHCARD(id, title, color, page) VALUES (2,'Embriologia','0xFF008C72', 'TelaAssuntos()');";
     await db.execute(sql6);
 
     sql6 =
-    "INSERT INTO FLASHCARD (id, title, color, page) VALUES (3,'Introdução à Biologia', '0xFF007369', 'TelaAssuntos()');";
+        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (3,'Introdução à Biologia', '0xFF007369', 'TelaAssuntos()');";
     await db.execute(sql6);
 
     sql6 =
-    "INSERT INTO FLASHCARD (id, title, color, page) VALUES (4,'Genética', '0xFF005A5B', 'TelaAssuntos()');";
+        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (4,'Genética', '0xFF005A5B', 'TelaAssuntos()');";
     await db.execute(sql6);
 
     sql6 =
-    "INSERT INTO FLASHCARD (id, title, color, page) VALUES (5,'Biofísica', '0xFF003840', 'TelaAssuntos()');";
+        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (5,'Biofísica', '0xFF003840', 'TelaAssuntos()');";
     await db.execute(sql6);
 
     sql6 =
-    "INSERT INTO FLASHCARD (id, title, color, page) VALUES (6,'Botânica I (Morfologia e Anatomia Vegetal)', '0xFF003840', 'TelaAssuntos()');";
+        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (6,'Botânica I (Morfologia e Anatomia Vegetal)', '0xFF003840', 'TelaAssuntos()');";
     await db.execute(sql6);
 
     sql6 =
-    "INSERT INTO FLASHCARD (id, title, color, page) VALUES (7,'Botânica II', '0xFF005A5B', 'TelaAssuntos()');";
+        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (7,'Botânica II', '0xFF005A5B', 'TelaAssuntos()');";
     await db.execute(sql6);
 
     sql6 =
-    "INSERT INTO FLASHCARD (id, title, color, page) VALUES (8,'Anatomia Humana', '0xFF007369', 'TelaAssuntos()');";
+        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (8,'Anatomia Humana', '0xFF007369', 'TelaAssuntos()');";
     await db.execute(sql6);
 
     sql6 =
-    "INSERT INTO FLASHCARD (id, title, color, page) VALUES (9,'Biologia Celular', '0xFF008C72', 'TelaAssuntos()');";
+        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (9,'Biologia Celular', '0xFF008C72', 'TelaAssuntos()');";
     await db.execute(sql6);
 
     sql6 =
-    "INSERT INTO FLASHCARD (id, title, color, page) VALUES (10,'Ecologia Geral', '0xFF02A676', 'TelaAssuntos()');";
+        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (10,'Ecologia Geral', '0xFF02A676', 'TelaAssuntos()');";
     await db.execute(sql6);
 
     sql6 =
-    "INSERT INTO FLASHCARD (id, title, color, page) VALUES (11,'Histologia', '0xFF02A676', 'TelaAssuntos()');";
+        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (11,'Histologia', '0xFF02A676', 'TelaAssuntos()');";
     await db.execute(sql6);
 
     ////////////////////////////
@@ -163,47 +188,47 @@ class DBHelper {
     await db.execute(sql7);
 
     sql7 =
-    "INSERT INTO CONTENT(id, title, color, page) VALUES (1, 'Citologia', '0xFF02A676', 'TelaAssuntos()');";
+        "INSERT INTO CONTENT(id, title, color, page) VALUES (1, 'Citologia', '0xFF02A676', 'TelaAssuntos()');";
     await db.execute(sql7);
 
     sql7 =
-    "INSERT INTO CONTENT(id, title, color, page) VALUES (2,'Embriologia','0xFF008C72', 'TelaAssuntos()');";
+        "INSERT INTO CONTENT(id, title, color, page) VALUES (2,'Embriologia','0xFF008C72', 'TelaAssuntos()');";
     await db.execute(sql7);
 
     sql7 =
-    "INSERT INTO CONTENT (id, title, color, page) VALUES (3,'Introdução à Biologia', '0xFF007369', 'TelaAssuntos()');";
+        "INSERT INTO CONTENT (id, title, color, page) VALUES (3,'Introdução à Biologia', '0xFF007369', 'TelaAssuntos()');";
     await db.execute(sql7);
 
     sql7 =
-    "INSERT INTO CONTENT (id, title, color, page) VALUES (4,'Genética', '0xFF005A5B', 'TelaAssuntos()');";
+        "INSERT INTO CONTENT (id, title, color, page) VALUES (4,'Genética', '0xFF005A5B', 'TelaAssuntos()');";
     await db.execute(sql7);
 
     sql7 =
-    "INSERT INTO CONTENT (id, title, color, page) VALUES (5,'Biofísica', '0xFF003840', 'TelaAssuntos()');";
+        "INSERT INTO CONTENT (id, title, color, page) VALUES (5,'Biofísica', '0xFF003840', 'TelaAssuntos()');";
     await db.execute(sql7);
 
     sql7 =
-    "INSERT INTO CONTENT(id, title, color, page) VALUES (6,'Botânica I (Morfologia e Anatomia Vegetal)', '0xFF003840', 'TelaAssuntos()');";
+        "INSERT INTO CONTENT(id, title, color, page) VALUES (6,'Botânica I (Morfologia e Anatomia Vegetal)', '0xFF003840', 'TelaAssuntos()');";
     await db.execute(sql7);
 
     sql7 =
-    "INSERT INTO CONTENT(id, title, color, page) VALUES (7,'Botânica II', '0xFF005A5B', 'TelaAssuntos()');";
+        "INSERT INTO CONTENT(id, title, color, page) VALUES (7,'Botânica II', '0xFF005A5B', 'TelaAssuntos()');";
     await db.execute(sql7);
 
     sql7 =
-    "INSERT INTO CONTENT(id, title, color, page) VALUES (8,'Anatomia Humana', '0xFF007369', 'TelaAssuntos()');";
+        "INSERT INTO CONTENT(id, title, color, page) VALUES (8,'Anatomia Humana', '0xFF007369', 'TelaAssuntos()');";
     await db.execute(sql7);
 
     sql7 =
-    "INSERT INTO CONTENT(id, title, color, page) VALUES (9,'Biologia Celular', '0xFF008C72', 'TelaAssuntos()');";
+        "INSERT INTO CONTENT(id, title, color, page) VALUES (9,'Biologia Celular', '0xFF008C72', 'TelaAssuntos()');";
     await db.execute(sql7);
 
     sql7 =
-    "INSERT INTO CONTENT(id, title, color, page) VALUES (10,'Ecologia Geral', '0xFF02A676', 'TelaAssuntos()');";
+        "INSERT INTO CONTENT(id, title, color, page) VALUES (10,'Ecologia Geral', '0xFF02A676', 'TelaAssuntos()');";
     await db.execute(sql7);
 
     sql7 =
-    "INSERT INTO CONTENT(id, title, color, page) VALUES (11,'Histologia', '0xFF02A676', 'TelaAssuntos()');";
+        "INSERT INTO CONTENT(id, title, color, page) VALUES (11,'Histologia', '0xFF02A676', 'TelaAssuntos()');";
     await db.execute(sql7);
 
     ////////////////////////////
@@ -213,47 +238,47 @@ class DBHelper {
     await db.execute(sql8);
 
     sql8 =
-    "INSERT INTO QUESTS(id, title, color, page) VALUES (1, 'Citologia', '0xFF02A676', 'QuestPage()');";
+        "INSERT INTO QUESTS(id, title, color, page) VALUES (1, 'Citologia', '0xFF02A676', 'QuestPage()');";
     await db.execute(sql8);
 
     sql8 =
-    "INSERT INTO QUESTS(id, title, color, page) VALUES (2,'Embriologia','0xFF008C72', 'QuestPage()');";
+        "INSERT INTO QUESTS(id, title, color, page) VALUES (2,'Embriologia','0xFF008C72', 'QuestPage()');";
     await db.execute(sql8);
 
     sql8 =
-    "INSERT INTO QUESTS(id, title, color, page) VALUES (3,'Introdução à Biologia', '0xFF007369', 'QuestPage()');";
+        "INSERT INTO QUESTS(id, title, color, page) VALUES (3,'Introdução à Biologia', '0xFF007369', 'QuestPage()');";
     await db.execute(sql8);
 
     sql8 =
-    "INSERT INTO QUESTS(id, title, color, page) VALUES (4,'Genética', '0xFF005A5B', 'QuestPage()');";
+        "INSERT INTO QUESTS(id, title, color, page) VALUES (4,'Genética', '0xFF005A5B', 'QuestPage()');";
     await db.execute(sql8);
 
     sql8 =
-    "INSERT INTO QUESTS(id, title, color, page) VALUES (5,'Biofísica', '0xFF003840', 'QuestPage()');";
+        "INSERT INTO QUESTS(id, title, color, page) VALUES (5,'Biofísica', '0xFF003840', 'QuestPage()');";
     await db.execute(sql8);
 
     sql8 =
-    "INSERT INTO QUESTS(id, title, color, page) VALUES (6,'Botânica I (Morfologia e Anatomia Vegetal)', '0xFF003840', 'QuestPage()');";
+        "INSERT INTO QUESTS(id, title, color, page) VALUES (6,'Botânica I (Morfologia e Anatomia Vegetal)', '0xFF003840', 'QuestPage()');";
     await db.execute(sql8);
 
     sql8 =
-    "INSERT INTO QUESTS(id, title, color, page) VALUES (7,'Botânica II', '0xFF005A5B', 'QuestPage()');";
+        "INSERT INTO QUESTS(id, title, color, page) VALUES (7,'Botânica II', '0xFF005A5B', 'QuestPage()');";
     await db.execute(sql8);
 
     sql8 =
-    "INSERT INTO QUESTS(id, title, color, page) VALUES (8,'Anatomia Humana', '0xFF007369', 'QuestPage()');";
+        "INSERT INTO QUESTS(id, title, color, page) VALUES (8,'Anatomia Humana', '0xFF007369', 'QuestPage()');";
     await db.execute(sql8);
 
     sql8 =
-    "INSERT INTO QUESTS(id, title, color, page) VALUES (9,'Biologia Celular', '0xFF008C72', 'QuestPage()');";
+        "INSERT INTO QUESTS(id, title, color, page) VALUES (9,'Biologia Celular', '0xFF008C72', 'QuestPage()');";
     await db.execute(sql8);
 
     sql8 =
-    "INSERT INTO QUESTS(id, title, color, page) VALUES (10,'Ecologia Geral', '0xFF02A676', 'QuestPage()');";
+        "INSERT INTO QUESTS(id, title, color, page) VALUES (10,'Ecologia Geral', '0xFF02A676', 'QuestPage()');";
     await db.execute(sql8);
 
     sql8 =
-    "INSERT INTO QUESTS(id, title, color, page) VALUES (11,'Histologia', '0xFF02A676', 'QuestPage()');";
+        "INSERT INTO QUESTS(id, title, color, page) VALUES (11,'Histologia', '0xFF02A676', 'QuestPage()');";
     await db.execute(sql8);
   }
 

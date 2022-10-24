@@ -40,7 +40,7 @@ class _CardQuestoesState extends State<CardQuestoes> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          widget.questoes.enunciado,
+                          widget.questoes.title,
                           textAlign: TextAlign.justify,
                           style: const TextStyle(
                             fontSize: 20,
@@ -95,7 +95,7 @@ class _CardQuestoesState extends State<CardQuestoes> {
                       onTap: () {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
-                            content: Text(widget.questoes.resp),
+                            content: Text(widget.questoes.answer),
                           ),
                         );
                       },

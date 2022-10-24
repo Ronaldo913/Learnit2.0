@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnit2/data/oldData/bd.dart';
+import '../../data/dao/questcitologia_dao.dart';
 import 'package:learnit2/domain/questoes.dart';
 import 'package:learnit2/pages/home/home_page.dart';
 import 'package:learnit2/widget/questoes_card.dart';
@@ -12,7 +12,7 @@ class QuestPage extends StatefulWidget {
 }
 
 class _QuestPageState extends State<QuestPage> {
-  Future<List<Questoes>> lista3 = BD.getQuestoes();
+  Future<List<Questoes>> lista = QuestCitologiaDao().listarQuestoes();
 
   @override
   Widget build(BuildContext context) {
@@ -60,17 +60,17 @@ class _QuestPageState extends State<QuestPage> {
 
   buildListView() {
     return FutureBuilder<List<Questoes>>(
-      future: lista3,
+      future: lista,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          List<Questoes> lista3 = snapshot.data ?? [];
+          List<Questoes> lista = snapshot.data ?? [];
 
           return ListView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            itemCount: lista3.length,
+            itemCount: lista.length,
             itemBuilder: (BuildContext context, int index) {
-              return CardQuestoes(questoes: lista3[index]);
+              return CardQuestoes(questoes: lista[index]);
             },
           );
         }
