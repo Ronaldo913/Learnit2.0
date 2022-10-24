@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learnit2/pages/contents/conteudo_page.dart';
 import 'package:learnit2/pages/questions/quest.dart';
+import '../pages/flashcard_contents/citologia_flashcard.dart';
 
 class QuestoesConteudo {
   late final String titulo;
@@ -36,6 +37,9 @@ class QuestoesConteudo {
 
       case 'QuestPage()':
         return QuestPage();
+
+      case 'FlashCitologia()':
+        return FlashCitologia();
 
       default:
         return TelaAssuntos();

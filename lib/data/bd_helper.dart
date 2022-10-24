@@ -6,7 +6,7 @@ class DBHelper {
   initDB() async {
     String databasePath = await getDatabasesPath();
 
-    String path = join(databasePath, "pacote35.db");
+    String path = join(databasePath, "bank2.db");
 
     Database database = await openDatabase(
       path,
@@ -138,47 +138,47 @@ class DBHelper {
     await db.execute(sql6);
 
     sql6 =
-        "INSERT INTO FLASHCARD(id, title, color, page) VALUES (1, 'Citologia', '0xFF02A676', 'TelaAssuntos()');";
+        "INSERT INTO FLASHCARD(id, title, color, page) VALUES (1, 'Citologia', '0xFF02A676', 'FlashCitologia()');";
     await db.execute(sql6);
 
     sql6 =
-        "INSERT INTO FLASHCARD(id, title, color, page) VALUES (2,'Embriologia','0xFF008C72', 'TelaAssuntos()');";
+        "INSERT INTO FLASHCARD(id, title, color, page) VALUES (2,'Embriologia','0xFF008C72', 'FlashCitologia()');";
     await db.execute(sql6);
 
     sql6 =
-        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (3,'Introdução à Biologia', '0xFF007369', 'TelaAssuntos()');";
+        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (3,'Introdução à Biologia', '0xFF007369', 'FlashCitologia()');";
     await db.execute(sql6);
 
     sql6 =
-        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (4,'Genética', '0xFF005A5B', 'TelaAssuntos()');";
+        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (4,'Genética', '0xFF005A5B', 'FlashCitologia()');";
     await db.execute(sql6);
 
     sql6 =
-        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (5,'Biofísica', '0xFF003840', 'TelaAssuntos()');";
+        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (5,'Biofísica', '0xFF003840', 'FlashCitologia()');";
     await db.execute(sql6);
 
     sql6 =
-        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (6,'Botânica I (Morfologia e Anatomia Vegetal)', '0xFF003840', 'TelaAssuntos()');";
+        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (6,'Botânica I (Morfologia e Anatomia Vegetal)', '0xFF003840', 'FlashCitologia()');";
     await db.execute(sql6);
 
     sql6 =
-        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (7,'Botânica II', '0xFF005A5B', 'TelaAssuntos()');";
+        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (7,'Botânica II', '0xFF005A5B', 'FlashCitologia()');";
     await db.execute(sql6);
 
     sql6 =
-        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (8,'Anatomia Humana', '0xFF007369', 'TelaAssuntos()');";
+        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (8,'Anatomia Humana', '0xFF007369', 'FlashCitologia()');";
     await db.execute(sql6);
 
     sql6 =
-        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (9,'Biologia Celular', '0xFF008C72', 'TelaAssuntos()');";
+        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (9,'Biologia Celular', '0xFF008C72', 'FlashCitologia()');";
     await db.execute(sql6);
 
     sql6 =
-        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (10,'Ecologia Geral', '0xFF02A676', 'TelaAssuntos()');";
+        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (10,'Ecologia Geral', '0xFF02A676', 'FlashCitologia()');";
     await db.execute(sql6);
 
     sql6 =
-        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (11,'Histologia', '0xFF02A676', 'TelaAssuntos()');";
+        "INSERT INTO FLASHCARD (id, title, color, page) VALUES (11,'Histologia', '0xFF02A676', 'FlashCitologia()');";
     await db.execute(sql6);
 
     ////////////////////////////
@@ -298,6 +298,24 @@ class DBHelper {
     sql9 =
         "INSERT INTO PACOTES (id, imagem, redacao, titulo, desconto, numParcelas, precoAntigo, precoAtual, aula, exercicio, horas, duvida) VALUES (3, 'https://ronaldo913.github.io/ImagensPMovel/images/learnmed.png', 5, 'Pacote LearnMed', 10, 10, 50.00, 30.00, 200, 500, 20, 3);";
     await db.execute(sql9);
+
+    //////////////////////////////////
+
+    String sql10 =
+        'create table FLASHCARDCITOLOGIA (id INTEGER PRIMARY KEY, resposta varchar(100), pergunta varchar(100));';
+    await db.execute(sql10);
+
+    sql10 =
+        "INSERT INTO FLASHCARDCITOLOGIA (id, resposta, pergunta) VALUES (1, 'hsdfjhdkjlfdhgkjfsghdgkjsfdhgjkhdfh', 'Pacote Foco');";
+    await db.execute(sql10);
+
+    sql10 =
+        "INSERT INTO FLASHCARDCITOLOGIA (id, resposta, pergunta) VALUES (2, 'dfhfdjhlkjfhfdkhgfhgfhkjdfhiuweytuieryt', 'Pacote Médio');";
+    await db.execute(sql10);
+
+    sql10 =
+        "INSERT INTO FLASHCARDCITOLOGIA (id, resposta, pergunta) VALUES (3, 'fhrtu65487568tyretgeryrtutryutryutyutyy', 'Pacote LearnMed');";
+    await db.execute(sql10);
   }
 
   // Future<void> onUpgrade(Database database, int oldVersion, int newVersion) async {

@@ -1,13 +1,13 @@
-import 'package:learnit2/domain/flashcards.dart';
+import 'package:learnit2/domain/flashcardss.dart';
 import 'package:flutter/material.dart';
 import 'package:flash_card/flash_card.dart';
 
 class FlashCards extends StatefulWidget {
-  final Flashcards flashcards;
+  final Flashcardss flashcardsss;
 
   const FlashCards({
     Key? key,
-    required this.flashcards,
+    required this.flashcardsss,
   }) : super(key: key);
 
   @override
@@ -18,29 +18,15 @@ class _FlashCardsState extends State<FlashCards> {
   @override
   Widget build(BuildContext context) {
     return FlashCard(
-      width: 400,
-      height: 900,
+      width: 500,
+      height: 200,
       frontWidget: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Text(
-            widget.flashcards.resposta,
-            textAlign: TextAlign.justify,
-            style: const TextStyle(
-              fontSize: 30,
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ]),
-      ),
-      backWidget: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              widget.flashcards.pergunta,
+              widget.flashcardsss.pergunta,
               textAlign: TextAlign.justify,
               style: const TextStyle(
                 fontSize: 30,
@@ -50,6 +36,20 @@ class _FlashCardsState extends State<FlashCards> {
             ),
           ],
         ),
+      ),
+      backWidget: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Text(
+            widget.flashcardsss.resposta,
+            textAlign: TextAlign.justify,
+            style: const TextStyle(
+              fontSize: 30,
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ]),
       ),
     );
   }

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:learnit2/widget/flashcard_card.dart';
-import '../../data/dao/about_dao.dart';
-import '../../domain/about.dart';
-import '../../widget/about_card.dart';
+import 'package:learnit2/domain/flashcardss.dart';
+import '../../data/dao/flashcardCitologia_dao.dart';
+import '../../domain/flashcardss.dart';
 import 'package:learnit2/pages/home/home_page.dart';
+import '../../widget/flashcards_card.dart';
 
 class FlashCitologia extends StatefulWidget {
   const FlashCitologia({Key? key}) : super(key: key);
@@ -13,13 +13,14 @@ class FlashCitologia extends StatefulWidget {
 }
 
 class _FlashCitologiaState extends State<FlashCitologia> {
-  Future<List<About>> lista = AboutDao().listarAbout();
+  Future<List<Flashcardss>> lista = FlashcardCitologiaDao().listarFlashcardCitologia();
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('FlashCitologia'),
+        title: Text('Flashcard Citologia'),
         backgroundColor: Color(0xFF0B4619),
         toolbarHeight: 64,
         actions: [
@@ -60,18 +61,18 @@ class _FlashCitologiaState extends State<FlashCitologia> {
   }
 
   buildListView() {
-    return FutureBuilder<List<About>>(
+    return FutureBuilder<List<Flashcardss>>(
       future: lista,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          List<About> lista = snapshot.data ?? [];
+          List<Flashcardss> lista = snapshot.data ?? [];
 
           return ListView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemCount: lista.length,
             itemBuilder: (BuildContext context, int index) {
-              return Flashcard(about: lista[index]);
+              return FlashCards(flashcardsss: lista[index]);
             },
           );
         }
