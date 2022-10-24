@@ -4,6 +4,9 @@ import 'package:learnit2/data/oldData/bd.dart';
 import 'package:learnit2/domain/questoes_conteudo.dart';
 import 'package:learnit2/widget/questoes_conteudo_card.dart';
 
+import '../../data/dao/content_dao.dart';
+import '../../data/dao/flashcard_dao.dart';
+
 class AssuntosPage extends StatefulWidget {
   const AssuntosPage({Key? key}) : super(key: key);
 
@@ -12,7 +15,7 @@ class AssuntosPage extends StatefulWidget {
 }
 
 class _AssuntosPageState extends State<AssuntosPage> {
-  Future<List<QuestoesConteudo>> lista = BD.getListaConstents();
+  Future<List<QuestoesConteudo>> lista = ContentDao().listarQuestoesConteudo();
 
   @override
   Widget build(BuildContext context) {

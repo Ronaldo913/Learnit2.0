@@ -5,7 +5,7 @@ import 'package:sqflite/sqflite.dart';
 class DBHelper {
   initDB() async {
     String databasePath = await getDatabasesPath();
-    String path = join(databasePath, "pacote19.db");
+    String path = join(databasePath, "pacote28.db");
     Database database = await openDatabase(
       path,
       version: 1,
@@ -105,6 +105,156 @@ class DBHelper {
     sql5 =
         "INSERT INTO CONTEUDO(paragrafo1, paragrafo2, titulo2, subtitulo, paragrafo3, subtitulo2, paragrafo4, titulo3, paragrafo5, subtitulo3, paragrafo6, subtitulo4, paragrafo7, paragrafo8, subtitulo5 ,  paragrafo9, espaco1, imagem, espaco2) VALUES ('A citologia é onde as células são estudadas. A citologia passou a desenvolver-se como ciência em 1663, quando Robert Hooke cortou um pedaço de cortiça e observou ao microscópio.', 'Graças ao desenvolvimento da microscopia surgiu a teoria celular, onde há postulados importantes para o ramo da citoligia, como: Todos os seres vivos são constituídos por células, As atividades essenciais que caracterizam a vida ocorrem no interior das células, Novas células se formam pela divisão de células preexistentes através da divisão celular, A célula é a menor unidade da vida.','TIPOS DE CÉLULAS','PROCARIONTES', 'Esta tem como sua principal característica a ausencia da carioteca, assim sendo, o núcleo dessa célula não é individualizado. É importante destacar que as células procariontes são as células mais primitivas e que possuem estruturas celulares mais simples. Na reprodução as células procariontes não se reproduzem por mitose. Exemplo de célula procarionte: bactérias.', 'EUCARIONTES', 'Tais células são mais complaxas do que as procariontes. Ao contrário das procariontes, possuem carioteca individualizando o núcleo e também possuem vários tipos de organelas. Exemplos de células eucariontes: células animais, células vegetais','PARTES DA CÉLULA', 'As células eucariontes possuem partes morfológicas distintas. Suas principais partes são: membrana plasmática, citoplasma e núcleo celular.', 'MEMBRANA PLASMÁTICA', 'Também conhecida como membrana celular. Trata-se de uma estrutura fina e porosa. Sua função é proteger as estruturas celulares no momento em que serve de envoltório para todas as células. Ela atua como um filtro onde meio que decide o que poderá entrar, possibilitando a entrada de substâncias pequenas e impedindo ou dificultando a passagem de substâncias de grande porte, esse processo é nomeado de Permeabilidade Seletiva.', 'CITOPLASMA', 'No citoplasma será encotradas organelas celulares, onde é preenchido por uma matriz viscosa e semitransparente, o hialoplasma ou citosol. As organelas são pequenos órgãos da célula. Cada organela desempenha uma função distinta.', 'Organelas celulares: Mitocôndrias(realiza a respiração celular, que produz a maior parte da energia utilizada nas funções celulares), Retículo Endoplasmático(há 2 tipos de retículo endoplasmático, o liso e o rugoso), Complexo de Golgi (principais funções do complexo de golgi são são modificar, armazenar e exportar proteínas sintetizadas no retículo endoplasmático rugoso. Ele também origina os lisossomos e os acrossomos dos espermatozoides), Lisossomos (responsáveis pela digestão intracelular. Essas organelas atuam como sacos de enzimas digestivas, digerindo nutrientes e destruindo substâncias não desejadas), Ribossomos (auxiliar a síntese de proteínas nas células), Peroxissomos (a função dos peroxissomos é a oxidação de ácidos graxos para a síntese de colesterol e respiração celular).', 'NÚCLEO CELULAR','Nele é onde se encontra o DNA, o material genético do organismo. No núcleo ocorre a divisão celular, esse processo é extremamente importante para o crescimento e reprodução das células.', ' ', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVsq0ESSVKM86Va0uG3y7PUDYSevpuNb1KmQ&usqp=CAU', ' ');";
     await db.execute(sql5);
+
+    ////////////////////////////
+
+    String sql6 =
+        'create table FLASHCARD (id INTEGER PRIMARY KEY, title varchar(30), color varchar(50), page varchar(50));';
+    await db.execute(sql6);
+
+    sql6 =
+    "INSERT INTO FLASHCARD(id, title, color, page) VALUES (1, 'Citologia', '0xFF02A676', 'TelaAssuntos()');";
+    await db.execute(sql6);
+
+    sql6 =
+    "INSERT INTO FLASHCARD(id, title, color, page) VALUES (2,'Embriologia','0xFF008C72', 'TelaAssuntos()');";
+    await db.execute(sql6);
+
+    sql6 =
+    "INSERT INTO FLASHCARD (id, title, color, page) VALUES (3,'Introdução à Biologia', '0xFF007369', 'TelaAssuntos()');";
+    await db.execute(sql6);
+
+    sql6 =
+    "INSERT INTO FLASHCARD (id, title, color, page) VALUES (4,'Genética', '0xFF005A5B', 'TelaAssuntos()');";
+    await db.execute(sql6);
+
+    sql6 =
+    "INSERT INTO FLASHCARD (id, title, color, page) VALUES (5,'Biofísica', '0xFF003840', 'TelaAssuntos()');";
+    await db.execute(sql6);
+
+    sql6 =
+    "INSERT INTO FLASHCARD (id, title, color, page) VALUES (6,'Botânica I (Morfologia e Anatomia Vegetal)', '0xFF003840', 'TelaAssuntos()');";
+    await db.execute(sql6);
+
+    sql6 =
+    "INSERT INTO FLASHCARD (id, title, color, page) VALUES (7,'Botânica II', '0xFF005A5B', 'TelaAssuntos()');";
+    await db.execute(sql6);
+
+    sql6 =
+    "INSERT INTO FLASHCARD (id, title, color, page) VALUES (8,'Anatomia Humana', '0xFF007369', 'TelaAssuntos()');";
+    await db.execute(sql6);
+
+    sql6 =
+    "INSERT INTO FLASHCARD (id, title, color, page) VALUES (9,'Biologia Celular', '0xFF008C72', 'TelaAssuntos()');";
+    await db.execute(sql6);
+
+    sql6 =
+    "INSERT INTO FLASHCARD (id, title, color, page) VALUES (10,'Ecologia Geral', '0xFF02A676', 'TelaAssuntos()');";
+    await db.execute(sql6);
+
+    sql6 =
+    "INSERT INTO FLASHCARD (id, title, color, page) VALUES (11,'Histologia', '0xFF02A676', 'TelaAssuntos()');";
+    await db.execute(sql6);
+
+    ////////////////////////////
+
+    String sql7 =
+        'create table CONTENT (id INTEGER PRIMARY KEY, title varchar(30), color varchar(50), page varchar(50));';
+    await db.execute(sql7);
+
+    sql7 =
+    "INSERT INTO CONTENT(id, title, color, page) VALUES (1, 'Citologia', '0xFF02A676', 'TelaAssuntos()');";
+    await db.execute(sql7);
+
+    sql7 =
+    "INSERT INTO CONTENT(id, title, color, page) VALUES (2,'Embriologia','0xFF008C72', 'TelaAssuntos()');";
+    await db.execute(sql7);
+
+    sql7 =
+    "INSERT INTO CONTENT (id, title, color, page) VALUES (3,'Introdução à Biologia', '0xFF007369', 'TelaAssuntos()');";
+    await db.execute(sql7);
+
+    sql7 =
+    "INSERT INTO CONTENT (id, title, color, page) VALUES (4,'Genética', '0xFF005A5B', 'TelaAssuntos()');";
+    await db.execute(sql7);
+
+    sql7 =
+    "INSERT INTO CONTENT (id, title, color, page) VALUES (5,'Biofísica', '0xFF003840', 'TelaAssuntos()');";
+    await db.execute(sql7);
+
+    sql7 =
+    "INSERT INTO CONTENT(id, title, color, page) VALUES (6,'Botânica I (Morfologia e Anatomia Vegetal)', '0xFF003840', 'TelaAssuntos()');";
+    await db.execute(sql7);
+
+    sql7 =
+    "INSERT INTO CONTENT(id, title, color, page) VALUES (7,'Botânica II', '0xFF005A5B', 'TelaAssuntos()');";
+    await db.execute(sql7);
+
+    sql7 =
+    "INSERT INTO CONTENT(id, title, color, page) VALUES (8,'Anatomia Humana', '0xFF007369', 'TelaAssuntos()');";
+    await db.execute(sql7);
+
+    sql7 =
+    "INSERT INTO CONTENT(id, title, color, page) VALUES (9,'Biologia Celular', '0xFF008C72', 'TelaAssuntos()');";
+    await db.execute(sql7);
+
+    sql7 =
+    "INSERT INTO CONTENT(id, title, color, page) VALUES (10,'Ecologia Geral', '0xFF02A676', 'TelaAssuntos()');";
+    await db.execute(sql7);
+
+    sql7 =
+    "INSERT INTO CONTENT(id, title, color, page) VALUES (11,'Histologia', '0xFF02A676', 'TelaAssuntos()');";
+    await db.execute(sql7);
+
+    ////////////////////////////
+
+    String sql8 =
+        'create table QUESTS(id INTEGER PRIMARY KEY, title varchar(30), color varchar(50), page varchar(50));';
+    await db.execute(sql8);
+
+    sql8 =
+    "INSERT INTO QUESTS(id, title, color, page) VALUES (1, 'Citologia', '0xFF02A676', 'QuestPage()');";
+    await db.execute(sql8);
+
+    sql8 =
+    "INSERT INTO QUESTS(id, title, color, page) VALUES (2,'Embriologia','0xFF008C72', 'QuestPage()');";
+    await db.execute(sql8);
+
+    sql8 =
+    "INSERT INTO QUESTS(id, title, color, page) VALUES (3,'Introdução à Biologia', '0xFF007369', 'QuestPage()');";
+    await db.execute(sql8);
+
+    sql8 =
+    "INSERT INTO QUESTS(id, title, color, page) VALUES (4,'Genética', '0xFF005A5B', 'QuestPage()');";
+    await db.execute(sql8);
+
+    sql8 =
+    "INSERT INTO QUESTS(id, title, color, page) VALUES (5,'Biofísica', '0xFF003840', 'QuestPage()');";
+    await db.execute(sql8);
+
+    sql8 =
+    "INSERT INTO QUESTS(id, title, color, page) VALUES (6,'Botânica I (Morfologia e Anatomia Vegetal)', '0xFF003840', 'QuestPage()');";
+    await db.execute(sql8);
+
+    sql8 =
+    "INSERT INTO QUESTS(id, title, color, page) VALUES (7,'Botânica II', '0xFF005A5B', 'QuestPage()');";
+    await db.execute(sql8);
+
+    sql8 =
+    "INSERT INTO QUESTS(id, title, color, page) VALUES (8,'Anatomia Humana', '0xFF007369', 'QuestPage()');";
+    await db.execute(sql8);
+
+    sql8 =
+    "INSERT INTO QUESTS(id, title, color, page) VALUES (9,'Biologia Celular', '0xFF008C72', 'QuestPage()');";
+    await db.execute(sql8);
+
+    sql8 =
+    "INSERT INTO QUESTS(id, title, color, page) VALUES (10,'Ecologia Geral', '0xFF02A676', 'QuestPage()');";
+    await db.execute(sql8);
+
+    sql8 =
+    "INSERT INTO QUESTS(id, title, color, page) VALUES (11,'Histologia', '0xFF02A676', 'QuestPage()');";
+    await db.execute(sql8);
   }
 
   // Future<void> onUpgrade(Database database, int oldVersion, int newVersion) async {

@@ -3,6 +3,8 @@ import 'package:learnit2/domain/questoes_conteudo.dart';
 import 'package:learnit2/data/oldData/bd.dart';
 import 'package:learnit2/widget/questoes_conteudo_card.dart';
 
+import '../../data/dao/flashcard_dao.dart';
+
 class FlashcardHome extends StatefulWidget {
   const FlashcardHome({Key? key}) : super(key: key);
 
@@ -11,7 +13,9 @@ class FlashcardHome extends StatefulWidget {
 }
 
 class _FlashcardHomeState extends State<FlashcardHome> {
-  Future<List<QuestoesConteudo>> lista = BD.getListaFlashCard();
+  // Future<List<QuestoesConteudo>> lista = BD.getListaFlashCard();
+  Future<List<QuestoesConteudo>> lista = FlashCardDao().listarQuestoesConteudo();
+
 
   @override
   Widget build(BuildContext context) {

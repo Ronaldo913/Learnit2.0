@@ -3,6 +3,8 @@ import 'package:learnit2/domain/questoes_conteudo.dart';
 import 'package:learnit2/data/oldData/bd.dart';
 import 'package:learnit2/widget/questoes_conteudo_card.dart';
 
+import '../../data/dao/quests_dao.dart';
+
 class QuestoesPage extends StatefulWidget {
   const QuestoesPage({Key? key}) : super(key: key);
 
@@ -11,7 +13,8 @@ class QuestoesPage extends StatefulWidget {
 }
 
 class _QuestoesPageState extends State<QuestoesPage> {
-  Future<List<QuestoesConteudo>> lista = BD.getListaQuest();
+  Future<List<QuestoesConteudo>> lista = QuestsDao().listarQuestoesConteudo();
+
 
   @override
   Widget build(BuildContext context) {

@@ -118,102 +118,102 @@ class BD {
     return lista1;
   }
 
-  static List<QuestoesConteudo> listaquest = [
-    QuestoesConteudo(titulo: 'Citologia', color: 0xFF02A676, page: QuestPage()),
-    QuestoesConteudo(
-        titulo: 'Embriologia', color: 0xFF008C72, page: Conteudob()),
-    QuestoesConteudo(
-        titulo: 'Introdução à Biologia', color: 0xFF007369, page: QuestPage()),
-    QuestoesConteudo(titulo: 'Genética', color: 0xFF005A5B, page: QuestPage()),
-    QuestoesConteudo(titulo: 'Biofísica', color: 0xFF003840, page: QuestPage()),
-    QuestoesConteudo(
-        titulo: 'Botânica I (Morfologia e Anatomia Vegetal)',
-        color: 0xFF003840,
-        page: QuestPage()),
-    QuestoesConteudo(
-        titulo: 'Botânica II', color: 0xFF005A5B, page: QuestPage()),
-    QuestoesConteudo(
-        titulo: 'Anatomia Humana', color: 0xFF007369, page: QuestPage()),
-    QuestoesConteudo(
-        titulo: 'Biologia Celular', color: 0xFF008C72, page: QuestPage()),
-    QuestoesConteudo(
-        titulo: 'Ecologia Geral', color: 0xFF02A676, page: QuestPage()),
-    QuestoesConteudo(
-        titulo: 'Histologia', color: 0xFF02A676, page: const QuestPage())
-  ];
-
-  static Future<List<QuestoesConteudo>> getListaQuest() async {
-    await Future.delayed(const Duration(seconds: 1));
-    return listaquest;
-  }
-
-  static List<QuestoesConteudo> listcontents = [
-    QuestoesConteudo(
-        titulo: 'Citologia', color: 0xFF02A676, page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Embriologia', color: 0xFF008C72, page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Introdução à Biologia',
-        color: 0xFF007369,
-        page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Genética', color: 0xFF005A5B, page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Biofísica', color: 0xFF003840, page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Botânica I (Morfologia e Anatomia Vegetal)',
-        color: 0xFF003840,
-        page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Botânica II', color: 0xFF005A5B, page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Anatomia Humana', color: 0xFF007369, page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Biologia Celular', color: 0xFF008C72, page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Ecologia Geral', color: 0xFF02A676, page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Histologia', color: 0xFF02A676, page: TelaAssuntos())
-  ];
-
-  static Future<List<QuestoesConteudo>> getListaConstents() async {
-    await Future.delayed(const Duration(seconds: 1));
-    return listcontents;
-  }
-
-  static List<QuestoesConteudo> listflashcard = [
-    QuestoesConteudo(
-        titulo: 'Citologia', color: 0xFF02A676, page: FlashCitologia()),
-    QuestoesConteudo(
-        titulo: 'Embriologia', color: 0xFF008C72, page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Introdução à Biologia',
-        color: 0xFF007369,
-        page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Genética', color: 0xFF005A5B, page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Biofísica', color: 0xFF003840, page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Botânica I (Morfologia e Anatomia Vegetal)',
-        color: 0xFF003840,
-        page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Botânica II', color: 0xFF005A5B, page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Anatomia Humana', color: 0xFF007369, page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Biologia Celular', color: 0xFF008C72, page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Ecologia Geral', color: 0xFF02A676, page: TelaAssuntos()),
-    QuestoesConteudo(
-        titulo: 'Histologia', color: 0xFF02A676, page: TelaAssuntos())
-  ];
-
-  static Future<List<QuestoesConteudo>> getListaFlashCard() async {
-    await Future.delayed(const Duration(seconds: 1));
-    return listflashcard;
-  }
+  // static List<QuestoesConteudo> listaquest = [
+  //   QuestoesConteudo(titulo: 'Citologia', color: 0xFF02A676, page: QuestPage()),
+  //   QuestoesConteudo(
+  //       titulo: 'Embriologia', color: 0xFF008C72, page: Conteudob()),
+  //   QuestoesConteudo(
+  //       titulo: 'Introdução à Biologia', color: 0xFF007369, page: QuestPage()),
+  //   QuestoesConteudo(titulo: 'Genética', color: 0xFF005A5B, page: QuestPage()),
+  //   QuestoesConteudo(titulo: 'Biofísica', color: 0xFF003840, page: QuestPage()),
+  //   QuestoesConteudo(
+  //       titulo: 'Botânica I (Morfologia e Anatomia Vegetal)',
+  //       color: 0xFF003840,
+  //       page: QuestPage()),
+  //   QuestoesConteudo(
+  //       titulo: 'Botânica II', color: 0xFF005A5B, page: QuestPage()),
+  //   QuestoesConteudo(
+  //       titulo: 'Anatomia Humana', color: 0xFF007369, page: QuestPage()),
+  //   QuestoesConteudo(
+  //       titulo: 'Biologia Celular', color: 0xFF008C72, page: QuestPage()),
+  //   QuestoesConteudo(
+  //       titulo: 'Ecologia Geral', color: 0xFF02A676, page: QuestPage()),
+  //   QuestoesConteudo(
+  //       titulo: 'Histologia', color: 0xFF02A676, page: const QuestPage())
+  // ];
+  //
+  // static Future<List<QuestoesConteudo>> getListaQuest() async {
+  //   await Future.delayed(const Duration(seconds: 1));
+  //   return listaquest;
+  // }
+  //
+  // static List<QuestoesConteudo> listcontents = [
+  //   QuestoesConteudo(
+  //       titulo: 'Citologia', color: 0xFF02A676, page: TelaAssuntos()),
+  //   QuestoesConteudo(
+  //       titulo: 'Embriologia', color: 0xFF008C72, page: TelaAssuntos()),
+  //   QuestoesConteudo(
+  //       titulo: 'Introdução à Biologia',
+  //       color: 0xFF007369,
+  //       page: TelaAssuntos()),
+  //   QuestoesConteudo(
+  //       titulo: 'Genética', color: 0xFF005A5B, page: TelaAssuntos()),
+  //   QuestoesConteudo(
+  //       titulo: 'Biofísica', color: 0xFF003840, page: TelaAssuntos()),
+  //   QuestoesConteudo(
+  //       titulo: 'Botânica I (Morfologia e Anatomia Vegetal)',
+  //       color: 0xFF003840,
+  //       page: TelaAssuntos()),
+  //   QuestoesConteudo(
+  //       titulo: 'Botânica II', color: 0xFF005A5B, page: TelaAssuntos()),
+  //   QuestoesConteudo(
+  //       titulo: 'Anatomia Humana', color: 0xFF007369, page: TelaAssuntos()),
+  //   QuestoesConteudo(
+  //       titulo: 'Biologia Celular', color: 0xFF008C72, page: TelaAssuntos()),
+  //   QuestoesConteudo(
+  //       titulo: 'Ecologia Geral', color: 0xFF02A676, page: TelaAssuntos()),
+  //   QuestoesConteudo(
+  //       titulo: 'Histologia', color: 0xFF02A676, page: TelaAssuntos())
+  // ];
+  //
+  // static Future<List<QuestoesConteudo>> getListaConstents() async {
+  //   await Future.delayed(const Duration(seconds: 1));
+  //   return listcontents;
+  // }
+  //
+  // static List<QuestoesConteudo> listflashcard = [
+  //   QuestoesConteudo(
+  //       titulo: 'Citologia', color: 0xFF02A676, page: FlashCitologia()),
+  //   QuestoesConteudo(
+  //       titulo: 'Embriologia', color: 0xFF008C72, page: TelaAssuntos()),
+  //   QuestoesConteudo(
+  //       titulo: 'Introdução à Biologia',
+  //       color: 0xFF007369,
+  //       page: TelaAssuntos()),
+  //   QuestoesConteudo(
+  //       titulo: 'Genética', color: 0xFF005A5B, page: TelaAssuntos()),
+  //   QuestoesConteudo(
+  //       titulo: 'Biofísica', color: 0xFF003840, page: TelaAssuntos()),
+  //   QuestoesConteudo(
+  //       titulo: 'Botânica I (Morfologia e Anatomia Vegetal)',
+  //       color: 0xFF003840,
+  //       page: TelaAssuntos()),
+  //   QuestoesConteudo(
+  //       titulo: 'Botânica II', color: 0xFF005A5B, page: TelaAssuntos()),
+  //   QuestoesConteudo(
+  //       titulo: 'Anatomia Humana', color: 0xFF007369, page: TelaAssuntos()),
+  //   QuestoesConteudo(
+  //       titulo: 'Biologia Celular', color: 0xFF008C72, page: TelaAssuntos()),
+  //   QuestoesConteudo(
+  //       titulo: 'Ecologia Geral', color: 0xFF02A676, page: TelaAssuntos()),
+  //   QuestoesConteudo(
+  //       titulo: 'Histologia', color: 0xFF02A676, page: TelaAssuntos())
+  // ];
+  //
+  // static Future<List<QuestoesConteudo>> getListaFlashCard() async {
+  //   await Future.delayed(const Duration(seconds: 1));
+  //   return listflashcard;
+  // }
 
   static List<Questoes> lista3 = [
     Questoes(
