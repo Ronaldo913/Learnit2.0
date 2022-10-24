@@ -26,15 +26,6 @@ class _FlashcardState extends State<Flashcard> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              widget.about.title,
-              textAlign: TextAlign.justify,
-              style: const TextStyle(
-                fontSize: 30,
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
             const SizedBox(
               height: 20.0,
             ),
@@ -52,15 +43,6 @@ class _FlashcardState extends State<Flashcard> {
             ),
             const SizedBox(
               height: 20.0,
-            ),
-            Text(
-              widget.about.title,
-              textAlign: TextAlign.justify,
-              style: const TextStyle(
-                fontSize: 16,
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-              ),
             ),
           ],
         ),

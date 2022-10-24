@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learnit2/pages/Previous/login_page.dart';
+import 'package:learnit2/pages/flashcard_contents/flashcard_home.dart';
 import 'package:learnit2/pages/home/about_page.dart';
 import 'package:learnit2/pages/home/assuntos_page.dart';
 import 'package:learnit2/pages/sideBar/bottom_navigation_page.dart';
@@ -134,7 +135,7 @@ class _HomePageState extends State<HomePage> {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return const CronogramaPage();
+                        return const FlashcardHome();
                       },
                     ),
                   );

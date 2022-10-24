@@ -5,6 +5,7 @@ import 'package:learnit2/domain/pacote_estudo.dart';
 import 'package:learnit2/domain/questoes_conteudo.dart';
 import 'package:learnit2/domain/questoes.dart';
 import 'package:learnit2/domain/cronograma.dart';
+import 'package:learnit2/pages/flashcard_contents/citologia_flashcard.dart';
 import 'package:learnit2/pages/questions/quest.dart';
 import 'package:learnit2/pages/contents/conteudo_page.dart';
 import '../../domain/conteudo.dart';
@@ -182,7 +183,7 @@ class BD {
 
   static List<QuestoesConteudo> listflashcard = [
     QuestoesConteudo(
-        titulo: 'Citologia', color: 0xFF02A676, page: TelaAssuntos()),
+        titulo: 'Citologia', color: 0xFF02A676, page: FlashCitologia()),
     QuestoesConteudo(
         titulo: 'Embriologia', color: 0xFF008C72, page: TelaAssuntos()),
     QuestoesConteudo(
