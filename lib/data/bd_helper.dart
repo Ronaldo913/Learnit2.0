@@ -6,7 +6,7 @@ class DBHelper {
   initDB() async {
     String databasePath = await getDatabasesPath();
 
-    String path = join(databasePath, "bank2.db");
+    String path = join(databasePath, "bank3.db");
 
     Database database = await openDatabase(
       path,
@@ -306,15 +306,15 @@ class DBHelper {
     await db.execute(sql10);
 
     sql10 =
-        "INSERT INTO FLASHCARDCITOLOGIA (id, resposta, pergunta) VALUES (1, 'hsdfjhdkjlfdhgkjfsghdgkjsfdhgjkhdfh', 'Pacote Foco');";
+        "INSERT INTO FLASHCARDCITOLOGIA (id, resposta, pergunta) VALUES (1, 'O que é a citologia?', 'É o estudo das células.');";
     await db.execute(sql10);
 
     sql10 =
-        "INSERT INTO FLASHCARDCITOLOGIA (id, resposta, pergunta) VALUES (2, 'dfhfdjhlkjfhfdkhgfhgfhkjdfhiuweytuieryt', 'Pacote Médio');";
+        "INSERT INTO FLASHCARDCITOLOGIA (id, resposta, pergunta) VALUES (2, 'Em que ano a citologia passou a ser considerada ciência?', '1663.');";
     await db.execute(sql10);
 
     sql10 =
-        "INSERT INTO FLASHCARDCITOLOGIA (id, resposta, pergunta) VALUES (3, 'fhrtu65487568tyretgeryrtutryutryutyutyy', 'Pacote LearnMed');";
+        "INSERT INTO FLASHCARDCITOLOGIA (id, resposta, pergunta) VALUES (3, 'Quais e quantos são os tipos de células', 'Dois. Eucariontes e procariontes.');";
     await db.execute(sql10);
   }
 
