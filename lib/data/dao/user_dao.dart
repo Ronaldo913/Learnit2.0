@@ -3,6 +3,7 @@ import 'package:learnit2/domain/user.dart';
 import 'package:sqflite/sqflite.dart';
 
 class UserDao {
+
   Future<void> salvarUser({required User user}) async {
     DBHelper dbHelper = DBHelper();
     Database db = await dbHelper.initDB();

@@ -6,7 +6,7 @@ class DBHelper {
   initDB() async {
     String databasePath = await getDatabasesPath();
 
-    String path = join(databasePath, "bank6.db");
+    String path = join(databasePath, "bank7.db");
 
     Database database = await openDatabase(
       path,
@@ -339,17 +339,4 @@ class DBHelper {
     "INSERT INTO crono (id, title, hour, minute, day, color) VALUES (4, 'Estudar Genetica','15' , '20', 'Terça', '0xFF005A5B');";
     await db.execute(sql11);
   }
-
-  // Future<void> onUpgrade(
-  //     Database database, int oldVersion, int newVersion) async {
-  //   if (oldVersion == 1 && newVersion == 2) {
-  //     String sql4 =
-  //         'create table USER (cpf INTEGER PRIMARY KEY, nome varchar(500), email varchar(100), username varchar(100), password varchar(100), sobrenome varchar(500), celular varchar(100), nascimento varchar(10));';
-  //     await database.execute(sql4);
-  //
-  //     sql4 =
-  //         "INSERT INTO USER (cpf, nome, email, username, password, sobrenome, celular, nascimento) VALUES (12345678901, 'Tarsis', 'tarsis@email.com', 'tarsis123@email.com', 'tarsis123', 'Marinho', '82912345678', '01/01/1970');";
-  //     await database.execute(sql4);
-  //   }
-  // }
 }

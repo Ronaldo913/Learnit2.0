@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:learnit2/data/dao/user_dao.dart';
+import 'package:learnit2/domain/user.dart';
 import 'package:learnit2/pages/Previous/login_page.dart';
 
 class RegistrationPage extends StatefulWidget {
@@ -202,19 +204,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       }
                   ),
                   const SizedBox(height: 42),
-                  ElevatedButton(onPressed: (){
-                    if(_formKey.currentState!.validate()){
-                      print('Cadastrando usuário');
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context){
-                            return const Loginpage();
-                          },
-                        ),
-                      );
-                    }
-                  },
+                  ElevatedButton(onPressed: onPressed,
                     child: const Padding(
                         padding: const EdgeInsets.all(24.0),
                         child: const Text('Cadastrar'),
@@ -233,5 +223,39 @@ class _RegistrationPageState extends State<RegistrationPage> {
         )
     )
     );
+  }
+
+  onPressed() async {
+    if (_formKey.currentState!.validate()) {
+      String nameDigitado = _nameController.text;
+      String sobrenomeDigitado = _sobreController.text;
+      String nascimentoDigitado = _dataController.text;
+      String celularDigitado = _phoneController.text;
+      String emailDigitado = _mailController.text;
+      String cpfDigitado = _cpfController.text;
+      String usernameDigitado = _userController.text;
+      String passwordDigitado = _passController.text;
+
+      User user = User(nome: nameDigitado, sobrenome: sobrenomeDigitado, nascimento: nascimentoDigitado, celular: celularDigitado, email: emailDigitado, cpf: cpfDigitado, username: usernameDigitado, password: passwordDigitado);
+      await UserDao().salvarUser(user: user);
+
+      showSnackBar('USUÁRIO CRIADO!');
+      Navigator.pop(context);
+
+    } else {
+      showSnackBar("ERRO NA VALIDAÇÃO!");
+    }
+  }
+
+  showSnackBar(String msg) {
+    final snackBar = SnackBar(
+      behavior: SnackBarBehavior.floating,
+      margin: const EdgeInsets.symmetric(
+        vertical: 80,
+        horizontal: 32,
+      ),
+      content: Text(msg),
+    );
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }
