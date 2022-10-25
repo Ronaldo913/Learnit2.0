@@ -21,11 +21,10 @@ class CronoDao {
 
     return lista;
   }
-  Future<String> getTitleCrono() async{
 
-
-    String tit = 'SELECT title FROM CONTENTS;';
-    return tit;
-  }
+  // Future<String> getTitleCrono() async{
+  //   String tit = 'SELECT title FROM CONTENTS;';
+  //   return tit;
+  // }
 
 }

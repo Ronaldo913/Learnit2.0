@@ -20,7 +20,7 @@ class Cronograma {
     data['hour'] = hour;
     data['minute'] = minute;
     data['day'] = day;
-    data['color'] = color;
+    data['color'] = color.toString();
 
     return data;
   }
@@ -30,7 +30,7 @@ class Cronograma {
     hour = json['hour'];
     minute = json['minute'];
     day = json['day'];
-    color = json['color'];
+    color = int.parse(json['color']);
 
   }
 

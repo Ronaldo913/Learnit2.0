@@ -27,7 +27,7 @@ class _FlashCardsState extends State<FlashCards> {
           children: [
             Text(
               widget.flashcardsss.pergunta,
-              textAlign: TextAlign.justify,
+              textAlign: TextAlign.left,
               style: const TextStyle(
                 fontSize: 30,
                 color: Colors.black,

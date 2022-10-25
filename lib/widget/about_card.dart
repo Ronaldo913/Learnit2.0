@@ -26,18 +26,6 @@ class _AboutCardState extends State<AboutCard> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              widget.about.title,
-              textAlign: TextAlign.justify,
-              style: const TextStyle(
-                fontSize: 30,
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(
-              height: 20.0,
-            ),
             Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
@@ -49,18 +37,6 @@ class _AboutCardState extends State<AboutCard> {
                       fit: BoxFit.cover)),
               width: 400,
               height: 300,
-            ),
-            const SizedBox(
-              height: 20.0,
-            ),
-            Text(
-              widget.about.title,
-              textAlign: TextAlign.justify,
-              style: const TextStyle(
-                fontSize: 16,
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-              ),
             ),
           ],
         ),
@@ -85,7 +61,7 @@ class _AboutCardState extends State<AboutCard> {
             Container(
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
-                  color: Colors.white10,
+                  color: Colors.grey,
                   image: DecorationImage(
                       image: NetworkImage(
                         widget.about.image,

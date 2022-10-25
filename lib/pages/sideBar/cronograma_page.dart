@@ -6,7 +6,6 @@ import 'package:learnit2/widget/cronograma_card.dart';
 import '../home/home_page.dart';
 import 'create_crono_page.dart';
 import 'package:learnit2/data/dao/cronograma_dao.dart';
-import 'package:learnit2/data/oldData/bd.dart';
 
 class CronogramaPage extends StatefulWidget {
   const CronogramaPage({Key? key}) : super(key: key);
@@ -21,12 +20,12 @@ class _CronogramaPageState extends State<CronogramaPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text(' CRONOGRAMA '),
+        title: const Text(' CRONOGRAMA '),
         backgroundColor: Color(0xFF0B4619),
         toolbarHeight: 64,
         actions: [
           IconButton(
-            icon: Icon(Icons.home),
+            icon: const Icon(Icons.home),
             onPressed: () {
               Navigator.push(
                 context,
@@ -45,23 +44,24 @@ class _CronogramaPageState extends State<CronogramaPage> {
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
-            const SizedBox(height: 16), buildListView(),
-                FloatingActionButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return CreateCronogramaPage();
-                        },
-                      ),
-                      );
-                  },
-                  child: Icon(Icons.add),
-                ),
-              ],
+            const SizedBox(height: 16),
+            buildListView(),
+            FloatingActionButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const CreateCronogramaPage();
+                    },
+                  ),
+                );
+              },
+              child: const Icon(Icons.add),
             ),
+          ],
         ),
+      ),
     );
   }
 
@@ -87,7 +87,7 @@ class _CronogramaPageState extends State<CronogramaPage> {
     );
   }
 
-  buildListView(){
+  buildListView() {
     return FutureBuilder<List<Cronograma>>(
       future: lista,
       builder: (context, snapshot) {
@@ -103,10 +103,8 @@ class _CronogramaPageState extends State<CronogramaPage> {
             },
           );
         }
-        return Center(child: const CircularProgressIndicator());
+        return const Center(child: CircularProgressIndicator());
       },
     );
   }
-
 }
-
