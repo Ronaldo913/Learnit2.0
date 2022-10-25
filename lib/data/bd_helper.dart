@@ -6,7 +6,7 @@ class DBHelper {
   initDB() async {
     String databasePath = await getDatabasesPath();
 
-    String path = join(databasePath, "bank4.db");
+    String path = join(databasePath, "bank6.db");
 
     Database database = await openDatabase(
       path,
@@ -316,6 +316,28 @@ class DBHelper {
     sql10 =
         "INSERT INTO FLASHCARDCITOLOGIA (id, resposta, pergunta) VALUES (3, 'Quais e quantos são os tipos de células', 'Dois. Eucariontes e procariontes.');";
     await db.execute(sql10);
+
+    ///////////////////////////////////////
+
+    String sql11 =
+        'create table crono (id INTEGER PRIMARY KEY, title varchar(80), hour varchar(2) , minute varchar (2), day varchar (50), color varchar(50));';
+    await db.execute(sql11);
+
+    sql11 =
+    "INSERT INTO crono (id, title, hour, minute, day, color) VALUES (1, 'Estudar Embriologia','12' , '30', 'Terça', '0xFF02A676');";
+    await db.execute(sql11);
+
+    sql11 =
+    "INSERT INTO crono (id, title, hour, minute, day, color) VALUES (2, 'Estudar Citologia','13' , '45', 'Terça', '0xFF008C72');";
+    await db.execute(sql11);
+
+    sql11 =
+    "INSERT INTO crono (id, title, hour, minute, day, color) VALUES (3, 'Estudar Histologia','14' , '55', 'Terça', '0xFF007369');";
+    await db.execute(sql11);
+
+    sql11 =
+    "INSERT INTO crono (id, title, hour, minute, day, color) VALUES (4, 'Estudar Genetica','15' , '20', 'Terça', '0xFF005A5B');";
+    await db.execute(sql11);
   }
 
   // Future<void> onUpgrade(

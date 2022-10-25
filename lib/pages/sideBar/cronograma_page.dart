@@ -5,6 +5,7 @@ import 'package:learnit2/domain/cronograma.dart';
 import 'package:learnit2/widget/cronograma_card.dart';
 import '../home/home_page.dart';
 import 'create_crono_page.dart';
+import 'package:learnit2/data/dao/cronograma_dao.dart';
 import 'package:learnit2/data/oldData/bd.dart';
 
 class CronogramaPage extends StatefulWidget {
@@ -13,7 +14,8 @@ class CronogramaPage extends StatefulWidget {
 }
 
 class _CronogramaPageState extends State<CronogramaPage> {
-  Future<List<Cronograma>> lista = BD.getListaCrono();
+  Future<List<Cronograma>> lista = CronoDao().listarCronograma();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

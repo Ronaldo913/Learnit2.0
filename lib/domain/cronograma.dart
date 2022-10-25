@@ -1,9 +1,9 @@
 class Cronograma {
-  final String title;
-  final int hour;
-  final int minute;
-  final String day;
-  final int color;
+  late final String title;
+  late final int hour;
+  late final int minute;
+  late final String day;
+  late final int color;
 
   Cronograma({
     required this.title,
@@ -12,4 +12,26 @@ class Cronograma {
     required this.day,
     required this.color,
   });
+
+  Map<String, Object?> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+
+    data['title'] = title;
+    data['hour'] = hour;
+    data['minute'] = minute;
+    data['day'] = day;
+    data['color'] = color;
+
+    return data;
+  }
+
+  Cronograma.fromJson(Map<String, dynamic> json) {
+    title = json['title'];
+    hour = json['hour'];
+    minute = json['minute'];
+    day = json['day'];
+    color = json['color'];
+
+  }
+
 }

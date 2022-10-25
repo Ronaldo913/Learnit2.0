@@ -53,6 +53,7 @@ dependencies:
   sqflite:
   path:
   shared_preferences:
+  select_card: ^0.0.9
 
 dev_dependencies:
   flutter_test:
