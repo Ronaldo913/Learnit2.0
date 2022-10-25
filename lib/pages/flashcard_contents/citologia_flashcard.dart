@@ -39,7 +39,7 @@ class _FlashCitologiaState extends State<FlashCitologia> {
           ),
         ],
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xFF02A676),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView(

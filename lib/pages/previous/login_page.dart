@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:learnit2/domain/user.dart';
-import 'package:learnit2/pages/animations/animation.dart';
+import 'package:learnit2/pages/splash/animation.dart';
 import 'package:learnit2/pages/home/home_page.dart';
 import 'package:learnit2/pages/Previous/registration_page.dart';
 import 'package:learnit2/pages/Previous/recuperacao.dart';
-import 'package:learnit2/data/oldData/bd.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import '../../data/dao/user_dao.dart';
 import '../../data/shared_prefs_helper.dart';
 
