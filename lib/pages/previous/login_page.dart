@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:learnit2/pages/splash/animation.dart';
 import 'package:learnit2/pages/home/home_page.dart';
 import 'package:learnit2/pages/Previous/registration_page.dart';
@@ -18,6 +19,36 @@ class _LoginpageState extends State<Loginpage> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passController = TextEditingController();
+
+  get notificationsPlugin => null;
+
+  // void showNotification() async {
+  //   AndroidNotificationDetails androidDetails = AndroidNotificationDetails(
+  //     "as-app",
+  //     "ASApp",
+  //     priority: Priority.max,
+  //     importance: Importance.max,
+  //   );
+  //
+  //   DarwinNotificationDetails iosDetails = DarwinNotificationDetails(
+  //     presentAlert: true,
+  //     presentBadge: true,
+  //     presentSound: true,
+  //   );
+  //
+  //   NotificationDetails notiDetails = NotificationDetails(
+  //     android: androidDetails,
+  //     iOS: iosDetails,
+  //   );
+  //
+  //   await notificationsPlugin.show(
+  //       0,
+  //       "Notificação teste",
+  //       "Belle Belinha fodar",
+  //       notiDetails
+  //   );
+  // }
+
 
   @override
   Widget build(BuildContext context) {
@@ -452,13 +483,17 @@ class _LoginpageState extends State<Loginpage> {
 
   Future<void> onPressedLogin() async {
     if (_formKey.currentState!.validate()) {
-      // List<Usuario> listaUsuario = BD.lista;
       String email = _emailController.text;
       String pass = _passController.text;
 
       bool resultado = await UserDao().autenticar(user: email, password: pass);
 
       if (resultado) {
+        // FloatingActionButton(
+        //   onPressed: showNotification,
+        //   child: const Icon(Icons.notification_add),
+        // );
+
         SharedPrefsHelper().login();
 
         Navigator.pushReplacement(

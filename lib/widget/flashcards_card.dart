@@ -29,7 +29,7 @@ class _FlashCardsState extends State<FlashCards> {
               widget.flashcardsss.pergunta,
               textAlign: TextAlign.left,
               style: const TextStyle(
-                fontSize: 30,
+                fontSize: 22,
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),
@@ -42,9 +42,9 @@ class _FlashCardsState extends State<FlashCards> {
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Text(
             widget.flashcardsss.resposta,
-            textAlign: TextAlign.justify,
+            textAlign: TextAlign.left,
             style: const TextStyle(
-              fontSize: 30,
+              fontSize: 22,
               color: Colors.black,
               fontWeight: FontWeight.bold,
             ),

@@ -42,6 +42,11 @@ dependencies:
   html_character_entities: ^0.1.2+4
   meta: ^1.2.4
   flash_card: ^0.0.5
+  flutter_local_notifications:
+  flutter_native_timezone:
+  rxdart:
+  timezone:
+  provider:
 
 
   # The following adds the Cupertino Icons font to your application.
