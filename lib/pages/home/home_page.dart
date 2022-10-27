@@ -36,6 +36,7 @@ class _HomePageState extends State<HomePage> {
       ),
 
       drawer: Drawer(
+        backgroundColor: Color(0xFFFFFFF0),
         child: ListView(
           children: [
             InkWell(
@@ -53,174 +54,186 @@ class _HomePageState extends State<HomePage> {
                 accountName: Text("Usuário"),
                 accountEmail: Text("usuario123@gmail.com"),
                 currentAccountPicture: CircleAvatar(
+
                   radius: 30.0,
                   backgroundImage:
                   NetworkImage(
                       'https://www.lacazmartins.com.br/wp-content/uploads/2017/05/sem-foto-oficial.png'),
                   backgroundColor: Colors.transparent,
                 ),
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      stops: [0.3, 1],
+                      colors: [
+                        Color(0xFF003840),
+                        Color(0xFF02A676),
+                      ],
+                    ),
+                ),
               ),
             ),
-            ListTile(
-              leading: const Icon(Icons.wifi,
-              ),
-              title: const Text("Comunidade",
-                style: TextStyle(
-                    fontSize: 24
+
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const BottomNavigationPage();
+                    },
+                  ),
+                );
+              },
+              child: const ListTile(
+                leading: Icon(Icons.wifi,
                 ),
-              ),
-              subtitle: const Text("Atualize-se!",
-                style: TextStyle(
-                  fontSize: 18,
+                title: Text("Comunidade",
+                  style: TextStyle(
+                      fontSize: 24,
+                  ),
                 ),
-              ),
-              trailing: IconButton(
-                icon: const Icon(Icons.arrow_forward_outlined),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return const BottomNavigationPage();
-                      },
-                    ),
-                  );
-                },
+                subtitle: Text("Atualize-se!",
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
               ),
             ),
-            ListTile(
-              leading: const Icon(Icons.event_note,
-              ),
-              title: const Text("Cronograma",
-                style: TextStyle(
-                    fontSize: 24
+
+            InkWell(
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const CronogramaPage();
+                    },
+                  ),
+                );
+              },
+              child: const ListTile(
+                leading: Icon(Icons.event_note,
                 ),
-              ),
-              subtitle: const Text("Organize-se",
-                style: TextStyle(
-                  fontSize: 18,
+                title: Text("Cronograma",
+                  style: TextStyle(
+                      fontSize: 24
+                  ),
                 ),
-              ),
-              trailing: IconButton(
-                icon: const Icon(Icons.arrow_forward_outlined),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return const CronogramaPage();
-                      },
-                    ),
-                  );
-                },
+                subtitle: Text("Organize-se",
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
               ),
             ),
-            ListTile(
-              leading: const Icon(Icons.event_note,
-              ),
-              title: const Text("FlashCard",
-                style: TextStyle(
-                    fontSize: 24
+
+            InkWell(
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const FlashcardHome();
+                    },
+                  ),
+                );
+              },
+              child: const ListTile(
+                leading: Icon(Icons.event_note,
                 ),
-              ),
-              subtitle: const Text("Memorize",
-                style: TextStyle(
-                  fontSize: 18,
+                title: Text("FlashCard",
+                  style: TextStyle(
+                      fontSize: 24
+                  ),
                 ),
-              ),
-              trailing: IconButton(
-                icon: const Icon(Icons.arrow_forward_outlined),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return const FlashcardHome();
-                      },
-                    ),
-                  );
-                },
+                subtitle: Text("Memorize",
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
               ),
             ),
-            ListTile(
-              leading: const Icon(Icons.settings,
-              ),
-              title: const Text("Configurações",
-                style: TextStyle(
-                    fontSize: 23
+
+            InkWell(
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const CronogramaPage();
+                    },
+                  ),
+                );
+              },
+              child: const ListTile(
+                leading: Icon(Icons.settings,
                 ),
-              ),
-              subtitle: const Text("Configure",
-                style: TextStyle(
-                  fontSize: 18,
+                title: Text("Configurações",
+                  style: TextStyle(
+                      fontSize: 23
+                  ),
                 ),
-              ),
-              trailing: IconButton(
-                icon: const Icon(Icons.arrow_forward_outlined),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return const CronogramaPage();
-                      },
-                    ),
-                  );
-                },
+                subtitle: Text("Configure",
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
               ),
             ),
-            ListTile(
-              leading: const Icon(Icons.favorite_outlined,
-              ),
-              title: const Text("Sobre",
-                style: TextStyle(
-                    fontSize: 24
+
+            InkWell(
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const AboutPage();
+                    },
+                  ),
+                );
+              },
+              child: const ListTile(
+                leading: Icon(Icons.favorite_outlined,
                 ),
-              ),
-              subtitle: const Text("Conheça-nos",
-                style: TextStyle(
-                  fontSize: 18,
+                title: Text("Sobre",
+                  style: TextStyle(
+                      fontSize: 24
+                  ),
                 ),
-              ),
-              trailing: IconButton(
-                icon: const Icon(Icons.arrow_forward_outlined),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return const AboutPage();
-                      },
-                    ),
-                  );
-                },
+                subtitle: Text("Conheça-nos",
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
               ),
             ),
-            ListTile(
-              leading: const Icon(Icons.event_note,
-              ),
-              title: const Text("Sair",
-                style: TextStyle(
-                    fontSize: 24
+
+            InkWell(
+              onTap: (){
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const Loginpage();
+                    },
+                  ),
+                );
+              },
+              child: const ListTile(
+                leading: Icon(Icons.event_note,
                 ),
-              ),
-              subtitle: const Text("Tchauzin",
-                style: TextStyle(
-                  fontSize: 18,
+                title: Text("Sair",
+                  style: TextStyle(
+                      fontSize: 24
+                  ),
                 ),
-              ),
-              trailing: IconButton(
-                icon: const Icon(Icons.arrow_forward_outlined),
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return const Loginpage();
-                      },
-                    ),
-                  );
-                },
+                subtitle: Text("Tchauzin",
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
               ),
             )
           ],
