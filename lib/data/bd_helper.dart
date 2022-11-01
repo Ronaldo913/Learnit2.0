@@ -6,7 +6,7 @@ class DBHelper {
   initDB() async {
     String databasePath = await getDatabasesPath();
 
-    String path = join(databasePath, "bank12.db");
+    String path = join(databasePath, "bank14.db");
 
     Database database = await openDatabase(
       path,
@@ -366,5 +366,43 @@ class DBHelper {
     sql11 =
         "INSERT INTO crono (id, title, hour, minute, day, color) VALUES (4, 'Estudar Genetica',15 , 20, 'Terça', '0xFF005A5B');";
     await db.execute(sql11);
+
+    ///////////////////////////////
+
+    String sql12 =
+        'create table SETTING (id INTEGER PRIMARY KEY, title title(50), page varchar(50));';
+    await db.execute(sql12);
+
+    sql12 =
+        "INSERT INTO SETTING (id, title, page) VALUES (1, 'Gerenciar meus dados', 'ManageData()');";
+    await db.execute(sql12);
+
+    sql12 =
+        "INSERT INTO SETTING (id, title, page) VALUES (2, 'Dispositivos conectados', 'ManageData()');";
+    await db.execute(sql12);
+
+    sql12 =
+        "INSERT INTO SETTING (id, title, page) VALUES (3, 'Mudar senha', 'ManageData()');";
+    await db.execute(sql12);
+
+    sql12 =
+        "INSERT INTO SETTING (id, title, page) VALUES (4, 'Tema', 'ManageData()');";
+    await db.execute(sql12);
+
+    sql12 =
+        "INSERT INTO SETTING (id, title, page) VALUES (5, 'idioma', 'ManageData()');";
+    await db.execute(sql12);
+
+    sql12 =
+        "INSERT INTO SETTING (id, title, page) VALUES (6, 'Sistema web', 'ManageData()');";
+    await db.execute(sql12);
+
+    sql12 =
+        "INSERT INTO SETTING (id, title, page) VALUES (7, 'Política e privacidade', 'ManageData()');";
+    await db.execute(sql12);
+
+    sql12 =
+        "INSERT INTO SETTING (id, title, page) VALUES (8, 'Deletar conta', 'ManageData()');";
+    await db.execute(sql12);
   }
 }

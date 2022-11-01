@@ -10,7 +10,7 @@ import 'package:learnit2/pages/sideBar/perfil_page.dart';
 import 'package:learnit2/pages/home/questoes_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:learnit2/data/shared_prefs_helper.dart';
-import 'package:learnit2/pages/sideBar/settings_page.dart';
+import 'package:learnit2/pages/sideBar/settings/settings_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
