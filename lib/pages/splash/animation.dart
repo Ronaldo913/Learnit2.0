@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import '../../data/shared_prefs_helper.dart';
+import '../Previous/login_page.dart';
+import '../home/home_page.dart';
 // import 'package:audioplayers/audioplayers.dart';
 
 class AnimationPage extends StatefulWidget {
@@ -14,8 +17,37 @@ class _AnimationPageState extends State<AnimationPage> {
   @override
   void initState() {
     super.initState();
-    animacao();
+    loadData();
     // player = AudioPlayer();
+  }
+
+  loadData() async {
+    await Future.delayed(
+      const Duration(seconds: 4),
+    );
+
+    bool isLogged = await SharedPrefsHelper().getUser();
+    if (isLogged == true) {
+      // Ir p/ pag de HomePage
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) {
+            return const HomePage();
+          },
+        ),
+      );
+    } else {
+      // Ir p/ pag de Login
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) {
+            return const Loginpage();
+          },
+        ),
+      );
+    }
   }
 
   // AudioPlayer? player;
@@ -39,7 +71,8 @@ class _AnimationPageState extends State<AnimationPage> {
               child: Container(
                 height: 650,
                 width: 650,
-                child: Image.network('https://ronaldo913.github.io/ImagensPMovel/images/logo.png'),
+                child: Image.network(
+                    'https://ronaldo913.github.io/ImagensPMovel/images/logo.png'),
                 // runAudio("som-abertura.mp3");
               ),
             )),

@@ -9,6 +9,8 @@ import 'package:learnit2/pages/home/home.dart';
 import 'package:learnit2/pages/sideBar/perfil_page.dart';
 import 'package:learnit2/pages/home/questoes_page.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:learnit2/data/shared_prefs_helper.dart';
+import 'package:learnit2/pages/sideBar/settings_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -162,7 +164,7 @@ class _HomePageState extends State<HomePage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return const CronogramaPage();
+                      return const SettingPage();
                     },
                   ),
                 );
@@ -212,6 +214,7 @@ class _HomePageState extends State<HomePage> {
 
             InkWell(
               onTap: (){
+                SharedPrefsHelper().logout();
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(

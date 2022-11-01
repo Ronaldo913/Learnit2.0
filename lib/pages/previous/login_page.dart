@@ -508,13 +508,13 @@ class _LoginpageState extends State<Loginpage> {
         final msg = SnackBar(
           behavior: SnackBarBehavior.floating,
           content: Text(
-            ("Usuario/Senha incorretos"),
+            ("Usuário ou Senha incorretos"),
           ),
         );
         ScaffoldMessenger.of(context).showSnackBar(msg);
       }
     } else {
-      print("Formulário invalido");
+      print("Formulário inválido");
     }
   }
 }

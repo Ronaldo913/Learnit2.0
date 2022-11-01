@@ -6,7 +6,7 @@ class DBHelper {
   initDB() async {
     String databasePath = await getDatabasesPath();
 
-    String path = join(databasePath, "bank9.db");
+    String path = join(databasePath, "bank12.db");
 
     Database database = await openDatabase(
       path,
@@ -109,6 +109,10 @@ class DBHelper {
 
     sql3 =
         "INSERT INTO ABOUT (id, text, title, image) VALUES (1, 'Learn It + é um aplicativo de estudos que ajuda os estudantes a ter uma melhor compreensão da disciplina de biologia. Nele, contém explicações de cada conteúdo, seja ele escrito ou por vídeo. Junto aos conteúdos vem exercícios que devem ser resolvidas para uma melhor fixação do seu aprendizado. Além disso, o app conta com uma parte premium, a qual quem assinar terá regalias e direitos a outros serviços como mais questões, por exemplo. Além do mais, o Learn conta com uma rede social própria onde os usuários podem interagir entre eles nas diversas postagens em seu chat e e que também conta com status(mas tudo conforme as regras). Pensando de uma forma diferente e menos cansativa de ensino, o aplicativo tem formas de ensino através de quiz, flashcards e muitos mais.', 'Sobre nós', 'https://ronaldo913.github.io/ImagensPMovel/images/logo.png');";
+    await db.execute(sql3);
+
+    sql3 =
+        "INSERT INTO ABOUT (id, text, title, image) VALUES (2, 'Learn It + é um aplicativo de estudos que ajuda com muito orgulho os estudantes em sua jornada! É com muito prazer e alegria que o Learnit+ esta semana está completando 3 bimestres! Venha comemorar com a gente e aproveite as promoções!', 'Aniversário', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxlRvUK3BiBxUdqm9YrMJ7CDhsMmDnC0NkpQ&usqp=CAU');";
     await db.execute(sql3);
 
     ///////////////////////////////////////////////
@@ -317,6 +321,30 @@ class DBHelper {
         "INSERT INTO FLASHCARDCITOLOGIA (id, resposta, pergunta) VALUES (3, 'Quais e quantos são os tipos de células', 'Dois. Eucariontes e procariontes.');";
     await db.execute(sql10);
 
+    sql10 =
+        "INSERT INTO FLASHCARDCITOLOGIA (id, resposta, pergunta) VALUES (4, 'Em que ano a citologia passou a ser considerada ciência?', '1663.');";
+    await db.execute(sql10);
+
+    sql10 =
+        "INSERT INTO FLASHCARDCITOLOGIA (id, resposta, pergunta) VALUES (5, 'Quais e quantos são os tipos de células', 'Dois. Eucariontes e procariontes.');";
+    await db.execute(sql10);
+
+    sql10 =
+        "INSERT INTO FLASHCARDCITOLOGIA (id, resposta, pergunta) VALUES (6, 'Em que ano a citologia passou a ser considerada ciência?', '1663.');";
+    await db.execute(sql10);
+
+    sql10 =
+        "INSERT INTO FLASHCARDCITOLOGIA (id, resposta, pergunta) VALUES (7, 'Quais e quantos são os tipos de células', 'Dois. Eucariontes e procariontes.');";
+    await db.execute(sql10);
+
+    sql10 =
+        "INSERT INTO FLASHCARDCITOLOGIA (id, resposta, pergunta) VALUES (8, 'Em que ano a citologia passou a ser considerada ciência?', '1663.');";
+    await db.execute(sql10);
+
+    sql10 =
+        "INSERT INTO FLASHCARDCITOLOGIA (id, resposta, pergunta) VALUES (9, 'Quais e quantos são os tipos de células', 'Dois. Eucariontes e procariontes.');";
+    await db.execute(sql10);
+
     ///////////////////////////////////////
 
     String sql11 =
@@ -324,19 +352,19 @@ class DBHelper {
     await db.execute(sql11);
 
     sql11 =
-    "INSERT INTO crono (id, title, hour, minute, day, color) VALUES (1, 'Estudar Embriologia', 12 , 30, 'Terça', '0xFF02A676');";
+        "INSERT INTO crono (id, title, hour, minute, day, color) VALUES (1, 'Estudar Embriologia', 12 , 30, 'Terça', '0xFF02A676');";
     await db.execute(sql11);
 
     sql11 =
-    "INSERT INTO crono (id, title, hour, minute, day, color) VALUES (2, 'Estudar Citologia',13 , 45, 'Terça', '0xFF008C72');";
+        "INSERT INTO crono (id, title, hour, minute, day, color) VALUES (2, 'Estudar Citologia',13 , 45, 'Terça', '0xFF008C72');";
     await db.execute(sql11);
 
     sql11 =
-    "INSERT INTO crono (id, title, hour, minute, day, color) VALUES (3, 'Estudar Histologia',14 , 55, 'Terça', '0xFF007369');";
+        "INSERT INTO crono (id, title, hour, minute, day, color) VALUES (3, 'Estudar Histologia',14 , 55, 'Terça', '0xFF007369');";
     await db.execute(sql11);
 
     sql11 =
-    "INSERT INTO crono (id, title, hour, minute, day, color) VALUES (4, 'Estudar Genetica',15 , 20, 'Terça', '0xFF005A5B');";
+        "INSERT INTO crono (id, title, hour, minute, day, color) VALUES (4, 'Estudar Genetica',15 , 20, 'Terça', '0xFF005A5B');";
     await db.execute(sql11);
   }
 }
