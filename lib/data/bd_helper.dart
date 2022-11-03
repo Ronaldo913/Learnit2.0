@@ -6,7 +6,7 @@ class DBHelper {
   initDB() async {
     String databasePath = await getDatabasesPath();
 
-    String path = join(databasePath, "bank14.db");
+    String path = join(databasePath, "banko013.db");
 
     Database database = await openDatabase(
       path,
@@ -370,39 +370,39 @@ class DBHelper {
     ///////////////////////////////
 
     String sql12 =
-        'create table SETTING (id INTEGER PRIMARY KEY, title title(50), page varchar(50));';
+        'create table SETTING (id INTEGER PRIMARY KEY, title title(50), page varchar(50), color varchar(50));';
     await db.execute(sql12);
 
     sql12 =
-        "INSERT INTO SETTING (id, title, page) VALUES (1, 'Gerenciar meus dados', 'ManageData()');";
+        "INSERT INTO SETTING (id, title, page, color) VALUES (1, 'Gerenciar meus dados', 'ManageData()', '0xFF02A676');";
     await db.execute(sql12);
 
     sql12 =
-        "INSERT INTO SETTING (id, title, page) VALUES (2, 'Dispositivos conectados', 'ManageData()');";
+        "INSERT INTO SETTING (id, title, page, color) VALUES (2, 'Dispositivos conectados', 'ManageData()', '0xFF008C72');";
     await db.execute(sql12);
 
     sql12 =
-        "INSERT INTO SETTING (id, title, page) VALUES (3, 'Mudar senha', 'ManageData()');";
+        "INSERT INTO SETTING (id, title, page, color) VALUES (3, 'Mudar senha', 'ManageData()', '0xFF007369');";
     await db.execute(sql12);
 
     sql12 =
-        "INSERT INTO SETTING (id, title, page) VALUES (4, 'Tema', 'ManageData()');";
+        "INSERT INTO SETTING (id, title, page, color) VALUES (4, 'Tema', 'ManageData()', '0xFF005A5B');";
     await db.execute(sql12);
 
     sql12 =
-        "INSERT INTO SETTING (id, title, page) VALUES (5, 'idioma', 'ManageData()');";
+        "INSERT INTO SETTING (id, title, page, color) VALUES (5, 'idioma', 'ManageData()', '0xFF007369');";
     await db.execute(sql12);
 
     sql12 =
-        "INSERT INTO SETTING (id, title, page) VALUES (6, 'Sistema web', 'ManageData()');";
+        "INSERT INTO SETTING (id, title, page, color) VALUES (6, 'Sistema web', 'ManageData()', '0xFF003840');";
     await db.execute(sql12);
 
     sql12 =
-        "INSERT INTO SETTING (id, title, page) VALUES (7, 'Política e privacidade', 'ManageData()');";
+        "INSERT INTO SETTING (id, title, page, color) VALUES (7, 'Política e privacidade', 'ManageData()', '0xFF005A5B');";
     await db.execute(sql12);
 
     sql12 =
-        "INSERT INTO SETTING (id, title, page) VALUES (8, 'Deletar conta', 'ManageData()');";
+        "INSERT INTO SETTING (id, title, page, color) VALUES (8, 'Deletar conta', 'ManageData()', '0xFF007369');";
     await db.execute(sql12);
   }
 }

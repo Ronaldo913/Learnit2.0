@@ -5,10 +5,12 @@ import '../pages/sideBar/settings/managerData_page.dart';
 class Setting {
   late String title;
   late Widget page;
+  late int color;
 
   Setting({
     required this.title,
     required this.page,
+    required this.color,
   });
 
   Map<String, Object?> toJson() {
@@ -16,6 +18,7 @@ class Setting {
 
     data['title'] = title;
     data['page'] = page;
+    data['color'] = color.toString();
 
     return data;
   }
@@ -23,6 +26,7 @@ class Setting {
   Setting.fromJson(Map<String, dynamic> json) {
     title = json['title'];
     page = _gerarPagina(json['page']);
+    color = int.parse(json['color']);
   }
 
   Widget _gerarPagina(String nomePagina) {

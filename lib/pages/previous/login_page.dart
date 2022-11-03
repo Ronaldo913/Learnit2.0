@@ -7,6 +7,7 @@ import 'package:learnit2/pages/Previous/recuperacao.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../data/dao/user_dao.dart';
 import '../../data/shared_prefs_helper.dart';
+import '../../main.dart';
 
 class Loginpage extends StatefulWidget {
   const Loginpage({Key? key}) : super(key: key);
@@ -20,12 +21,10 @@ class _LoginpageState extends State<Loginpage> {
   final _emailController = TextEditingController();
   final _passController = TextEditingController();
 
-  get notificationsPlugin => null;
-
   // void showNotification() async {
   //   AndroidNotificationDetails androidDetails = AndroidNotificationDetails(
-  //     "as-app",
-  //     "ASApp",
+  //     "Learnit2.0",
+  //     "Learnit2.0",
   //     priority: Priority.max,
   //     importance: Importance.max,
   //   );
@@ -42,13 +41,8 @@ class _LoginpageState extends State<Loginpage> {
   //   );
   //
   //   await notificationsPlugin.show(
-  //       0,
-  //       "Notificação teste",
-  //       "Belle Belinha fodar",
-  //       notiDetails
-  //   );
+  //       0, "Seja bem-vindo!!", "Aproveite bastante", notiDetails);
   // }
-
 
   @override
   Widget build(BuildContext context) {
@@ -489,10 +483,26 @@ class _LoginpageState extends State<Loginpage> {
       bool resultado = await UserDao().autenticar(user: email, password: pass);
 
       if (resultado) {
-        // FloatingActionButton(
-        //   onPressed: showNotification,
-        //   child: const Icon(Icons.notification_add),
-        // );
+        AndroidNotificationDetails androidDetails = AndroidNotificationDetails(
+          "Learnit2.0",
+          "Learnit2.0",
+          priority: Priority.max,
+          importance: Importance.max,
+        );
+
+        DarwinNotificationDetails iosDetails = DarwinNotificationDetails(
+          presentAlert: true,
+          presentBadge: true,
+          presentSound: true,
+        );
+
+        NotificationDetails notiDetails = NotificationDetails(
+          android: androidDetails,
+          iOS: iosDetails,
+        );
+
+        await notificationsPlugin.show(
+            0, "Seja bem-vindo!!", "Aproveite bastante", notiDetails);
 
         SharedPrefsHelper().login();
 

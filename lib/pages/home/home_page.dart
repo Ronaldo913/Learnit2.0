@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:learnit2/pages/Previous/login_page.dart';
 import 'package:learnit2/pages/flashcard_contents/flashcard_home.dart';
 import 'package:learnit2/pages/home/about_page.dart';
@@ -11,6 +12,9 @@ import 'package:learnit2/pages/home/questoes_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:learnit2/data/shared_prefs_helper.dart';
 import 'package:learnit2/pages/sideBar/settings/settings_page.dart';
+
+import '../../main.dart';
+import '../splash/animation.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -213,13 +217,34 @@ class _HomePageState extends State<HomePage> {
             ),
 
             InkWell(
-              onTap: (){
+              onTap: () async {
+                AndroidNotificationDetails androidDetails = AndroidNotificationDetails(
+                  "Learnit2.0",
+                  "Learnit2.0",
+                  priority: Priority.max,
+                  importance: Importance.max,
+                );
+
+                DarwinNotificationDetails iosDetails = DarwinNotificationDetails(
+                  presentAlert: true,
+                  presentBadge: true,
+                  presentSound: true,
+                );
+
+                NotificationDetails notiDetails = NotificationDetails(
+                  android: androidDetails,
+                  iOS: iosDetails,
+                );
+
+                await notificationsPlugin.show(
+                    0, "Tá saindo por quê?", "Volte sempre!", notiDetails);
+
                 SharedPrefsHelper().logout();
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return const Loginpage();
+                      return const AnimationPage(page: Loginpage());
                     },
                   ),
                 );

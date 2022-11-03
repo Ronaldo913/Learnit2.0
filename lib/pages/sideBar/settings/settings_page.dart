@@ -37,7 +37,7 @@ class _SettingPageState extends State<SettingPage> {
           ),
         ],
       ),
-      backgroundColor: const Color(0xFFB6D0BB),
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView(

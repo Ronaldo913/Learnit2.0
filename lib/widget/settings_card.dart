@@ -20,14 +20,27 @@ class _SettingCardState extends State<SettingCard> {
       padding: const EdgeInsets.all(16.0),
       child: InkWell(
         onTap: tela,
-        child: Container(
-          width: 400,
-          height: 60,
+        child: Card(
+          color: Color(widget.settings.color),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8.0),
+          ),
           margin: EdgeInsets.only(bottom: 24.0, top: 10),
-          color: Colors.white,
-          child: Text(
-            widget.settings.title,
-            style: TextStyle(fontSize: 20),
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 30.0, top: 30.0, right: 8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                  widget.settings.title,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                ),
+              ],
+            ),
           ),
         ),
       ),
