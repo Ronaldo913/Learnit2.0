@@ -20,4 +20,9 @@ class Flashcardss {
     pergunta = json['pergunta'];
     resposta = json['resposta'];
   }
+
+  Flashcardss.fromApiJson(Map<String, dynamic> json) {
+    pergunta = json['pergunta'];
+    resposta = json['resposta'];
+  }
 }

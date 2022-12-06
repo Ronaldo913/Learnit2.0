@@ -4,6 +4,7 @@ import '../../data/dao/flashcardCitologia_dao.dart';
 import '../../domain/flashcardss.dart';
 import 'package:learnit2/pages/home/home_page.dart';
 import '../../widget/flashcards_card.dart';
+import 'package:learnit2/data/api/flashcard_api.dart';
 
 class FlashCitologia extends StatefulWidget {
   const FlashCitologia({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class FlashCitologia extends StatefulWidget {
 }
 
 class _FlashCitologiaState extends State<FlashCitologia> {
-  Future<List<Flashcardss>> lista = FlashcardCitologiaDao().listarFlashcardCitologia();
+  Future<List<Flashcardss>> lista = FlashcardApi().listarFlashcards();
 
 
   @override

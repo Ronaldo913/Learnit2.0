@@ -5,6 +5,7 @@ import 'package:learnit2/data/oldData/bd.dart';
 import 'package:learnit2/data/DAO/posts_dao.dart';
 import 'package:learnit2/domain/network.dart';
 import 'package:learnit2/widget/cardNetwork/posts_card.dart';
+import 'package:learnit2/data/api/publication_api.dart';
 
 class NetworkPage extends StatefulWidget {
   const NetworkPage({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class NetworkPage extends StatefulWidget {
 
 class _NetworkPageState extends State<NetworkPage> {
   // Future<List<Network>> posts = BD.getNetwork();
-  Future<List<Network>> posts = PostsDao().listarPosts();
+  Future<List<Network>> posts = PublicationApi().listarPublications();
 
   @override
   Widget build(BuildContext context) {

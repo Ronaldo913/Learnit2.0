@@ -4,8 +4,8 @@ class Network {
   late final String avatar;
   late final String date;
   late final String type;
-  late final int likeCount;
-  late final int commentCount;
+  late final String likeCount;
+  late final String commentCount;
   late final String caption;
   // late final List<String> tags;
 
@@ -45,5 +45,16 @@ class Network {
     date = json['date'];
     likeCount = json['likeCount'];
     commentCount = json['commentCount'];
+  }
+
+  Network.fromApiJson(Map<String, dynamic> json) {
+    photo = json['photo'];
+    author = json['author'];
+    avatar = json['avatar'];
+    date = json['date'];
+    type = json['type'];
+    likeCount = json['like'];
+    commentCount = json['comment'];
+    caption = json['caption'];
   }
 }
