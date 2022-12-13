@@ -192,7 +192,7 @@ class DBHelper {
     await db.execute(sql7);
 
     sql7 =
-        "INSERT INTO CONTENT(id, title, color, page) VALUES (1, 'Citologia', '0xFF02A676', 'TelaAssuntos()');";
+        "INSERT INTO CONTENT(id, title, color, page) VALUES (1, 'Citologia', '0xFF02A676', 'Conteudoc()');";
     await db.execute(sql7);
 
     sql7 =
