@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:learnit2/pages/contents/conteudo2_page.dart';
+import 'package:learnit2/pages/contents/conteudo3_page.dart';
 import 'package:learnit2/pages/contents/conteudo_page.dart';
 import 'package:learnit2/pages/questions/quest.dart';
 import '../pages/flashcard_contents/citologia_flashcard.dart';
@@ -32,8 +34,8 @@ class QuestoesConteudo {
 
   Widget _gerarPagina(String nomePagina) {
     switch (nomePagina) {
-      case 'TelaAssuntos()':
-        return TelaAssuntos();
+      case 'Conteudoc()':
+        return Conteudoc();
 
       case 'QuestPage()':
         return QuestPage();
@@ -42,7 +44,7 @@ class QuestoesConteudo {
         return FlashCitologia();
 
       default:
-        return TelaAssuntos();
+        return Conteudoc();
     }
   }
 }
