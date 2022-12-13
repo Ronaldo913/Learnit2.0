@@ -5,7 +5,7 @@ import 'package:learnit2/domain/network.dart';
 import 'package:http/http.dart';
 
 class PublicationApi {
-  String baseUrl = "publications.ronaldonoberton.repl.co";
+  String baseUrl = "nodepublications.herokuapp.com";
 
   Future<List<Network>> listarPublications() async {
     Uri url = Uri.http(baseUrl, "/publications");

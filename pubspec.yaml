@@ -32,9 +32,9 @@ dependencies:
   intl: ^0.15.7
   carousel_slider: ^4.1.1
   auto_size_text: ^2.1.0
-  http: ^0.12.0+4
+  http: ^0.13.5
   share: ^0.6.3+6
-  dio: ^3.0.10
+  dio:
   enum_to_string: ^1.0.14
   equatable: ^1.2.6
   flutter_hooks: ^0.15.0
