@@ -24,4 +24,10 @@ class About {
     text = json['text'];
     image = json['image'];
   }
+
+  About.fromApiJson(Map<String, dynamic> json) {
+    title = json['title'];
+    text = json['text'];
+    image = json['image'];
+  }
 }

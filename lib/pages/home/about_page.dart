@@ -3,6 +3,7 @@ import '../../data/dao/about_dao.dart';
 import '../../domain/about.dart';
 import '../../widget/about_card.dart';
 import 'home_page.dart';
+import 'package:learnit2/data/api/about_api.dart';
 
 class AboutPage extends StatefulWidget {
   const AboutPage({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class AboutPage extends StatefulWidget {
 }
 
 class _AboutPageState extends State<AboutPage> {
-  Future<List<About>> lista = AboutDao().listarAbout();
+  Future<List<About>> lista = AboutApi().listarSobre();
 
   @override
   Widget build(BuildContext context) {

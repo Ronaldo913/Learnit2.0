@@ -1,24 +1,24 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:learnit2/domain/network.dart';
+import 'package:learnit2/domain/pacote_estudo.dart';
 import 'package:http/http.dart';
 
-class PublicationApi {
+class PacotesApi {
   String baseUrl = "learnit.herokuapp.com";
 
-  Future<List<Network>> listarPublications() async {
-    Uri url = Uri.http(baseUrl, "/publications");
+  Future<List<PacoteEstudo>> listarPacotes() async {
+    Uri url = Uri.http(baseUrl, "/packages");
     Response response = await http.get(url);
 
-    List<Network> lista = <Network>[];
+    List<PacoteEstudo> lista = <PacoteEstudo>[];
     if (response.statusCode == 200) {
       var result = jsonDecode(response.body);
       print(result);
 
       for (var json in result) {
-        Network publi = Network.fromApiJson(json);
-        lista.add(publi);
+        PacoteEstudo pack = PacoteEstudo.fromApiJson(json);
+        lista.add(pack);
       }
     }
 

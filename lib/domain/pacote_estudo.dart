@@ -2,9 +2,9 @@ class PacoteEstudo {
   late final String imagem;
   late final String titulo;
   late final int numParcelas;
-  late final int desconto;
-  late final double precoAtual;
-  late final double precoAntigo;
+  late final String desconto;
+  late final String precoAtual;
+  late final String precoAntigo;
   late final int redacao;
   late final int aula;
   late final int exercicio;
@@ -55,5 +55,19 @@ class PacoteEstudo {
     exercicio = json['exercicio'];
     horas = json['horas'];
     duvida = json['duvida'];
+  }
+
+  PacoteEstudo.fromApiJson(Map<String, dynamic> json) {
+    imagem = json['imagem'];
+    titulo = json['titulo'];
+    desconto = json['desconto'];
+    precoAtual = json['precoAtual'];
+    precoAntigo = json['precoAntigo'];
+    redacao = json[0];
+    numParcelas = json[0];
+    aula = json[0];
+    exercicio = json[0];
+    horas = json[0];
+    duvida = json[0];
   }
 }

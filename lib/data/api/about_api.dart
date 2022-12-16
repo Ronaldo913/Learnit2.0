@@ -1,24 +1,24 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:learnit2/domain/network.dart';
+import 'package:learnit2/domain/about.dart';
 import 'package:http/http.dart';
 
-class PublicationApi {
+class AboutApi {
   String baseUrl = "learnit.herokuapp.com";
 
-  Future<List<Network>> listarPublications() async {
-    Uri url = Uri.http(baseUrl, "/publications");
+  Future<List<About>> listarSobre() async {
+    Uri url = Uri.http(baseUrl, "/abouts");
     Response response = await http.get(url);
 
-    List<Network> lista = <Network>[];
+    List<About> lista = <About>[];
     if (response.statusCode == 200) {
       var result = jsonDecode(response.body);
       print(result);
 
       for (var json in result) {
-        Network publi = Network.fromApiJson(json);
-        lista.add(publi);
+        About about = About.fromApiJson(json);
+        lista.add(about);
       }
     }
 

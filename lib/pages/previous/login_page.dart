@@ -1,3 +1,4 @@
+import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:learnit2/pages/splash/animation.dart';
@@ -443,7 +444,7 @@ class _LoginpageState extends State<Loginpage> {
 
   Future<void> openSite() async {
     final Uri _url =
-        Uri.parse('https://ronaldo913.github.io/ImagensPMovel/index.html');
+        Uri.parse('https://learnit.herokuapp.com');
 
     if (!await launchUrl(
       _url,
@@ -483,6 +484,8 @@ class _LoginpageState extends State<Loginpage> {
       bool resultado = await UserDao().autenticar(user: email, password: pass);
 
       if (resultado) {
+        final player = AudioCache();
+        player.play('./audio-splash.mp3');
         AndroidNotificationDetails androidDetails = AndroidNotificationDetails(
           "Learnit2.0",
           "Learnit2.0",

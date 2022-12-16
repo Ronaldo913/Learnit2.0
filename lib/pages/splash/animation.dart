@@ -1,3 +1,4 @@
+import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/material.dart';
 import '../../data/shared_prefs_helper.dart';
 import '../Previous/login_page.dart';
@@ -16,6 +17,8 @@ class AnimationPage extends StatefulWidget {
 class _AnimationPageState extends State<AnimationPage> {
   @override
   void initState() {
+    final player = AudioCache();
+    player.play('./audio-splash.mp3');
     super.initState();
     loadData();
     // player = AudioPlayer();

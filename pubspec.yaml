@@ -47,6 +47,7 @@ dependencies:
   rxdart:
   timezone:
   provider:
+  audioplayers: ^0.10.0
 
 
   # The following adds the Cupertino Icons font to your application.
