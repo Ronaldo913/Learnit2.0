@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learnit2/data/api/question_api.dart';
 import '../../data/dao/questcitologia_dao.dart';
 import 'package:learnit2/domain/questoes.dart';
 import 'package:learnit2/pages/home/home_page.dart';
@@ -12,7 +13,7 @@ class QuestPage extends StatefulWidget {
 }
 
 class _QuestPageState extends State<QuestPage> {
-  Future<List<Questoes>> lista = QuestCitologiaDao().listarQuestoes();
+  Future<List<Questoes>> lista = QuestionApi().listarQuestions();
 
   @override
   Widget build(BuildContext context) {

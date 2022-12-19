@@ -15,6 +15,7 @@ class CardQuestoes extends StatefulWidget {
 }
 
 class _CardQuestoesState extends State<CardQuestoes> {
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -24,7 +25,7 @@ class _CardQuestoesState extends State<CardQuestoes> {
         ),
         InkWell(
           child: Card(
-            color: Color(widget.questoes.color),
+            color: Color(int.parse(widget.questoes.color)),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8.0),
             ),
@@ -56,7 +57,7 @@ class _CardQuestoesState extends State<CardQuestoes> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          widget.questoes.a,
+                          'a) ' + widget.questoes.a,
                           textAlign: TextAlign.left,
                           style: const TextStyle(
                             fontSize: 20,
@@ -64,21 +65,21 @@ class _CardQuestoesState extends State<CardQuestoes> {
                           ),
                         ),
                         Text(
-                          widget.questoes.b,
+                          'b) ' + widget.questoes.b,
                           style: const TextStyle(
                             fontSize: 20,
                             color: Colors.white,
                           ),
                         ),
                         Text(
-                          widget.questoes.c,
+                          'c) ' + widget.questoes.c,
                           style: const TextStyle(
                             fontSize: 20,
                             color: Colors.white,
                           ),
                         ),
                         Text(
-                          widget.questoes.d,
+                          'd) ' + widget.questoes.d,
                           style: const TextStyle(
                             fontSize: 20,
                             color: Colors.white,

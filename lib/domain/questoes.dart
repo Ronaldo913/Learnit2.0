@@ -4,7 +4,7 @@ class Questoes {
   late final String b;
   late final String c;
   late final String d;
-  late final int color;
+  late final String color;
   late final String answer;
 
   Questoes({
@@ -33,6 +33,16 @@ class Questoes {
   }
 
   Questoes.fromJson(Map<String, dynamic> json) {
+    title = json['title'];
+    a = json['a'];
+    b = json['b'];
+    c = json['c'];
+    d = json['d'];
+    color = json['color'];
+    answer = json['answer'];
+  }
+
+  Questoes.fromApiJson(Map<String, dynamic> json) {
     title = json['title'];
     a = json['a'];
     b = json['b'];
