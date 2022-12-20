@@ -2,6 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:learnit2/pages/home/assuntos_page.dart';
 import 'package:learnit2/pages/home/pacote_page.dart';
 import 'package:learnit2/pages/home/questoes_page.dart';
+import 'package:learnit2/pages/home/colors.dart';
+
+import 'dart:ui';
+
+import 'package:learnit2/data/home/latest_workout.dart';
+import 'package:learnit2/pages/home/colors.dart';
+import 'package:learnit2/widget/home/chart_activity_status.dart';
+import 'package:learnit2/widget/home/chart_sleep.dart';
+import 'package:learnit2/widget/home/chart_workout_progress.dart';
+import 'package:learnit2/widget/home/water_intake_progressbar.dart';
+import 'package:learnit2/widget/home/water_intake_timeline.dart';
+import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter/material.dart';
+import 'package:line_icons/line_icons.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -14,115 +28,546 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: ListView(
-        children: [
-          Image.network('https://ronaldo913.github.io/ImagensPMovel/images/logo.png'),
-          const SizedBox(height: 24),
-          Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Padding(padding: const EdgeInsets.all(16),
-                  child: ElevatedButton(onPressed: onPressedButton,
-                    child: const Padding(padding: EdgeInsets.symmetric(vertical: 20),
-                      child: const Text(
-                        'CONTEÚDOS',
+      body: getBody(),
+    );
+  }
+
+  Widget getBody() {
+    var size = MediaQuery.of(context).size;
+    return SingleChildScrollView(
+      child: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(30),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Welcome Back",
+                        style: TextStyle(fontSize: 14, color: black),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        "Learnit",
                         style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: black),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                        color: black.withOpacity(0.03),
+                        borderRadius: BorderRadius.circular(12)),
+                    child: Center(
+                      child: Icon(LineIcons.bell),
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Container(
+                width: double.infinity,
+                height: 145,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  gradient: LinearGradient(colors: [secondary, primary]),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Row(
+                    children: [
+                      Flexible(
+                        child: Container(
+                          width: (size.width),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "PREMIUM",
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                    color: white),
+                              ),
+                              Text(
+                                "Conheça nossos planos",
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w400,
+                                    color: white),
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => const PacotePage()),
+                                  );
+                                },
+                                child: Container(
+                                  width: 95,
+                                  height: 35,
+                                  decoration: BoxDecoration(
+                                      gradient: LinearGradient(
+                                          colors: [fourthColor, thirdColor]),
+                                      borderRadius: BorderRadius.circular(20)),
+                                  child: Center(
+                                    child: Text(
+                                      "Ir para",
+                                      style:
+                                      TextStyle(fontSize: 13, color: white),
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Container(
+                        width: 100,
+                        height: 100,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          gradient:
+                          LinearGradient(colors: [fourthColor, thirdColor]),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "5 estrelas",
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: white),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Container(
+                width: double.infinity,
+                height: 60,
+                decoration: BoxDecoration(
+                    color: secondary.withOpacity(0.5),
+                    borderRadius: BorderRadius.circular(20)),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20, right: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Atividades",
+                        style: TextStyle(
+                            fontSize: 17,
+                            color: black,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      InkWell(
+                        onTap: (){
+                          Navigator.pushNamed(context, "/today_target_detail");
+                        },
+                        child: Container(
+                          width: 70,
+                          height: 35,
+                          decoration: BoxDecoration(
+                              gradient:
+                              LinearGradient(colors: [secondary, primary]),
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Center(
+                            child: Text(
+                              "Check",
+                              style: TextStyle(fontSize: 13, color: white),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Text(
+                "Status de Atividade",
+                style: TextStyle(
+                    fontSize: 18, fontWeight: FontWeight.bold, color: black),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Container(
+                width: double.infinity,
+                height: 150,
+                decoration: BoxDecoration(
+                    color: secondary.withOpacity(0.5),
+                    borderRadius: BorderRadius.circular(30)),
+                child: Stack(
+                  children: [
+                    Container(
+                      width: double.infinity,
+                      child: LineChart(activityData()),
                     ),
-                    style: ElevatedButton.styleFrom(
-                      primary: Color(0xFF027333),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25.0),
+                    Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Text(
+                        "Heart Rate",
+                        style: TextStyle(
+                            fontSize: 15, fontWeight: FontWeight.bold),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Row(
+                children: [
+                  Container(
+                    width: (size.width - 80) / 2,
+                    height: 320,
+                    decoration: BoxDecoration(
+                        color: white,
+                        boxShadow: [
+                          BoxShadow(
+                              color: black.withOpacity(0.01),
+                              spreadRadius: 20,
+                              blurRadius: 10,
+                              offset: Offset(0, 10))
+                        ],
+                        borderRadius: BorderRadius.circular(30)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Row(
+                        children: [
+                          WateIntakeProgressBar(),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Flexible(
+                            child: Column(
+                              children: [
+                                Text(
+                                  "Water Intake",
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                Spacer(),
+                                Column(
+                                  children: [
+                                    Text(
+                                      "Real time updates",
+                                      style: TextStyle(
+                                          fontSize: 13,
+                                          color: black.withOpacity(0.5)),
+                                    ),
+                                    SizedBox(
+                                      height: 15,
+                                    ),
+                                    WaterIntakeTimeLine()
+                                  ],
+                                )
+                              ],
+                            ),
+                          )
+                        ],
                       ),
                     ),
                   ),
-                ),
-                Padding(padding: EdgeInsets.all(16),
-                  child: ElevatedButton(onPressed: onPressedButton2,
-                    child: const Padding(padding: EdgeInsets.symmetric(vertical: 20),
-                      child: const Text(
-                        'QUESTÕES',
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                      primary: Color(0xFF027333),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25.0),
-                      ),
-                    ),
+                  SizedBox(
+                    width: 20,
                   ),
-                ),
-                const SizedBox(height: 24),
-                Padding(padding: EdgeInsets.all(20),
-                  child: ElevatedButton(onPressed: onPressedButton3,
-                    child: const Padding(padding: EdgeInsets.symmetric(vertical: 24),
-                      child: const Text(
-                        'PREMIUM',
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.white,
+                  Column(
+                    children: [
+                      Container(
+                        width: (size.width - 80) / 2,
+                        height: 150,
+                        decoration: BoxDecoration(
+                            color: white,
+                            boxShadow: [
+                              BoxShadow(
+                                  color: black.withOpacity(0.01),
+                                  spreadRadius: 20,
+                                  blurRadius: 10,
+                                  offset: Offset(0, 10))
+                            ],
+                            borderRadius: BorderRadius.circular(30)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(20),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Sleep",
+                                style: TextStyle(
+                                    fontSize: 15, fontWeight: FontWeight.bold),
+                              ),
+                              Spacer(),
+                              Flexible(
+                                child: LineChart(sleepData()),
+                              )
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                    style: ElevatedButton.styleFrom(
-                        primary: const Color(0xFF012340),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(35.0)
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                          width: (size.width - 80) / 2,
+                          height: 150,
+                          decoration: BoxDecoration(
+                              color: white,
+                              boxShadow: [
+                                BoxShadow(
+                                    color: black.withOpacity(0.01),
+                                    spreadRadius: 20,
+                                    blurRadius: 10,
+                                    offset: Offset(0, 10))
+                              ],
+                              borderRadius: BorderRadius.circular(30)),
+                          child: Padding(
+                            padding: const EdgeInsets.all(20),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Calories",
+                                  style: TextStyle(
+                                      fontSize: 15,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                Spacer(),
+                                Container(
+                                  width: 70,
+                                  height: 70,
+                                  decoration: BoxDecoration(
+                                      gradient: LinearGradient(
+                                          begin: Alignment.topCenter,
+                                          colors: [
+                                            fourthColor,
+                                            primary.withOpacity(0.5)
+                                          ]),
+                                      shape: BoxShape.circle),
+                                  child: Center(
+                                      child: Container(
+                                        width: 50,
+                                        height: 50,
+                                        decoration: BoxDecoration(
+                                            shape: BoxShape.circle, color: primary),
+                                        child: Center(
+                                          child: Text(
+                                            "230 Cal",
+                                            style: TextStyle(
+                                                fontSize: 10, color: white),
+                                          ),
+                                        ),
+                                      )),
+                                )
+                              ],
+                            ),
+                          ))
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Workout Progress",
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: black),
+                  ),
+                  Container(
+                    width: 95,
+                    height: 35,
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(colors: [secondary, primary]),
+                        borderRadius: BorderRadius.circular(20)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Weekly",
+                          style: TextStyle(fontSize: 13, color: white),
+                        ),
+                        Icon(
+                          Icons.keyboard_arrow_down,
+                          color: white,
                         )
+                      ],
                     ),
-                  ),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                width: double.infinity,
+                height: 220,
+                decoration: BoxDecoration(
+                    color: white,
+                    boxShadow: [
+                      BoxShadow(
+                          color: black.withOpacity(0.01),
+                          spreadRadius: 20,
+                          blurRadius: 10,
+                          offset: Offset(0, 10))
+                    ],
+                    borderRadius: BorderRadius.circular(30)),
+                child: LineChart(
+                  workoutProgressData(),
                 ),
-              ],
-            ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Latest Workout",
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: black),
+                  ),
+                  Text(
+                    "See more",
+                    style: TextStyle(fontSize: 15, color: black.withOpacity(0.5)),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Column(
+                children: List.generate(latestWorkoutJson.length, (index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 20),
+                    child: Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          color: white,
+                          boxShadow: [
+                            BoxShadow(
+                                color: black.withOpacity(0.01),
+                                spreadRadius: 20,
+                                blurRadius: 10,
+                                offset:Offset(0, 10)
+                            )
+                          ],
+                          borderRadius: BorderRadius.circular(12)
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 50,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(image: AssetImage(latestWorkoutJson[index]['img']))
+                              ),
+                            ),
+                            SizedBox(width: 15,),
+                            Flexible(
+                              child: Container(
+                                height: 55,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(latestWorkoutJson[index]['title'],style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight:FontWeight.bold
+                                    ),),
+                                    Text(latestWorkoutJson[index]['description'],style: TextStyle(
+                                        fontSize: 13,
+                                        color: black.withOpacity(0.5)
+                                    ),),
+                                    Stack(
+                                        children:[
+                                          Container(
+                                            width: size.width,
+                                            height: 10,
+                                            decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(30),
+                                                color: bgTextField
+                                            ),
+                                          ),
+                                          Container(
+                                            width: size.width*(latestWorkoutJson[index]['progressBar']),
+                                            height: 10,
+                                            decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(30),
+                                                gradient: LinearGradient(colors: [
+                                                  primary, secondary
+                                                ])
+                                            ),
+                                          )
+                                        ]
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 15,),
+                            Container(
+                              width: 20,
+                              height: 20,
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                      color: primary
+                                  )
+                              ),
+                              child: Center(
+                                child: Icon(Icons.arrow_forward_ios,size:11,color:primary),
+                              ),
+                            ),
+
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
+                }),
+              )
+            ],
           ),
-        ],
-      ),
-
-    );
-  }
-
-
-  void onPressedButton(){
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context){
-          return const AssuntosPage();
-        },
+        ),
       ),
     );
   }
-
-  void onPressedButton2(){
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context){
-          return const QuestoesPage();
-        },
-      ),
-    );
-  }
-
-  void onPressedButton3(){
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context){
-          return const PacotePage();
-        },
-      ),
-    );
-  }
-
 }

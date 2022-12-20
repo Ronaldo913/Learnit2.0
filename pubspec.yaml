@@ -48,6 +48,8 @@ dependencies:
   timezone:
   provider:
   audioplayers: ^0.10.0
+  fl_chart:
+  line_icons:
 
 
   # The following adds the Cupertino Icons font to your application.

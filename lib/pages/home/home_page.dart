@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Learn It + Bio'),
-        backgroundColor: const Color(0xFF025939),
+        backgroundColor: const Color(0xFF015958),
         toolbarHeight: 64,
       ),
 
