@@ -26,7 +26,7 @@ class _CardCronograma extends State<CardCronograma> {
           height: 30,
         ),
         Card(
-            color: Color(widget.cronogramaCard.color),
+            color: Color(int.parse(widget.cronogramaCard.color)),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8.0),
             ),

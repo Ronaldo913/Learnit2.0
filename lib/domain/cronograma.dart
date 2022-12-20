@@ -1,9 +1,12 @@
+import 'dart:developer';
+
 class Cronograma {
   late final String title;
-  late final int hour;
-  late final int minute;
+  late final String hour;
+  late final String minute;
   late final String day;
-  late final int color;
+  late final String color;
+
 
   Cronograma({
     required this.title,
@@ -30,8 +33,16 @@ class Cronograma {
     hour = json['hour'];
     minute = json['minute'];
     day = json['day'];
-    color = int.parse(json['color']);
+    color = json['color'];
 
+  }
+
+    Cronograma.fromApiJson(Map<String, dynamic> json) {
+      title = json['title'];
+      hour = json['hour'];
+      minute = json['minute'];
+      day = json['day'];
+      color = json['color'];
   }
 
 }

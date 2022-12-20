@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:learnit2/data/api/timeline_api.dart';
 import 'package:learnit2/domain/cronograma.dart';
 import 'package:learnit2/widget/cronograma_card.dart';
 import '../home/home_page.dart';
@@ -13,7 +14,7 @@ class CronogramaPage extends StatefulWidget {
 }
 
 class _CronogramaPageState extends State<CronogramaPage> {
-  Future<List<Cronograma>> lista = CronoDao().listarCronograma();
+  Future<List<Cronograma>> lista = TimelineApi().listarCronograma();
 
   @override
   Widget build(BuildContext context) {
