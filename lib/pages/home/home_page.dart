@@ -4,7 +4,7 @@ import 'package:learnit2/pages/Previous/login_page.dart';
 import 'package:learnit2/pages/flashcard_contents/flashcard_home.dart';
 import 'package:learnit2/pages/home/about_page.dart';
 import 'package:learnit2/pages/home/assuntos_page.dart';
-import 'package:learnit2/pages/sideBar/bottom_navigation_page.dart';
+import 'package:learnit2/pages/sideBar/redes/bottom_navigation_page.dart';
 import 'package:learnit2/pages/sideBar/cronograma_page.dart';
 import 'package:learnit2/pages/home/home.dart';
 import 'package:learnit2/pages/sideBar/perfil_page.dart';

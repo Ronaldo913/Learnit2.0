@@ -20,7 +20,7 @@ class _PostsCardState extends State<PostsCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Color(0xFF012340),
+      color: Color(0xFF015958),
       margin: EdgeInsets.only(bottom: 25),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
