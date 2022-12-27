@@ -6,7 +6,7 @@ class DBHelper {
   initDB() async {
     String databasePath = await getDatabasesPath();
 
-    String path = join(databasePath, "bank0013.db");
+    String path = join(databasePath, "bank00013.db");
 
     Database database = await openDatabase(
       path,
@@ -25,6 +25,34 @@ class DBHelper {
 
     sqll =
     "INSERT INTO STORE (id, image, title, price, page) VALUES (1, 'https://imgs.casasbahia.com.br/14023375/1xg.jpg?imwidth=500', 'Camisa de Biologia', '50,00', 'QuestPage()');";
+    await db.execute(sqll);
+
+    sqll =
+    "INSERT INTO STORE (id, image, title, price, page) VALUES (2, 'https://imgs.casasbahia.com.br/14023375/1xg.jpg?imwidth=500', 'Camisa de Biologia', '50,00', 'QuestPage()');";
+    await db.execute(sqll);
+
+    sqll =
+    "INSERT INTO STORE (id, image, title, price, page) VALUES (3, 'https://imgs.casasbahia.com.br/14023375/1xg.jpg?imwidth=500', 'Camisa de Biologia', '50,00', 'QuestPage()');";
+    await db.execute(sqll);
+
+    sqll =
+    "INSERT INTO STORE (id, image, title, price, page) VALUES (4, 'https://imgs.casasbahia.com.br/14023375/1xg.jpg?imwidth=500', 'Camisa de Biologia', '50,00', 'QuestPage()');";
+    await db.execute(sqll);
+
+    sqll =
+    "INSERT INTO STORE (id, image, title, price, page) VALUES (5, 'https://imgs.casasbahia.com.br/14023375/1xg.jpg?imwidth=500', 'Camisa de Biologia', '50,00', 'QuestPage()');";
+    await db.execute(sqll);
+
+    sqll =
+    "INSERT INTO STORE (id, image, title, price, page) VALUES (6, 'https://imgs.casasbahia.com.br/14023375/1xg.jpg?imwidth=500', 'Camisa de Biologia', '50,00', 'QuestPage()');";
+    await db.execute(sqll);
+
+    sqll =
+    "INSERT INTO STORE (id, image, title, price, page) VALUES (7, 'https://imgs.casasbahia.com.br/14023375/1xg.jpg?imwidth=500', 'Camisa de Biologia', '50,00', 'QuestPage()');";
+    await db.execute(sqll);
+
+    sqll =
+    "INSERT INTO STORE (id, image, title, price, page) VALUES (8, 'https://imgs.casasbahia.com.br/14023375/1xg.jpg?imwidth=500', 'Camisa de Biologia', '50,00', 'QuestPage()');";
     await db.execute(sqll);
 
     String sql =
