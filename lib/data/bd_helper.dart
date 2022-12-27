@@ -6,7 +6,7 @@ class DBHelper {
   initDB() async {
     String databasePath = await getDatabasesPath();
 
-    String path = join(databasePath, "banko013.db");
+    String path = join(databasePath, "bank0013.db");
 
     Database database = await openDatabase(
       path,
@@ -19,6 +19,14 @@ class DBHelper {
   }
 
   Future<FutureOr<void>> onCreate(Database db, int version) async {
+    String sqll =
+        'create table STORE (id INTEGER PRIMARY KEY, image varchar(500), title varchar(100), price varchar(100), page varchar(100));';
+    await db.execute(sqll);
+
+    sqll =
+    "INSERT INTO STORE (id, image, title, price, page) VALUES (1, 'https://imgs.casasbahia.com.br/14023375/1xg.jpg?imwidth=500', 'Camisa de Biologia', '50,00', 'QuestPage()');";
+    await db.execute(sqll);
+
     String sql =
         'create table POSTS (id INTEGER PRIMARY KEY, url_avatar varchar(500), author varchar(100), type varchar(100), caption varchar(100), url_post varchar(500), date varchar(100), likeCount integer, commentCount integer);';
     await db.execute(sql);
